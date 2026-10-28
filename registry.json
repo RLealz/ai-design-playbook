@@ -1,0 +1,496 @@
+{
+  "version": "1.0.0",
+  "name": "ai-design-playbook",
+  "description": "Curated upstream registry of AI Design, Motion, 3D, Video, and Diagram skills with built-in security auditing and Combo orchestration.",
+  "localSkills": [
+    {
+      "id": "design-router",
+      "path": "skills/design-router",
+      "description": "Master Art Director & Design Router skill that diagnoses UI/motion/3D/video tasks, selects the optimal Skill Combo, and routes to curated libraries and anti-slop laws."
+    },
+    {
+      "id": "combo-anti-slop-landing",
+      "path": "skills/combo-anti-slop-landing",
+      "description": "Combo 1 Orchestrator: Chains styleseed, refactoring-ui-skill, hallmark, impeccable, make-interfaces-feel-better, and kill-ai-slop for non-generic landing pages."
+    },
+    {
+      "id": "combo-scroll-3d-world",
+      "path": "skills/combo-scroll-3d-world",
+      "description": "Combo 2 Orchestrator: Chains scrollcraft/scroll-world, GSAP ScrollTrigger, motion-primitives, and Scrolltide/Nohira patterns for narrative scroll experiences."
+    },
+    {
+      "id": "combo-3d-webgl-hero",
+      "path": "skills/combo-3d-webgl-hero",
+      "description": "Combo 3 Orchestrator: Chains genjutsu:cast, threejs-skills/3dviz-pro-max, img2threejs/anatomy, and ThreeUI/HorizonX for procedural 3D & isometric WebGL heroes."
+    },
+    {
+      "id": "combo-vibe-prototyping",
+      "path": "skills/combo-vibe-prototyping",
+      "description": "Combo 4 Orchestrator: Rapid multi-direction prototyping with superdesign, React Bits, 21st.dev, Skiper UI, Vengeance UI, Pacifio UI, and impeccable colorize."
+    },
+    {
+      "id": "combo-viral-launch-video",
+      "path": "skills/combo-viral-launch-video",
+      "description": "Combo 5 Orchestrator: Code-to-video launch pipeline combining brag, motion-video-kit, motionmaxxing, hyperframes, and ffmpeg-skill."
+    },
+    {
+      "id": "combo-steal-like-an-artist",
+      "path": "skills/combo-steal-like-an-artist",
+      "description": "Combo 6 Orchestrator: Live URL & reference-to-design-system extraction using design-extract, design-dna, genjutsu:paint, design-motion-principles, and LottieFiles motion-design."
+    },
+    {
+      "id": "combo-deck-diagram-factory",
+      "path": "skills/combo-deck-diagram-factory",
+      "description": "Combo 7 Orchestrator: Executive decks, brand identity kits, and editorial HTML/SVG diagrams using Kami, ppt-master, diagram-design, archify, and logo-design-skill."
+    }
+  ],
+  "combos": {
+    "anti-slop-landing": {
+      "name": "The Anti-Slop Landing Page",
+      "localSkill": "combo-anti-slop-landing",
+      "upstreamSkills": [
+        "styleseed",
+        "hallmark",
+        "impeccable",
+        "refactoring-ui-skill",
+        "make-interfaces-feel-better",
+        "kill-ai-slop"
+      ]
+    },
+    "scroll-3d-world": {
+      "name": "The Premium Scroll & 3D World Experience",
+      "localSkill": "combo-scroll-3d-world",
+      "upstreamSkills": [
+        "scroll-craft",
+        "scroll-world",
+        "gsap-skills",
+        "motion-design-skill"
+      ]
+    },
+    "3d-webgl-hero": {
+      "name": "The 3D / WebGL / Isometric Hero Section",
+      "localSkill": "combo-3d-webgl-hero",
+      "upstreamSkills": [
+        "genjutsu",
+        "threejs-skills",
+        "3dviz-pro-max",
+        "img2threejs",
+        "anatomy"
+      ]
+    },
+    "vibe-prototyping": {
+      "name": "Rapid Vibe Prototyping",
+      "localSkill": "combo-vibe-prototyping",
+      "upstreamSkills": [
+        "superdesign-skill",
+        "ui-skills",
+        "impeccable",
+        "taste-skill"
+      ]
+    },
+    "viral-launch-video": {
+      "name": "The Viral Launch Video & Sizzle Reel",
+      "localSkill": "combo-viral-launch-video",
+      "upstreamSkills": [
+        "brag",
+        "hyperframes",
+        "motion-video-kit",
+        "motionmaxxing",
+        "ffmpeg-skill"
+      ]
+    },
+    "steal-like-an-artist": {
+      "name": "Steal Like an Artist (Reference-to-System Extraction)",
+      "localSkill": "combo-steal-like-an-artist",
+      "upstreamSkills": [
+        "design-extract",
+        "design-dna",
+        "genjutsu",
+        "design-motion-principles",
+        "motion-design-skill"
+      ]
+    },
+    "deck-diagram-factory": {
+      "name": "Executive Deck, Editorial Diagram & Publication Factory",
+      "localSkill": "combo-deck-diagram-factory",
+      "upstreamSkills": [
+        "Kami",
+        "ppt-master",
+        "diagram-design",
+        "archify",
+        "excalidraw-diagram-skill",
+        "logo-design-skill"
+      ]
+    }
+  },
+  "upstreamSkills": [
+    {
+      "id": "styleseed",
+      "repo": "bitjaru/styleseed",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Design-method engine with 74 rules against AI slop and a scored quality gate."
+    },
+    {
+      "id": "genjutsu",
+      "repo": "AThevon/genjutsu",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Anti-AI-slop creative coding suite with cast (enhance UI) and paint (design systems) pipelines."
+    },
+    {
+      "id": "hallmark",
+      "repo": "Nutlope/hallmark",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Enforces structural variety and tactile rebellion across 20 themes with strict Slop Tests."
+    },
+    {
+      "id": "impeccable",
+      "repo": "pbakaus/impeccable",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Production frontend design language with 19 action-verb sub-skills (polish, colorize, bolder, quieter, typeset, etc.)."
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Design system intelligence and style/typography search across 9 tech stacks."
+    },
+    {
+      "id": "superdesign-skill",
+      "repo": "superdesigndev/superdesign-skill",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Turns generic AI-slop UI into shippable, tasteful frontend interfaces."
+    },
+    {
+      "id": "ui-skills",
+      "repo": "ibelick/ui-skills",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Opinionated constraints for Design Engineers building polished interfaces."
+    },
+    {
+      "id": "taste-skill",
+      "repo": "Leonxlnx/taste-skill",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "High-agency frontend taste skill with art direction, reference checks, and anti-slop rules."
+    },
+    {
+      "id": "scroll-craft",
+      "repo": "nateherkai/scroll-craft",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Builds narrative-driven, filmic scroll-heavy websites held to strict typographic and spacing standards."
+    },
+    {
+      "id": "design-dna",
+      "repo": "zanwei/design-dna",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "3-dimension design extraction and generation across Design System tokens, Design Style mood, and Visual Effects."
+    },
+    {
+      "id": "design-extract",
+      "repo": "Manavarya09/design-extract",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Extracts any live website's complete DTCG design system, Tailwind v4 config, and Figma variables via CLI, plugin, and MCP."
+    },
+    {
+      "id": "opendesign",
+      "repo": "manalkaff/opendesign",
+      "subPath": "skills",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "10 composable design skills (create-design-system, interactive-prototype, wireframe, make-a-deck, handoff-to-claude-code)."
+    },
+    {
+      "id": "huashu-design",
+      "repo": "alchaincyf/huashu-design",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "HTML-native design skill with an 84-style reference library for web, app prototypes, PPTX, and infographics."
+    },
+    {
+      "id": "claude-design-skill",
+      "repo": "jiji262/claude-design-skill",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Portable skill turning agents into expert designers for HTML artifacts, decks, landing pages, and posters."
+    },
+    {
+      "id": "motion-design-skill",
+      "repo": "LottieFiles/motion-design-skill",
+      "subPath": "",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "LottieFiles universal motion design principles: emotional intent, timing, easing, choreography, and Disney UI principles."
+    },
+    {
+      "id": "design-motion-principles",
+      "repo": "kylezantos/design-motion-principles",
+      "subPath": "",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "Two-mode motion skill (build or audit) distilled from Emil Kowalski, Jakub Krehel, and Jhey Tompkins."
+    },
+    {
+      "id": "make-interfaces-feel-better",
+      "repo": "jakubkrehel/make-interfaces-feel-better",
+      "subPath": "skills/make-interfaces-feel-better",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "Jakub Krehel's 16 concrete craft techniques for typography, surfaces, spring physics, and UI feel."
+    },
+    {
+      "id": "refactoring-ui-skill",
+      "repo": "s0xDk/refactoring-ui-skill",
+      "subPath": "",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "Applies concrete rules from Wathan & Schoger's Refactoring UI (constrained scales, hierarchy via weight/color, depth via light)."
+    },
+    {
+      "id": "design-for-ai",
+      "repo": "ryanthedev/design-for-ai",
+      "subPath": "",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "Visual design fundamentals plugin covering clarify, data-viz, prototype, and usability."
+    },
+    {
+      "id": "kill-ai-slop",
+      "repo": "yetone/kill-ai-slop",
+      "subPath": "skill",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "Field guide and agent skill that scans projects for visual and copy tics of AI-generated products."
+    },
+    {
+      "id": "logo-design-skill",
+      "repo": "kaankiziltug/logo-design-skill",
+      "subPath": "skills/logo-design",
+      "category": "Design Logic & Motion Grammar",
+      "license": "MIT",
+      "description": "Disciplined SVG identity designer with optical corrections, squint/shelf tests, and a 1,400+ logo reference library."
+    },
+    {
+      "id": "gsap-skills",
+      "repo": "greensock/gsap-skills",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Official GreenSock AI skills covering gsap-core, scrolltrigger, timeline, react, plugins, utils, and performance."
+    },
+    {
+      "id": "threejs-skills",
+      "repo": "CloudAI-X/threejs-skills",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Systematically creates 3D scenes, custom shaders, particle systems, and interactive WebGL experiences."
+    },
+    {
+      "id": "img2threejs",
+      "repo": "img2threejs/img2threejs",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Converts a 2D reference image into a procedural, animation-ready Three.js TypeScript model via an 8-stage sculpting pipeline."
+    },
+    {
+      "id": "scroll-world",
+      "repo": "oso95/scroll-world",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "See Repo",
+      "description": "Turns any brand into a scrollable 3D world landing page."
+    },
+    {
+      "id": "anatomy",
+      "repo": "wheresryan22/anatomy",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Creates detailed, interactive isometric SVG illustrations of complex systems with optional WebGL shaders and 3D effects."
+    },
+    {
+      "id": "3dviz-pro-max",
+      "repo": "viettranx/3dviz-pro-max",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Creative 3D visualization skill for Three.js and Blender with 223 recipes, 22 kits, and 37 runnable studies."
+    },
+    {
+      "id": "text-to-lottie",
+      "repo": "diffusionstudio/lottie",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Generates production-ready Lottie JSON animations directly from prompts."
+    },
+    {
+      "id": "threejs-game-skills",
+      "repo": "majidmanzarpour/threejs-game-skills",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "9 specialized skills for building playable Three.js WebGL experiences with AAA graphics and UI."
+    },
+    {
+      "id": "Kami",
+      "repo": "tw93/Kami",
+      "subPath": "",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "Document typesetting and layout rules for exporting publication-grade PDF, PNG, and editable PowerPoint."
+    },
+    {
+      "id": "ppt-master",
+      "repo": "hugohe3/ppt-master",
+      "subPath": "",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "Turns documents or topics into native PowerPoint (.pptx) decks with native shapes, transitions, and data-backed charts."
+    },
+    {
+      "id": "diagram-design",
+      "repo": "cathrynlavery/diagram-design",
+      "subPath": "skills/diagram-design",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "Cathryn Lavery's editorial diagram design skill rendering 45 self-contained HTML + SVG diagram types with zero Mermaid slop."
+    },
+    {
+      "id": "archify",
+      "repo": "tt-a1i/archify",
+      "subPath": "archify",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "Turns plain-English system descriptions into self-contained, theme-toggling HTML/PNG/SVG architecture and sequence diagrams."
+    },
+    {
+      "id": "excalidraw-diagram-skill",
+      "repo": "coleam00/excalidraw-diagram-skill",
+      "subPath": "",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "Generates clean, visual-argument Excalidraw JSON diagrams."
+    },
+    {
+      "id": "beautify-github-readme",
+      "repo": "oil-oil/beautify-github-readme",
+      "subPath": "",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "README visual design, typography, and custom SVG badge/diagram skill."
+    },
+    {
+      "id": "brag",
+      "repo": "latent-spaces/brag",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Inspects a codebase directly and turns the project into a short, shareable launch video with one command."
+    },
+    {
+      "id": "hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Write HTML, render video: full suite for deterministic frame-accurate agentic video rendering."
+    },
+    {
+      "id": "motion-video-kit",
+      "repo": "echris6/motion-video-kit",
+      "subPath": "business-motion-film",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Premium business launch film kit with the independent-critic Gauntlet loop and 16-mechanism motion grammar."
+    },
+    {
+      "id": "motionmaxxing",
+      "repo": "tejashmakwana/motionmaxxing",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "Apache-2.0",
+      "description": "Programmatically analyzes video frames and applies 53 measured motion design rules to fix AI video slop."
+    },
+    {
+      "id": "lemo-opuscar",
+      "repo": "lemomo-ai/lemo-opuscar",
+      "subPath": "plugin/skills/lemo-opuscar",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Code-driven short film studio across 59 visual styles using HTML5 Canvas/WebGL, Python audio, and FFmpeg."
+    },
+    {
+      "id": "animate-claude",
+      "repo": "cth9191/animate",
+      "subPath": "plugins/animate/skills/animate",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Procedural single-file canvas video animation matched to reference mood boards and beat-mapped music."
+    },
+    {
+      "id": "showtime",
+      "repo": "faviovazquez/showtime",
+      "subPath": "skills/showtime",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Local video studio where your coding agent writes scripts, picks music, and renders commercials locally."
+    },
+    {
+      "id": "mortiflix",
+      "repo": "gtkottman/mortiflix-oss",
+      "subPath": "plugin/skills/mortiflix",
+      "category": "Video & Motion Studios",
+      "license": "AGPL-3.0",
+      "description": "Step-by-step local motion design studio with stage approvals and frame-pinned revision notes."
+    },
+    {
+      "id": "hypit",
+      "repo": "hypit-ai/hypit",
+      "subPath": "skills/hypit",
+      "category": "Video & Motion Studios",
+      "license": "See Repo",
+      "description": "Deconstructs viral reference videos into execution graphs to swap B-roll, captions, and effects."
+    },
+    {
+      "id": "ffmpeg-skill",
+      "repo": "kajisho5/ffmpeg-skill",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Local video editor exposing 42 FFmpeg tools for cuts, captions, reframing, loudness, and platform exports."
+    },
+    {
+      "id": "film-studio-skills",
+      "repo": "machina-exm/film-studio-skills",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "7 installable skills running an AI video production pipeline from script to asset passports and locked shot prompts."
+    }
+  ]
+}

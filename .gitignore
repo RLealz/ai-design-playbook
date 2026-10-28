@@ -1,0 +1,16 @@
+# Staging & quarantine directories used by the security-auditing installer
+.staging/
+.quarantine/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+.env
