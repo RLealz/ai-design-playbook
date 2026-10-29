@@ -189,6 +189,8 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`kajisho5/ffmpeg-skill`](https://github.com/kajisho5/ffmpeg-skill)**: Local video editor for coding agents (42 FFmpeg tools + MCP server for cuts, captions, reframing, loudness, and platform exports).
   * **[`machina-exm/film-studio-skills`](https://github.com/machina-exm/film-studio-skills)**: 7 installable agent skills running an AI video production pipeline from script to locked, generation-ready shot prompts.
   * **[`jhartquist/claude-remotion-kickstart`](https://github.com/jhartquist/claude-remotion-kickstart)**: Programmatic video creation workflow with Claude Code and Remotion.
+  * **[`pexoai/pexo-skills`](https://github.com/pexoai/pexo-skills)**, **[`cclank/lanshu-create-ai-presenter-video`](https://github.com/cclank/lanshu-create-ai-presenter-video)**, **[`gnipbao/story-to-handdrawn-video`](https://github.com/gnipbao/story-to-handdrawn-video)**, **[`letuandat131/whiteboard-animation-vi`](https://github.com/letuandat131/whiteboard-animation-vi)**, & **[`0xsline/StoryGen-Atelier`](https://github.com/0xsline/StoryGen-Atelier)**: Multimodal image/audio/video content creation, presenter video, hand-drawn comic animation, moving-hand whiteboard animation, and Gemini + Veo automated storyboarding.
+  * **[`bergside/design-md-chrome`](https://github.com/bergside/design-md-chrome)** & **[`ConardLi/garden-skills`](https://github.com/ConardLi/garden-skills)**: Chrome style extractor for `DESIGN.md` skill generation and multi-skill web design collection.
 
 ---
 
@@ -225,20 +227,32 @@ Curated component libraries, shader playgrounds, brand `DESIGN.md` vaults, and i
 * **[21st.dev](https://21st.dev/)**: Open-source `shadcn`/React animated component and copy-paste prompt registry built for AI coding agents.
 * **[Shadcn Space](https://shadcnspace.com/)**: Curated platform offering production-ready templates, blocks, and components built on Tailwind CSS and `shadcn/ui` for React and Next.js.
 * **[Toools.design](https://www.toools.design/)**: Growing archive of 1,500+ curated UI/UX, icon, typography, mockup, and design resources.
+* **[The Prompt Index — SKILL.md Library](https://www.thepromptindex.com/skill-database.php)**: Searchable directory of 2,639+ downloadable `SKILL.md` agent skills.
 * **[Morphicons](https://www.morphicons.com)** ([`guillermolg00/morphicons`](https://github.com/guillermolg00/morphicons)): Universal stroke-based SVG icon morphing with spring physics (~7 KB gzip, zero dependencies).
 * **[Pokemon Cards CSS](https://poke-holo.simey.me/)** ([`simeydotme/pokemon-cards-css`](https://github.com/simeydotme/pokemon-cards-css)): Advanced CSS holographic, blend-mode, gradient, and 3D tilt shaders/filters.
 * **[Pacifio UI](https://ui.pacifio.dev/)** ([`pacifio/ui`](https://github.com/pacifio/ui)): "The shadcn for agent UI"—framework-agnostic design language for dense, AMOLED-black, multi-surface interfaces.
 * **[mapcn](https://github.com/AnmolSaini16/mapcn)**: Zero-config, customizable `shadcn`-style map components for React.
 * **[Airship](https://airship.design)** ([`0xnyn/airship`](https://github.com/0xnyn/airship)): Figma-like visual editor built specifically for Claude Code, Codex, and OpenCode.
 * **[Ditto](https://www.ditto.site/)**: Clones any live website into clean, production-ready code with components, design tokens, interactions, hover effects, REST API, and MCP server.
+* **[OpenUI](https://openui.fly.dev)** ([`wandb/openui`](https://github.com/wandb/openui)) & **[CopilotKit](https://docs.copilotkit.ai)** ([`CopilotKit/CopilotKit`](https://github.com/CopilotKit/CopilotKit)): Live generative UI rendering and AG-UI frontend stacks.
 
 ### 3D, WebGL, Scroll & Video Ecosystems
 * **[ThreeUI](https://github.com/MengTo/threeui)**: Premium 3D UI interfaces and WebGL design references (160+ 3D hero sections and shaders).
 * **[HorizonX](https://horizonx.so/)**: Premium UI, design, and code library featuring Three.js experiments, WebGL shaders, textures, and Figma mockups.
-* **[Scrolltide](https://scrolltide.co/)**: Curated prompt and template library for building cinematic, scroll-driven websites.
+* **[Scroll Craft](https://github.com/nateherkai/scroll-craft)** & **[Kubeez Scroll World Video](https://github.com/KubeezMedia/kubeez-scroll-world-video)**: Continuous-world filmic scroll sites and scroll-scrubbed "fly through the world" video demos.
+* **[HTML-in-Canvas](https://github.com/fimbox/html-in-canvas)**: Experimental Chrome workflow placing interactive HTML DOM screens directly inside 3D WebGL space.
+* **[ManimGX](https://manimgx.academa.ai)** ([`academa-labs/manimgx`](https://github.com/academa-labs/manimgx)): Blazing-fast math and 3D animation engine for agents (Manim Python API on a Rust GPU core).
+* **[Video-Use](https://video-use.com)** ([`browser-use/video-use`](https://github.com/browser-use/video-use)), **[FireRed-OpenStoryline](https://github.com/FireRedTeam/FireRed-OpenStoryline)**, **[ViMax](https://github.com/HKUDS/ViMax)**, **[ArtCraft](https://getartcraft.com)** ([`storytold/artcraft`](https://github.com/storytold/artcraft)), & **[FilmCraft](https://github.com/storytold/filmcraft)**: Agentic video directing, storyboarding, and nonlinear editing engines.
+
+### AI Motion Prompts, Image/Video Prompt Vaults & Inspiration Galleries
+* **[Scrolltide](https://scrolltide.co/)**: Curated prompt and template library for building cinematic, scroll-driven websites—copy structured prompts directly into AI coding agents to spin up production-ready animated layouts.
 * **[Prompt Motion](https://prompt-motion.com/)**: Gallery and resource hub showcasing motion design pieces, UI animations, and creative coding generation prompts.
-* **[Awesome Claude 5.5 Videos](https://github.com/athemeroy/awesome-claude-5-5-videos)**: 475+ examples of motion graphics, 3D scenes, explainers, and interactive demos created with Claude, linked to the exact prompts and workflows behind them.
+* **[Awesome Claude 5.5 Videos](https://github.com/athemeroy/awesome-claude-5-5-videos)** ([`osp.fyi/awesome-opus5-5-videos`](https://osp.fyi/awesome-opus5-5-videos)): 475+ examples of motion graphics, 3D scenes, explainers, and interactive demos created with Claude, linked to the exact prompts and workflows behind them.
 * **[Godly](https://godly.design/)**: Curated gallery of astronomically good web design, interactive motion, and creative developer portfolios (prime target for `design-dna` and `design-extract`).
+* **Generative Image & Video Prompt Vaults**:
+  * **[Nano Banana Pro Prompts](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts)** (`YouMind-OpenLab`), **[Awesome Nano Banana Images](https://github.com/PicoTrex/Awesome-Nano-Banana-images)** (`PicoTrex`), & **[Awesome NanoBanana Pro](https://github.com/ZeroLu/awesome-nanobanana-pro)** (`ZeroLu`): 10,000+ curated Gemini image generation prompts and visual studies.
+  * **[Awesome GPT Image 2 Prompts](https://github.com/YouMind-OpenLab/awesome-gpt-image-2)**: 2,000+ curated prompts for commercial-grade illustrations and typography rendering.
+  * **[Awesome Seedance 2.0 Prompts](https://github.com/ZeroLu/awesome-seedance)** (`ZeroLu` & [`YouMind-OpenLab/awesome-seedance-2-prompts`](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts)): 2,000+ cinematic, UGC, ad, and motion video generation prompts.
 
 ---
 

@@ -57,12 +57,14 @@ Regardless of which Combo is active, every output MUST pass these 6 laws:
 
 ---
 
-## Step 3: Component & Resource Selection Cheat Sheet
+## Step 3: Component, Website & Resource Selection Cheat Sheet
+
+For the complete directory of all 35+ UI component websites, `DESIGN.md` vaults, 3D/WebGL playgrounds, prompt hubs, and 13 MCP servers, read [`references/DESIGN_RESOURCES.md`](references/DESIGN_RESOURCES.md).
 
 When building UI sections, pull patterns from these specific ecosystems:
-* **Micro-interactions, Dynamic Islands & Uncommon Controls**: `Skiper UI` (`skiper-ui.com`), `Motion Primitives` (`motion-primitives.com`), `21st.dev`
-* **Animated Text, Backgrounds & React Blocks**: `React Bits` (`reactbits.dev`), `Vengeance UI` (`vengenceui.com`), `Origin Kit` (`originkit.dev`)
-* **Heavy Scroll Triggers & WebGL Page Transitions**: `Nohira Motion` (`motion.nohira.net`), `Animmaster Lib` (`animmasterlib.dev`), `Scrolltide` (`scrolltide.co`)
-* **3D Hero Scenes & Shaders**: `ThreeUI` (`threeui.com`), `HorizonX` (`horizonx.so`), `img2threejs`, `3dviz-pro-max`
-* **Dense Dark-Mode Agent & Dev Dashboards**: `Pacifio UI` (`ui.pacifio.dev`)
-* **Brand `DESIGN.md` Foundations**: `VoltAgent/awesome-design-md` (`getdesign.md`)
+* **Micro-interactions, Dynamic Islands & Uncommon Controls**: `Skiper UI` (`skiper-ui.com`), `Motion Primitives` (`motion-primitives.com`), `21st.dev`, `Morphicons` (`morphicons.com`)
+* **Animated Text, Backgrounds & React Blocks**: `React Bits` (`reactbits.dev`), `Vengeance UI` (`vengenceui.com`), `Origin Kit` (`originkit.dev`), `Shadcn Space` (`shadcnspace.com`), `Uiverse` (`uiverse.io`)
+* **Heavy Scroll Triggers & WebGL Page Transitions**: `Nohira Motion` (`motion.nohira.net`), `Animmaster Lib` (`animmasterlib.dev`), `Scrolltide` (`scrolltide.co`), `Prompt Motion` (`prompt-motion.com`)
+* **3D Hero Scenes, Shaders & CSS Holo Effects**: `ThreeUI` (`threeui.com`), `HorizonX` (`horizonx.so`), `Pokemon Cards CSS` (`poke-holo.simey.me`), `HTML-in-Canvas`, `img2threejs`, `3dviz-pro-max`
+* **Dense Dark-Mode Agent & Dev Dashboards**: `Pacifio UI` (`ui.pacifio.dev`), `mapcn`, `OpenUI`, `CopilotKit`
+* **Brand `DESIGN.md` Foundations & Live Inspiration**: `VoltAgent/awesome-design-md` (`getdesign.md`), `Awesome Claude Design`, `Godly` (`godly.design`), `Toools.design` (`toools.design`), `Airship` (`airship.design`), `Ditto` (`ditto.site`)
