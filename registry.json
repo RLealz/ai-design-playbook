@@ -54,7 +54,8 @@
         "impeccable",
         "refactoring-ui-skill",
         "make-interfaces-feel-better",
-        "kill-ai-slop"
+        "kill-ai-slop",
+        "landing-page-design"
       ]
     },
     "scroll-3d-world": {
@@ -75,7 +76,8 @@
         "threejs-skills",
         "3dviz-pro-max",
         "img2threejs",
-        "anatomy"
+        "anatomy",
+        "dimensional-drawing"
       ]
     },
     "vibe-prototyping": {
@@ -85,7 +87,8 @@
         "superdesign-skill",
         "ui-skills",
         "impeccable",
-        "taste-skill"
+        "taste-skill",
+        "figma-designer"
       ]
     },
     "viral-launch-video": {
@@ -96,7 +99,9 @@
         "hyperframes",
         "motion-video-kit",
         "motionmaxxing",
-        "ffmpeg-skill"
+        "ffmpeg-skill",
+        "digital-human-koubo",
+        "finance-explainer"
       ]
     },
     "steal-like-an-artist": {
@@ -107,7 +112,8 @@
         "design-dna",
         "genjutsu",
         "design-motion-principles",
-        "motion-design-skill"
+        "motion-design-skill",
+        "reanimate"
       ]
     },
     "deck-diagram-factory": {
@@ -118,6 +124,8 @@
         "ppt-master",
         "diagram-design",
         "archify",
+        "dimensional-drawing",
+        "dimensional-drawing-motion",
         "excalidraw-diagram-skill",
         "logo-design-skill"
       ]
@@ -491,6 +499,62 @@
       "category": "Video & Motion Studios",
       "license": "MIT",
       "description": "7 installable skills running an AI video production pipeline from script to asset passports and locked shot prompts."
+    },
+    {
+      "id": "reanimate",
+      "repo": "NiazMorshed2007/reanimate",
+      "subPath": "skills/reanimate",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Reverse-engineers any live web animation frame-by-frame via Playwright and proves the reconstructed copy moves identically."
+    },
+    {
+      "id": "dimensional-drawing",
+      "repo": "enesozturk/dimensional-drawing",
+      "subPath": "skills/dimensional-drawing",
+      "category": "Decks, Diagrams & Docs",
+      "license": "MIT",
+      "description": "Creates Apple-style dimensional technical drawings of UI components with extension lines, dimension callouts, and spec tables."
+    },
+    {
+      "id": "dimensional-drawing-motion",
+      "repo": "enesozturk/dimensional-drawing",
+      "subPath": "skills/dimensional-drawing-motion",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Animated motion blueprint version of Apple-style dimensional technical UI drawings with Playwright + FFmpeg MP4 export."
+    },
+    {
+      "id": "digital-human-koubo",
+      "repo": "andyhuo520/digital-human-koubo",
+      "subPath": "skills/digital-human-koubo",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "AI digital-human talking-head video generator from one photo with 5 editing styles and 48 creator packaging components."
+    },
+    {
+      "id": "finance-explainer",
+      "repo": "andyhuo520/digital-human-koubo",
+      "subPath": "skills/finance-explainer",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Remotion-powered animated financial and technical explainer video generator."
+    },
+    {
+      "id": "landing-page-design",
+      "repo": "elayadesign/ai-design-skills",
+      "subPath": "skills/landing-page-design",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "High-converting landing page design skill with structural hierarchy, layout composition, and visual polish."
+    },
+    {
+      "id": "figma-designer",
+      "repo": "elayadesign/ai-design-skills",
+      "subPath": "skills/figma-designer",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Direct Figma canvas design generation workflow via Figma MCP."
     }
   ],
   "designResources": [
@@ -510,6 +574,7 @@
     { "name": "mapcn", "url": "https://github.com/AnmolSaini16/mapcn", "repo": "AnmolSaini16/mapcn", "category": "Interactive Maps" },
     { "name": "Toools.design", "url": "https://www.toools.design/", "repo": "", "category": "Design Resource Directory" },
     { "name": "The Prompt Index", "url": "https://www.thepromptindex.com/skill-database.php", "repo": "", "category": "SKILL.md Directory" },
+    { "name": "Some Claude Skills", "url": "https://someclaudeskills.com/skills/", "repo": "erichowens/some_claude_skills", "category": "SKILL.md Directory" },
     { "name": "Airship", "url": "https://airship.design", "repo": "0xnyn/airship", "category": "Visual Agent Editor" },
     { "name": "Ditto", "url": "https://www.ditto.site/", "repo": "", "category": "Live Site-to-Code Cloning" },
     { "name": "VoltAgent Awesome DESIGN.md", "url": "https://getdesign.md/", "repo": "VoltAgent/awesome-design-md", "category": "DESIGN.md Brand Vault" },

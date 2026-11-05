@@ -24,6 +24,7 @@ This reference file is packaged directly inside `design-router` so AI coding age
 | **mapcn** | [`AnmolSaini16/mapcn`](https://github.com/AnmolSaini16/mapcn) | Zero-config, customizable `shadcn`-style interactive map components for React. |
 | **Toools.design** | [toools.design](https://www.toools.design/) | Archive of 1,500+ curated UI/UX, icon, typography, mockup, and design resources. |
 | **The Prompt Index** | [thepromptindex.com/skill-database.php](https://www.thepromptindex.com/skill-database.php) | Searchable directory of 2,639+ downloadable `SKILL.md` agent skills. |
+| **Some Claude Skills** | [someclaudeskills.com/skills/](https://someclaudeskills.com/skills/) ([`erichowens/some_claude_skills`](https://github.com/erichowens/some_claude_skills)) | Curated directory of 190+ modular expert Claude Code skills across Metal shaders, 3D Gaussian Splatting, ReactFlow DAG visualizations, and Playwright visual testing. |
 | **Airship** | [airship.design](https://airship.design) ([`0xnyn/airship`](https://github.com/0xnyn/airship)) | Figma-like visual editor built specifically for Claude Code, Codex, and OpenCode. |
 | **Ditto** | [ditto.site](https://www.ditto.site/) | Clones any live website into clean, production-ready code with components, design tokens, and interactions. |
 | **OpenUI & CopilotKit** | [`wandb/openui`](https://github.com/wandb/openui) & [`CopilotKit/CopilotKit`](https://github.com/CopilotKit/CopilotKit) | Live generative UI rendering and AG-UI frontend stacks. |

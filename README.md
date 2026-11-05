@@ -5,7 +5,7 @@
 
 Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), this repository goes a step further:
 1. **8 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent today—including `design-router` (anti-slop quality gates + intent routing) and **7 end-to-end Combo Orchestrators**.
-2. **44 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
+2. **51 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
 3. **Built-in Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill fetched via the installer is cloned with Git hooks disabled (`core.hooksPath=NUL`) into a temporary quarantine directory and scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes** before touching your agent config.
 
 ---
@@ -177,7 +177,11 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`eyadsibai/archify`](https://github.com/eyadsibai/archify)**: Turns plain-English system descriptions into self-contained, theme-toggling (dark/light) HTML, PNG, and SVG architecture, sequence, and state diagrams.
   * **[`coleam00/excalidraw-diagram-skill`](https://github.com/coleam00/excalidraw-diagram-skill)**: Generates clean, hand-drawn-style Excalidraw architecture and system diagrams.
   * **[`oil-oil/beautify-github-readme`](https://github.com/oil-oil/beautify-github-readme)**: README visual design, typography, and SVG layout skill.
+  * **[`enesozturk/dimensional-drawing`](https://github.com/enesozturk/dimensional-drawing)** (`dimensional-drawing` & `dimensional-drawing-motion`): Creates Apple-style dimensional technical drawings and animated motion blueprints of UI components with extension lines, dimension callouts, leader lines, and spec tables.
 * **Video, Film & Animation Production Studios**:
+  * **[`NiazMorshed2007/reanimate`](https://github.com/NiazMorshed2007/reanimate)** (`reanimate`): Reverse-engineers any live web animation frame-by-frame via Playwright and proves the reconstructed animation moves identically.
+  * **[`andyhuo520/digital-human-koubo`](https://github.com/andyhuo520/digital-human-koubo)** (`digital-human-koubo` & `finance-explainer`): Generates AI digital-human talking-head videos from one photo with 5 editing styles, 48 creator packaging components, and Remotion financial explainer templates.
+  * **[`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills)** (`landing-page-design` & `figma-designer`): High-converting landing page design skill and direct Figma canvas design generation workflow.
   * **[`manalkaff/opendesign`](https://github.com/manalkaff/opendesign)**: Local-first design workflow (10 sub-skills including `create-design-system`, `interactive-prototype`, `wireframe`, `make-a-deck`, `handoff-to-claude-code`) that turns coding agents into collaborative product designers using `SKILL.md` and `DESIGN.md`.
   * **[`lemomo-ai/lemo-opuscar`](https://github.com/lemomo-ai/lemo-opuscar)**: Claude Code skill and local mini-film studio that makes short films entirely in code across 59 visual styles (HTML5 Canvas/WebGL + Python audio + FFmpeg).
   * **[`tejashmakwana/motionmaxxing`](https://github.com/tejashmakwana/motionmaxxing)**: Agent skill that turns generic AI video into polished, professional motion graphics by programmatically analyzing frames and applying 53 measured motion rules.
@@ -228,6 +232,7 @@ Curated component libraries, shader playgrounds, brand `DESIGN.md` vaults, and i
 * **[Shadcn Space](https://shadcnspace.com/)**: Curated platform offering production-ready templates, blocks, and components built on Tailwind CSS and `shadcn/ui` for React and Next.js.
 * **[Toools.design](https://www.toools.design/)**: Growing archive of 1,500+ curated UI/UX, icon, typography, mockup, and design resources.
 * **[The Prompt Index — SKILL.md Library](https://www.thepromptindex.com/skill-database.php)**: Searchable directory of 2,639+ downloadable `SKILL.md` agent skills.
+* **[Some Claude Skills](https://someclaudeskills.com/skills/)** ([`erichowens/some_claude_skills`](https://github.com/erichowens/some_claude_skills)): Curated portal of 190+ modular expert skills for Claude Code across Metal shaders, 3D Gaussian Splatting, ReactFlow DAG visualizations, Playwright visual testing, and architecture.
 * **[Morphicons](https://www.morphicons.com)** ([`guillermolg00/morphicons`](https://github.com/guillermolg00/morphicons)): Universal stroke-based SVG icon morphing with spring physics (~7 KB gzip, zero dependencies).
 * **[Pokemon Cards CSS](https://poke-holo.simey.me/)** ([`simeydotme/pokemon-cards-css`](https://github.com/simeydotme/pokemon-cards-css)): Advanced CSS holographic, blend-mode, gradient, and 3D tilt shaders/filters.
 * **[Pacifio UI](https://ui.pacifio.dev/)** ([`pacifio/ui`](https://github.com/pacifio/ui)): "The shadcn for agent UI"—framework-agnostic design language for dense, AMOLED-black, multi-surface interfaces.
