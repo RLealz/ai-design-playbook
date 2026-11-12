@@ -77,7 +77,11 @@
         "3dviz-pro-max",
         "img2threejs",
         "anatomy",
-        "dimensional-drawing"
+        "dimensional-drawing",
+        "blender-skills",
+        "dream-loop",
+        "teardown",
+        "pixelfx"
       ]
     },
     "vibe-prototyping": {
@@ -101,7 +105,14 @@
         "motionmaxxing",
         "ffmpeg-skill",
         "digital-human-koubo",
-        "finance-explainer"
+        "finance-explainer",
+        "bang-motion",
+        "video-talkcraft",
+        "anything2explainer",
+        "huashu-motion",
+        "huashu-art-motion",
+        "claude-animated-shorts",
+        "claude-video"
       ]
     },
     "steal-like-an-artist": {
@@ -113,7 +124,9 @@
         "genjutsu",
         "design-motion-principles",
         "motion-design-skill",
-        "reanimate"
+        "reanimate",
+        "rea-video",
+        "reelmimic"
       ]
     },
     "deck-diagram-factory": {
@@ -555,51 +568,401 @@
       "category": "Core Design Engines",
       "license": "MIT",
       "description": "Direct Figma canvas design generation workflow via Figma MCP."
+    },
+    {
+      "id": "blender-skills",
+      "repo": "EL4CTEO/blender-skills",
+      "subPath": "skills",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "28 professional Blender 5.2 agent skills covering hard-surface modeling, sculpting, UVs, PBR materials, baking, rigging, animation, geometry nodes, export, and QA."
+    },
+    {
+      "id": "dream-loop",
+      "repo": "achimala/dream-loop",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Agent skill for impressive 3D visuals using Blender + image generation + an automated subagent visual critic loop."
+    },
+    {
+      "id": "teardown",
+      "repo": "elvarofficial/teardown",
+      "subPath": "",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "Claude Code skill that turns any machine (V8 engine, Cessna, Strandbeest) into an interactive 3D simulator you can explode and take apart."
+    },
+    {
+      "id": "pixelfx",
+      "repo": "patch-gg/pixelfx",
+      "subPath": "skills/pixelfx",
+      "category": "Animation, 3D & WebGL",
+      "license": "MIT",
+      "description": "244 procedural pixel-art VFX and sprite animations in pure JS/Canvas with an iterative draft-render-look-refine agent skill."
+    },
+    {
+      "id": "rea-video",
+      "repo": "JuneYaooo/rea-video",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Reverse-engineers any video shot-by-shot: detects whether each shot is filmed, AI-generated, or coded, and outputs a full remake plan."
+    },
+    {
+      "id": "reelmimic",
+      "repo": "edenfunf/reelmimic",
+      "subPath": ".claude/skills",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Multi-agent video style-cloning crew that analyzes a reference video and plans, builds, and reviews a new video in the same style."
+    },
+    {
+      "id": "bang-motion",
+      "repo": "bangtutorial/bang-motion",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Browser motion graphics agent skill for openers, promos, bumpers, kinetic typography, and 5 explainer styles in a single self-contained index.html."
+    },
+    {
+      "id": "video-talkcraft",
+      "repo": "Vincentwei1021/video-talkcraft",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Motion-design studio skill for voiceover-driven explainer videos featuring 109 motion recipe cards, anti-slideshow camera motion, and Remotion rendering."
+    },
+    {
+      "id": "anything2explainer",
+      "repo": "Vincentwei1021/anything2explainer",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Turns any topic into a black-canvas motion-graphics narrated explainer video with TTS voiceover, word-level subtitles, and Remotion."
+    },
+    {
+      "id": "huashu-motion",
+      "repo": "alchaincyf/huashu-motion",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Commercial-grade product launch film skill with automatic music composition and frame-pointing visual edits."
+    },
+    {
+      "id": "huashu-art-motion",
+      "repo": "alchaincyf/huashu-art-motion",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Art animation skill with 35 fine-art visual styles and 9 narration grammars animated in code."
+    },
+    {
+      "id": "claude-animated-shorts",
+      "repo": "mromidev/claude-animated-shorts",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Generates viral animated story shorts combining 2D characters inside a 3D Three.js + Remotion world."
+    },
+    {
+      "id": "claude-video",
+      "repo": "zhgarylu/claude-video",
+      "subPath": "plugin/skills",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Expanded Lemo-Opuscar derivative featuring 61 code-made film styles plus a talking-head presenter video workflow."
+    },
+    {
+      "id": "claude-content-skills",
+      "repo": "Ootto-AI/claude-content-skills",
+      "subPath": "skills",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "55 modular content-growth and scroll-stopping Instagram Reel skills (reel-analyzer, reel-builder, reel-scripter, viral-carousel, b-roll-shot-list)."
+    },
+    {
+      "id": "stickman-video-director",
+      "repo": "kaomei/stickman-video-director",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Automated pipeline turning any script into multi-style animated stickman videos with voiceover, captions, and SFX."
+    },
+    {
+      "id": "open-design",
+      "repo": "nexu-io/open-design",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Collaborative local-first AI Design Agent Workspace for generating, critiquing, and iterating UI designs."
     }
   ],
   "designResources": [
-    { "name": "React Bits", "url": "https://reactbits.dev/", "repo": "DavidHDev/react-bits", "category": "Animated UI Components" },
-    { "name": "Motion Primitives", "url": "https://motion-primitives.com/", "repo": "ibelick/motion-primitives", "category": "Animated UI Components" },
-    { "name": "Skiper UI", "url": "https://skiper-ui.com/", "repo": "", "category": "Animated UI Components" },
-    { "name": "Vengeance UI", "url": "https://www.vengenceui.com/", "repo": "", "category": "Animated UI Components" },
-    { "name": "Origin Kit", "url": "https://www.originkit.dev/", "repo": "", "category": "Animated UI Components" },
-    { "name": "Animmaster Lib", "url": "https://animmasterlib.dev/", "repo": "", "category": "Animated UI Components" },
-    { "name": "Nohira Motion", "url": "https://motion.nohira.net/#components", "repo": "", "category": "Scroll & WebGL Components" },
-    { "name": "Uiverse", "url": "https://uiverse.io/", "repo": "", "category": "CSS & Tailwind UI Elements" },
-    { "name": "21st.dev", "url": "https://21st.dev/", "repo": "", "category": "AI Component & Prompt Registry" },
-    { "name": "Shadcn Space", "url": "https://shadcnspace.com/", "repo": "", "category": "Shadcn Blocks & Templates" },
-    { "name": "Pacifio UI", "url": "https://ui.pacifio.dev/", "repo": "pacifio/ui", "category": "Agent & Dark Mode UI" },
-    { "name": "Morphicons", "url": "https://www.morphicons.com", "repo": "guillermolg00/morphicons", "category": "SVG Icon Morphing" },
-    { "name": "Pokemon Cards CSS", "url": "https://poke-holo.simey.me/", "repo": "simeydotme/pokemon-cards-css", "category": "CSS Shaders & Holo Effects" },
-    { "name": "mapcn", "url": "https://github.com/AnmolSaini16/mapcn", "repo": "AnmolSaini16/mapcn", "category": "Interactive Maps" },
-    { "name": "Toools.design", "url": "https://www.toools.design/", "repo": "", "category": "Design Resource Directory" },
-    { "name": "The Prompt Index", "url": "https://www.thepromptindex.com/skill-database.php", "repo": "", "category": "SKILL.md Directory" },
-    { "name": "Some Claude Skills", "url": "https://someclaudeskills.com/skills/", "repo": "erichowens/some_claude_skills", "category": "SKILL.md Directory" },
-    { "name": "Airship", "url": "https://airship.design", "repo": "0xnyn/airship", "category": "Visual Agent Editor" },
-    { "name": "Ditto", "url": "https://www.ditto.site/", "repo": "", "category": "Live Site-to-Code Cloning" },
-    { "name": "VoltAgent Awesome DESIGN.md", "url": "https://getdesign.md/", "repo": "VoltAgent/awesome-design-md", "category": "DESIGN.md Brand Vault" },
-    { "name": "Awesome Claude Design", "url": "https://github.com/rohitg00/awesome-claude-design", "repo": "rohitg00/awesome-claude-design", "category": "DESIGN.md Brand Vault" },
-    { "name": "ThreeUI", "url": "https://github.com/MengTo/threeui", "repo": "MengTo/threeui", "category": "3D & WebGL Hero References" },
-    { "name": "HorizonX", "url": "https://horizonx.so/", "repo": "", "category": "3D, Shaders & Figma Mockups" },
-    { "name": "Scrolltide", "url": "https://scrolltide.co/", "repo": "", "category": "Scrollytelling Prompts & Templates" },
-    { "name": "Prompt Motion", "url": "https://prompt-motion.com/", "repo": "", "category": "Motion Design Prompts" },
-    { "name": "Godly", "url": "https://godly.design/", "repo": "", "category": "Web Design & Motion Inspiration" },
-    { "name": "Awesome Claude 5.5 Videos", "url": "https://osp.fyi/awesome-opus5-5-videos", "repo": "athemeroy/awesome-claude-5-5-videos", "category": "Motion Video Prompts" },
-    { "name": "ManimGX", "url": "https://manimgx.academa.ai", "repo": "academa-labs/manimgx", "category": "3D & Math Animation Engine" }
+    {
+      "name": "React Bits",
+      "url": "https://reactbits.dev/",
+      "repo": "DavidHDev/react-bits",
+      "category": "Animated UI Components"
+    },
+    {
+      "name": "Motion Primitives",
+      "url": "https://motion-primitives.com/",
+      "repo": "ibelick/motion-primitives",
+      "category": "Animated UI Components"
+    },
+    {
+      "name": "Skiper UI",
+      "url": "https://skiper-ui.com/",
+      "repo": "",
+      "category": "Animated UI Components"
+    },
+    {
+      "name": "Vengeance UI",
+      "url": "https://www.vengenceui.com/",
+      "repo": "",
+      "category": "Animated UI Components"
+    },
+    {
+      "name": "Origin Kit",
+      "url": "https://www.originkit.dev/",
+      "repo": "",
+      "category": "Animated UI Components"
+    },
+    {
+      "name": "Animmaster Lib",
+      "url": "https://animmasterlib.dev/",
+      "repo": "",
+      "category": "Animated UI Components"
+    },
+    {
+      "name": "Nohira Motion",
+      "url": "https://motion.nohira.net/#components",
+      "repo": "",
+      "category": "Scroll & WebGL Components"
+    },
+    {
+      "name": "Uiverse",
+      "url": "https://uiverse.io/",
+      "repo": "",
+      "category": "CSS & Tailwind UI Elements"
+    },
+    {
+      "name": "21st.dev",
+      "url": "https://21st.dev/",
+      "repo": "",
+      "category": "AI Component & Prompt Registry"
+    },
+    {
+      "name": "Shadcn Space",
+      "url": "https://shadcnspace.com/",
+      "repo": "",
+      "category": "Shadcn Blocks & Templates"
+    },
+    {
+      "name": "Pacifio UI",
+      "url": "https://ui.pacifio.dev/",
+      "repo": "pacifio/ui",
+      "category": "Agent & Dark Mode UI"
+    },
+    {
+      "name": "Morphicons",
+      "url": "https://www.morphicons.com",
+      "repo": "guillermolg00/morphicons",
+      "category": "SVG Icon Morphing"
+    },
+    {
+      "name": "Pokemon Cards CSS",
+      "url": "https://poke-holo.simey.me/",
+      "repo": "simeydotme/pokemon-cards-css",
+      "category": "CSS Shaders & Holo Effects"
+    },
+    {
+      "name": "mapcn",
+      "url": "https://github.com/AnmolSaini16/mapcn",
+      "repo": "AnmolSaini16/mapcn",
+      "category": "Interactive Maps"
+    },
+    {
+      "name": "Toools.design",
+      "url": "https://www.toools.design/",
+      "repo": "",
+      "category": "Design Resource Directory"
+    },
+    {
+      "name": "The Prompt Index",
+      "url": "https://www.thepromptindex.com/skill-database.php",
+      "repo": "",
+      "category": "SKILL.md Directory"
+    },
+    {
+      "name": "Some Claude Skills",
+      "url": "https://someclaudeskills.com/skills/",
+      "repo": "erichowens/some_claude_skills",
+      "category": "SKILL.md Directory"
+    },
+    {
+      "name": "Airship",
+      "url": "https://airship.design",
+      "repo": "0xnyn/airship",
+      "category": "Visual Agent Editor"
+    },
+    {
+      "name": "Ditto",
+      "url": "https://www.ditto.site/",
+      "repo": "",
+      "category": "Live Site-to-Code Cloning"
+    },
+    {
+      "name": "VoltAgent Awesome DESIGN.md",
+      "url": "https://getdesign.md/",
+      "repo": "VoltAgent/awesome-design-md",
+      "category": "DESIGN.md Brand Vault"
+    },
+    {
+      "name": "Awesome Claude Design",
+      "url": "https://github.com/rohitg00/awesome-claude-design",
+      "repo": "rohitg00/awesome-claude-design",
+      "category": "DESIGN.md Brand Vault"
+    },
+    {
+      "name": "ThreeUI",
+      "url": "https://github.com/MengTo/threeui",
+      "repo": "MengTo/threeui",
+      "category": "3D & WebGL Hero References"
+    },
+    {
+      "name": "HorizonX",
+      "url": "https://horizonx.so/",
+      "repo": "",
+      "category": "3D, Shaders & Figma Mockups"
+    },
+    {
+      "name": "Scrolltide",
+      "url": "https://scrolltide.co/",
+      "repo": "",
+      "category": "Scrollytelling Prompts & Templates"
+    },
+    {
+      "name": "Prompt Motion",
+      "url": "https://prompt-motion.com/",
+      "repo": "",
+      "category": "Motion Design Prompts"
+    },
+    {
+      "name": "Godly",
+      "url": "https://godly.design/",
+      "repo": "",
+      "category": "Web Design & Motion Inspiration"
+    },
+    {
+      "name": "Awesome Claude 5.5 Videos",
+      "url": "https://osp.fyi/awesome-opus5-5-videos",
+      "repo": "athemeroy/awesome-claude-5-5-videos",
+      "category": "Motion Video Prompts"
+    },
+    {
+      "name": "ManimGX",
+      "url": "https://manimgx.academa.ai",
+      "repo": "academa-labs/manimgx",
+      "category": "3D & Math Animation Engine"
+    },
+    {
+      "name": "Refero Styles",
+      "url": "https://styles.refero.design/",
+      "repo": "",
+      "category": "Design Systems for AI Agents"
+    },
+    {
+      "name": "Oversight Supply",
+      "url": "https://supply.madebyoversight.com/sections?price=free#library",
+      "repo": "",
+      "category": "Free Website UI Sections"
+    },
+    {
+      "name": "Kevin Adams Portfolio",
+      "url": "https://www.ikevinadams.com/",
+      "repo": "",
+      "category": "Interactive Animation Reference"
+    },
+    {
+      "name": "God of Prompt",
+      "url": "https://godofprompt.ai/prompt-library/generate-hyperrealistic-mugshot-portraits",
+      "repo": "",
+      "category": "AI Visual Prompt Library"
+    },
+    {
+      "name": "Polyfork 3D Catalog",
+      "url": "https://polyfork.dev/",
+      "repo": "lucas-martinic/polyfork-catalog",
+      "category": "3,251 Free Low-Poly 3D GLB Models"
+    }
   ],
   "mcpServers": [
-    { "name": "stitch-mcp", "repo": "davideast/stitch-mcp", "domain": "UI Design Systems" },
-    { "name": "design-extract", "repo": "Manavarya09/design-extract", "domain": "Live DOM Token Extraction" },
-    { "name": "Ditto MCP", "url": "https://www.ditto.site/", "domain": "Live Site-to-Code Cloning" },
-    { "name": "Higgsfield MCP", "url": "https://higgsfield.ai", "domain": "Animated Hero & Media" },
-    { "name": "stealth-browser-mcp", "repo": "vibheksoni/stealth-browser-mcp", "domain": "UI Cloning & DOM" },
-    { "name": "ui-expert-mcp", "repo": "reallygood83/ui-expert-mcp", "domain": "UI/UX Review" },
-    { "name": "mcp-for-blender", "repo": "ahujasid/mcp-for-blender", "domain": "3D Modeling & Render" },
-    { "name": "pascal-editor", "repo": "pascalorg/editor", "domain": "3D Architecture & CAD" },
-    { "name": "pireel", "repo": "pireel/pireel", "domain": "Agentic Video Editing" },
-    { "name": "OpenChatCut", "repo": "0xsline/OpenChatCut", "domain": "Multi-Track Video + Remotion" },
-    { "name": "ffmpeg-skill", "repo": "kajisho5/ffmpeg-skill", "domain": "Video/Audio Processing" },
-    { "name": "CopilotKit generative-ui", "repo": "CopilotKit/generative-ui", "domain": "Generative UI Protocols" },
-    { "name": "AllVoiceLab-MCP", "repo": "allvoicelab/AllVoiceLab-MCP", "domain": "Voice & Video Dubbing" }
+    {
+      "name": "stitch-mcp",
+      "repo": "davideast/stitch-mcp",
+      "domain": "UI Design Systems"
+    },
+    {
+      "name": "design-extract",
+      "repo": "Manavarya09/design-extract",
+      "domain": "Live DOM Token Extraction"
+    },
+    {
+      "name": "Ditto MCP",
+      "url": "https://www.ditto.site/",
+      "domain": "Live Site-to-Code Cloning"
+    },
+    {
+      "name": "Higgsfield MCP",
+      "url": "https://higgsfield.ai",
+      "domain": "Animated Hero & Media"
+    },
+    {
+      "name": "stealth-browser-mcp",
+      "repo": "vibheksoni/stealth-browser-mcp",
+      "domain": "UI Cloning & DOM"
+    },
+    {
+      "name": "ui-expert-mcp",
+      "repo": "reallygood83/ui-expert-mcp",
+      "domain": "UI/UX Review"
+    },
+    {
+      "name": "mcp-for-blender",
+      "repo": "ahujasid/mcp-for-blender",
+      "domain": "3D Modeling & Render"
+    },
+    {
+      "name": "pascal-editor",
+      "repo": "pascalorg/editor",
+      "domain": "3D Architecture & CAD"
+    },
+    {
+      "name": "pireel",
+      "repo": "pireel/pireel",
+      "domain": "Agentic Video Editing"
+    },
+    {
+      "name": "OpenChatCut",
+      "repo": "0xsline/OpenChatCut",
+      "domain": "Multi-Track Video + Remotion"
+    },
+    {
+      "name": "ffmpeg-skill",
+      "repo": "kajisho5/ffmpeg-skill",
+      "domain": "Video/Audio Processing"
+    },
+    {
+      "name": "CopilotKit generative-ui",
+      "repo": "CopilotKit/generative-ui",
+      "domain": "Generative UI Protocols"
+    },
+    {
+      "name": "AllVoiceLab-MCP",
+      "repo": "allvoicelab/AllVoiceLab-MCP",
+      "domain": "Voice & Video Dubbing"
+    }
   ]
 }

@@ -75,46 +75,24 @@ function Test-SkillSecurity([string]$ScanDir, [string]$SkillId) {
         return $true
     }
 
-    Write-Host "  [AUDIT] Scanning '$SkillId' for prompt injection, hidden Unicode & malicious hooks..." -ForegroundColor Cyan
-    $Findings = @()
-
-    # 1. Check package.json for preinstall / postinstall hooks
-    $PkgFiles = Get-ChildItem -Path $ScanDir -Filter "package.json" -Recurse -File -ErrorAction SilentlyContinue
-    foreach ($pkg in $PkgFiles) {
-        $content = Get-Content $pkg.FullName -Raw -ErrorAction SilentlyContinue
-        if ($content -match '"(preinstall|postinstall|preuninstall)"\s*:') {
-            $Findings += "Suspicious lifecycle hook ($($Matches[1])) in $($pkg.FullName)"
-        }
-    }
-
-    # 2. Scan text files for prompt injection & remote code execution pipes
-    $TextFiles = Get-ChildItem -Path $ScanDir -Recurse -File -Include *.md,*.txt,*.json,*.yaml,*.yml,*.sh,*.ps1,*.js,*.ts,*.py -ErrorAction SilentlyContinue
-    $DangerPatterns = @(
-        @{ Name = "Prompt Injection Override"; Regex = '(?i)(ignore all previous instructions|ignore prior instructions|disregard system prompt|you are now in developer mode)' },
-        @{ Name = "Shell Pipe Execution";      Regex = '(?i)(curl\s+[^\n|]+\|\s*(ba)?sh|wget\s+[^\n|]+\|\s*(ba)?sh|Invoke-Expression\s+\(New-Object\s+Net\.WebClient)' },
-        @{ Name = "Bidi Unicode Override";     Regex = '[\u202A-\u202E\u2066-\u2069]' }
-    )
-
-    foreach ($file in $TextFiles) {
-        $raw = Get-Content $file.FullName -Raw -ErrorAction SilentlyContinue
-        if ([string]::IsNullOrEmpty($raw)) { continue }
-        foreach ($pat in $DangerPatterns) {
-            if ($raw -match $pat.Regex) {
-                $Findings += "$($pat.Name) detected in $($file.Name)"
+    Write-Host "  [AUDIT] Running standalone static security audit on '$SkillId'..." -ForegroundColor Cyan
+    $ScannerPy = "C:\Users\homeh\Documents\Antigravity WorkSpace\Infra\audits\scan_quarantine.py"
+    $PyExe = "C:\Users\homeh\AppData\Local\Programs\Python\Python314\python.exe"
+    if ((Test-Path $ScannerPy) -and (Test-Path $PyExe)) {
+        $jsonOut = & $PyExe $ScannerPy --path $ScanDir --json | ConvertFrom-Json
+        $failed = $jsonOut | Where-Object { $_.status -eq "FAIL" }
+        if ($failed) {
+            Write-Host "  [BLOCKED] Security audit FAILED for '$SkillId':" -ForegroundColor Red
+            foreach ($r in $failed) {
+                foreach ($f in $r.findings) {
+                    Write-Host "    - [$($f.severity)] $($f.rule) @ $($f.file):$($f.line) ($($f.detail))" -ForegroundColor Red
+                }
             }
+            return $false
         }
+        Write-Host "  [PASS] '$SkillId' passed static security audit." -ForegroundColor Green
+        return $true
     }
-
-    if ($Findings.Count -gt 0) {
-        Write-Host "  [BLOCKED] Security audit FAILED for '$SkillId':" -ForegroundColor Red
-        foreach ($f in $Findings) {
-            Write-Host "    - $f" -ForegroundColor Red
-        }
-        return $false
-    }
-
-    Write-Host "  [PASS] '$SkillId' passed static security audit." -ForegroundColor Green
-    return $true
 }
 
 function Install-LocalSkill([string]$SkillId, [string]$DestRoot) {

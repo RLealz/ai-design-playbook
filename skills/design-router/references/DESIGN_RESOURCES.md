@@ -28,6 +28,11 @@ This reference file is packaged directly inside `design-router` so AI coding age
 | **Airship** | [airship.design](https://airship.design) ([`0xnyn/airship`](https://github.com/0xnyn/airship)) | Figma-like visual editor built specifically for Claude Code, Codex, and OpenCode. |
 | **Ditto** | [ditto.site](https://www.ditto.site/) | Clones any live website into clean, production-ready code with components, design tokens, and interactions. |
 | **OpenUI & CopilotKit** | [`wandb/openui`](https://github.com/wandb/openui) & [`CopilotKit/CopilotKit`](https://github.com/CopilotKit/CopilotKit) | Live generative UI rendering and AG-UI frontend stacks. |
+| **Refero Styles** | [styles.refero.design](https://styles.refero.design/) | Curated Design Systems built specifically for AI coding agents. |
+| **Oversight Supply** | [supply.madebyoversight.com](https://supply.madebyoversight.com/sections?price=free#library) | Free, copy-ready website UI sections and layout blocks library. |
+| **Kevin Adams (`ikevinadams.com`)** | [ikevinadams.com](https://www.ikevinadams.com/) | High-craft interactive motion & micro-interaction showcase (prime target for `reanimate` and `rea-video`). |
+| **God of Prompt** | [godofprompt.ai](https://godofprompt.ai/prompt-library/generate-hyperrealistic-mugshot-portraits) | Structured visual & hyper-realistic portrait prompt library for AI image generation. |
+| **Polyfork 3D Catalog** | [polyfork.dev](https://polyfork.dev/) ([`lucas-martinic/polyfork-catalog`](https://github.com/lucas-martinic/polyfork-catalog)) | 3,251 free CC-BY-4.0 low-poly 3D GLB models and 32 themed Three.js asset kits. |
 
 ---
 
@@ -50,6 +55,11 @@ This reference file is packaged directly inside `design-router` so AI coding age
 * **[Kubeez Scroll World Video](https://github.com/KubeezMedia/kubeez-scroll-world-video)**: Scroll-scrubbed "fly through the world" video demos.
 * **[HTML-in-Canvas](https://github.com/fimbox/html-in-canvas)**: Experimental Chrome workflow placing interactive HTML DOM screens directly inside 3D WebGL space.
 * **[ManimGX](https://manimgx.academa.ai)** ([`academa-labs/manimgx`](https://github.com/academa-labs/manimgx)): Blazing-fast math and 3D animation engine for agents (Manim Python API on a Rust GPU core).
+* **[OpenDesign (`nexu-io/open-design`)](https://github.com/nexu-io/open-design)**: Collaborative local-first AI Design Agent Workspace (★107k+).
+* **[RAEA (`shinyobjectz/raea`)](https://github.com/shinyobjectz/raea)**: Render Anything Engine — videos, motion graphics, 3D, and games written in React/TypeScript and rendered on GPU via Rust + Bevy.
+* **[TRELLIS.2 (`microsoft/TRELLIS.2`)](https://github.com/microsoft/TRELLIS.2)**: Microsoft's native and compact structured latents for high-fidelity 3D asset generation.
+* **[AI Pose Gallery (`anhao/ai-pose-gallery-zh`)](https://github.com/anhao/ai-pose-gallery-zh)**: Zero-dependency static reference gallery with 1,439 AI character pose sets (2,878 images).
+* **Open-Source 2D/3D Animation, VFX & Video Suites**: **[OpenFilm](https://github.com/openfilm/openfilm)**, **[FreeVideo](https://github.com/FlashML-org/FreeVideo)** (MiniMax H3 in 8GB VRAM), **[SupoClip](https://github.com/FujiwaraChoki/supoclip)** (open-source OpusClip), **[Theatre.js](https://github.com/theatre-js/theatre)**, **[SVG.js](https://github.com/svgdotjs/svg.js)**, **[Natron](https://github.com/NatronGitHub/Natron)**, **[OpenToonz](https://github.com/opentoonz/opentoonz)**, **[Synfig](https://github.com/synfig/synfig)**, **[Friction 2D](https://github.com/friction2d/friction)**, **[Pencil2D](https://github.com/pencil2d/pencil)**, **[Effekseer](https://github.com/effekseer/Effekseer)**, **[OpenVDB](https://github.com/AcademySoftwareFoundation/openvdb)**, & **[FreeMoCap](https://github.com/freemocap/freemocap)**.
 * **Agentic Video Directing & Storyboarding Engines**: **[Video-Use](https://video-use.com)** ([`browser-use/video-use`](https://github.com/browser-use/video-use)), **[FireRed-OpenStoryline](https://github.com/FireRedTeam/FireRed-OpenStoryline)**, **[ViMax](https://github.com/HKUDS/ViMax)**, **[ArtCraft](https://getartcraft.com)** ([`storytold/artcraft`](https://github.com/storytold/artcraft)), & **[FilmCraft](https://github.com/storytold/filmcraft)**.
 * **Generative Image & Video Prompt Vaults**:
   * **[Nano Banana Pro Prompts](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts)**, **[Awesome Nano Banana Images](https://github.com/PicoTrex/Awesome-Nano-Banana-images)**, & **[Awesome NanoBanana Pro](https://github.com/ZeroLu/awesome-nanobanana-pro)**: 10,000+ curated Gemini image generation prompts and visual studies.

@@ -5,7 +5,7 @@
 
 Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), this repository goes a step further:
 1. **8 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent today—including `design-router` (anti-slop quality gates + intent routing) and **7 end-to-end Combo Orchestrators**.
-2. **51 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
+2. **67 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
 3. **Built-in Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill fetched via the installer is cloned with Git hooks disabled (`core.hooksPath=NUL`) into a temporary quarantine directory and scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes** before touching your agent config.
 
 ---
@@ -54,7 +54,7 @@ chmod +x install.sh
 Want all upstream skills required for a specific workflow? The installer uses `git sparse-checkout` to pull only the needed skill folders from GitHub and runs a static security audit before installing:
 
 ```powershell
-# List all 7 Combos and 44 Upstream Skills
+# List all 7 Combos and 67 Upstream Skills
 .\install.ps1 -List
 
 # Combo 1: Anti-Slop Landing Page (styleseed, hallmark, impeccable, refactoring-ui, make-interfaces-feel-better, kill-ai-slop)
@@ -180,6 +180,13 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`enesozturk/dimensional-drawing`](https://github.com/enesozturk/dimensional-drawing)** (`dimensional-drawing` & `dimensional-drawing-motion`): Creates Apple-style dimensional technical drawings and animated motion blueprints of UI components with extension lines, dimension callouts, leader lines, and spec tables.
 * **Video, Film & Animation Production Studios**:
   * **[`NiazMorshed2007/reanimate`](https://github.com/NiazMorshed2007/reanimate)** (`reanimate`): Reverse-engineers any live web animation frame-by-frame via Playwright and proves the reconstructed animation moves identically.
+  * **[`JuneYaooo/rea-video`](https://github.com/JuneYaooo/rea-video)** (`rea-video`): Reverse-engineers any video shot-by-shot (filmed, AI-generated, or coded) and outputs a complete reconstruction blueprint.
+  * **[`edenfunf/reelmimic`](https://github.com/edenfunf/reelmimic)** (`reelmimic-*`): Multi-agent video crew that clones the visual, pacing, and motion style of any reference video.
+  * **[`bangtutorial/bang-motion`](https://github.com/bangtutorial/bang-motion)** (`bang-motion`): Browser motion-graphics agent skill for openers, promos, kinetic typography, and 5 explainer styles in a single `index.html`.
+  * **[`Vincentwei1021/video-talkcraft`](https://github.com/Vincentwei1021/video-talkcraft)** (`video-talkcraft`) & **[`Vincentwei1021/anything2explainer`](https://github.com/Vincentwei1021/anything2explainer)** (`anything2explainer`): Voiceover-driven motion-design studio (109 motion recipe cards, anti-slideshow camera) and black-canvas narrated explainer generator with Remotion.
+  * **[`alchaincyf/huashu-motion`](https://github.com/alchaincyf/huashu-motion)** (`huashu-motion`) & **[`alchaincyf/huashu-art-motion`](https://github.com/alchaincyf/huashu-art-motion)** (`huashu-art-motion`): Commercial launch films with auto-composed music + frame-pointing edits, and 35 fine-art animation styles with 9 narration grammars.
+  * **[`mromidev/claude-animated-shorts`](https://github.com/mromidev/claude-animated-shorts)** (`claude-animated-shorts`), **[`zhgarylu/claude-video`](https://github.com/zhgarylu/claude-video)** (`lemo-film`), **[`kaomei/stickman-video-director`](https://github.com/kaomei/stickman-video-director)**, & **[`Ootto-AI/claude-content-skills`](https://github.com/Ootto-AI/claude-content-skills)**: Viral 2D-in-3D animated shorts, 61 code-made film styles, automated stickman video director, and 55 Instagram Reel growth skills.
+  * **[`EL4CTEO/blender-skills`](https://github.com/EL4CTEO/blender-skills)** (`28 blender-* skills`), **[`achimala/dream-loop`](https://github.com/achimala/dream-loop)** (`dream-loop`), **[`elvarofficial/teardown`](https://github.com/elvarofficial/teardown)** (`teardown`), & **[`patch-gg/pixelfx`](https://github.com/patch-gg/pixelfx)** (`pixelfx`): Professional Blender 5.2 agent workflows, Blender + critic loop, interactive 3D mechanical teardown simulators, and 244 procedural pixel-art VFX in code.
   * **[`andyhuo520/digital-human-koubo`](https://github.com/andyhuo520/digital-human-koubo)** (`digital-human-koubo` & `finance-explainer`): Generates AI digital-human talking-head videos from one photo with 5 editing styles, 48 creator packaging components, and Remotion financial explainer templates.
   * **[`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills)** (`landing-page-design` & `figma-designer`): High-converting landing page design skill and direct Figma canvas design generation workflow.
   * **[`manalkaff/opendesign`](https://github.com/manalkaff/opendesign)**: Local-first design workflow (10 sub-skills including `create-design-system`, `interactive-prototype`, `wireframe`, `make-a-deck`, `handoff-to-claude-code`) that turns coding agents into collaborative product designers using `SKILL.md` and `DESIGN.md`.
@@ -239,6 +246,12 @@ Curated component libraries, shader playgrounds, brand `DESIGN.md` vaults, and i
 * **[mapcn](https://github.com/AnmolSaini16/mapcn)**: Zero-config, customizable `shadcn`-style map components for React.
 * **[Airship](https://airship.design)** ([`0xnyn/airship`](https://github.com/0xnyn/airship)): Figma-like visual editor built specifically for Claude Code, Codex, and OpenCode.
 * **[Ditto](https://www.ditto.site/)**: Clones any live website into clean, production-ready code with components, design tokens, interactions, hover effects, REST API, and MCP server.
+* **[Refero Styles](https://styles.refero.design/)**: Curated Design Systems built specifically for AI coding agents.
+* **[Oversight Supply](https://supply.madebyoversight.com/sections?price=free#library)**: Free, copy-ready website UI sections library.
+* **[Kevin Adams (`ikevinadams.com`)](https://www.ikevinadams.com/)**: High-craft interactive portfolio target for animation reverse-engineering (`reanimate` / `rea-video`).
+* **[God of Prompt](https://godofprompt.ai/prompt-library/generate-hyperrealistic-mugshot-portraits)**: Hyper-realistic portrait and visual prompt library.
+* **[Polyfork 3D Catalog](https://polyfork.dev/)** ([`lucas-martinic/polyfork-catalog`](https://github.com/lucas-martinic/polyfork-catalog)): 3,251 free CC-BY-4.0 low-poly 3D GLB models and 32 themed Three.js kits.
+* **[OpenDesign (`nexu-io/open-design`)](https://github.com/nexu-io/open-design)** & **[RAEA (`shinyobjectz/raea`)](https://github.com/shinyobjectz/raea)**: Local-first collaborative AI design workspace (★107k+) and Rust/Bevy GPU React video/3D rendering engine.
 * **[OpenUI](https://openui.fly.dev)** ([`wandb/openui`](https://github.com/wandb/openui)) & **[CopilotKit](https://docs.copilotkit.ai)** ([`CopilotKit/CopilotKit`](https://github.com/CopilotKit/CopilotKit)): Live generative UI rendering and AG-UI frontend stacks.
 
 ### 3D, WebGL, Scroll & Video Ecosystems
