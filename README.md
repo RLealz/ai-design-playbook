@@ -5,7 +5,7 @@
 
 Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), this repository goes a step further:
 1. **8 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent today—including `design-router` (anti-slop quality gates + intent routing) and **7 end-to-end Combo Orchestrators**.
-2. **77 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
+2. **79 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
 3. **Built-in Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill fetched via the installer is cloned with Git hooks disabled (`core.hooksPath=NUL`) into a temporary quarantine directory and scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes** before touching your agent config.
 
 ---
@@ -54,7 +54,7 @@ chmod +x install.sh
 Want all upstream skills required for a specific workflow? The installer uses `git sparse-checkout` to pull only the needed skill folders from GitHub and runs a static security audit before installing:
 
 ```powershell
-# List all 7 Combos and 77 Upstream Skills
+# List all 7 Combos and 79 Upstream Skills
 .\install.ps1 -List
 
 # Combo 1: Anti-Slop Landing Page (styleseed, hallmark, impeccable, refactoring-ui, make-interfaces-feel-better, kill-ai-slop)
