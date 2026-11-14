@@ -55,7 +55,8 @@
         "refactoring-ui-skill",
         "make-interfaces-feel-better",
         "kill-ai-slop",
-        "landing-page-design"
+        "landing-page-design",
+        "motionsites-web-builder"
       ]
     },
     "scroll-3d-world": {
@@ -81,7 +82,9 @@
         "blender-skills",
         "dream-loop",
         "teardown",
-        "pixelfx"
+        "pixelfx",
+        "cutaway",
+        "wobnimo-mascot"
       ]
     },
     "vibe-prototyping": {
@@ -112,7 +115,11 @@
         "huashu-motion",
         "huashu-art-motion",
         "claude-animated-shorts",
-        "claude-video"
+        "claude-video",
+        "cinecode",
+        "video-shotcraft",
+        "explainroo",
+        "openmontage"
       ]
     },
     "steal-like-an-artist": {
@@ -140,7 +147,9 @@
         "dimensional-drawing",
         "dimensional-drawing-motion",
         "excalidraw-diagram-skill",
-        "logo-design-skill"
+        "logo-design-skill",
+        "stack-diagram",
+        "floorplan"
       ]
     }
   },
@@ -696,6 +705,86 @@
       "category": "Core Design Engines",
       "license": "MIT",
       "description": "Collaborative local-first AI Design Agent Workspace for generating, critiquing, and iterating UI designs."
+    },
+    {
+      "id": "cinecode",
+      "repo": "sarpstar/cinecode",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Films made with code (Quick single-HTML mode or 6-step Three.js Film mode) ending in a -14 LUFS MP4 master."
+    },
+    {
+      "id": "stack-diagram",
+      "repo": "caru-ini/stack-diagram",
+      "subPath": "skills/stack-diagram",
+      "category": "Deck, Diagram & Publication",
+      "license": "MIT",
+      "description": "Engineering-drawing-style tech stack and cloud architecture diagrams with real brand logos, HTML, PNG, and TSX outputs."
+    },
+    {
+      "id": "floorplan",
+      "repo": "haydenschmitty/floorplan",
+      "subPath": "skills/floorplan",
+      "category": "Deck, Diagram & Publication",
+      "license": "MIT",
+      "description": "Interactive node-graph codebase map and architectural overview rendered as self-contained floorplan/index.html."
+    },
+    {
+      "id": "motionsites-web-builder",
+      "repo": "Motionsites-AI/claude-skill",
+      "subPath": "plugins/motionsites-web-builder/skills/motionsites-web-builder",
+      "category": "Core Design Engines",
+      "license": "Custom",
+      "description": "Cinematic landing pages and hero sections with MotionSites visual recipes, real media, and Playwright screenshot-and-fix verification."
+    },
+    {
+      "id": "video-shotcraft",
+      "repo": "Vincentwei1021/video-shotcraft",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "Apache-2.0",
+      "description": "Remotion product promo studio with 124 shot recipe cards, Ink Press template, beat sync, sound design, and JianYing export."
+    },
+    {
+      "id": "cutaway",
+      "repo": "Nyxera0x/cutaway",
+      "subPath": "",
+      "category": "3D, WebGL & Shaders",
+      "license": "MIT",
+      "description": "Turns a single reference image into an interactive Three.js exploded-view robotic cutaway simulator and 60fps scored film."
+    },
+    {
+      "id": "wobnimo-mascot",
+      "repo": "Pouryaak/wobnimo",
+      "subPath": "skills/wobnimo-mascot",
+      "category": "3D, WebGL & Shaders",
+      "license": "MIT",
+      "description": "Designs custom living 3D brand mascots with 10 behavioral states for React and vanilla web using the ~25 KB Wobnimo engine."
+    },
+    {
+      "id": "explainroo",
+      "repo": "vincentsch/explainroo",
+      "subPath": "skills/explainroo",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Generates narrated MP4 explainer videos and animated product demos offline with Kokoro TTS, Whisper word timing, and Canvas."
+    },
+    {
+      "id": "klad",
+      "repo": "klad-app/klad",
+      "subPath": "docs/skill",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Collaborative vector, paint, and pixel-art CLI/editor workflow for agent and human co-drawing in .klad bundles."
+    },
+    {
+      "id": "openmontage",
+      "repo": "OpenMontageInc/OpenMontage",
+      "subPath": ".agents/skills",
+      "category": "Video & Motion Studios",
+      "license": "AGPL-3.0",
+      "description": "Open-source agentic video production system with 12 pipelines, video-toolkit, website-to-video, motion-graphics, and character QA skills."
     }
   ],
   "designResources": [
@@ -896,6 +985,42 @@
       "url": "https://polyfork.dev/",
       "repo": "lucas-martinic/polyfork-catalog",
       "category": "3,251 Free Low-Poly 3D GLB Models"
+    },
+    {
+      "name": "Anime.js v4",
+      "url": "https://animejs.com",
+      "repo": "juliangarnier/anime",
+      "category": "JavaScript Animation Engine"
+    },
+    {
+      "name": "Sand3D",
+      "url": "https://sandflow.ai/sand3d/",
+      "repo": "Sandflow-ai/sand3d",
+      "category": "3D Modeling in Python for LLMs"
+    },
+    {
+      "name": "Vork Engine",
+      "url": "https://voyager.so/vork",
+      "repo": "voyager-so/vork",
+      "category": "Headless Rust 3D & VFX Engine for Agents"
+    },
+    {
+      "name": "Estella Engine",
+      "url": "https://estellaengine.com/",
+      "repo": "esengine/estella",
+      "category": "2D/3D WebAssembly & TypeScript Game Engine"
+    },
+    {
+      "name": "Explainroo UI",
+      "url": "https://www.explainroo.com",
+      "repo": "jastfan/explainroo-ui",
+      "category": "Visual Explainer Video Studio UI"
+    },
+    {
+      "name": "Higgsfield Claude Fable 5.2 Cartoon Guide",
+      "url": "https://higgsfield.ai/@higgsfield.studio/blogs/from-code-to-cartoon-how-claude-built-a-3-minute-film",
+      "repo": "",
+      "category": "Code-to-Cartoon Video Production Guide"
     }
   ],
   "mcpServers": [

@@ -5,7 +5,7 @@
 
 Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), this repository goes a step further:
 1. **8 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent today—including `design-router` (anti-slop quality gates + intent routing) and **7 end-to-end Combo Orchestrators**.
-2. **67 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
+2. **77 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
 3. **Built-in Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill fetched via the installer is cloned with Git hooks disabled (`core.hooksPath=NUL`) into a temporary quarantine directory and scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes** before touching your agent config.
 
 ---
@@ -54,7 +54,7 @@ chmod +x install.sh
 Want all upstream skills required for a specific workflow? The installer uses `git sparse-checkout` to pull only the needed skill folders from GitHub and runs a static security audit before installing:
 
 ```powershell
-# List all 7 Combos and 67 Upstream Skills
+# List all 7 Combos and 77 Upstream Skills
 .\install.ps1 -List
 
 # Combo 1: Anti-Slop Landing Page (styleseed, hallmark, impeccable, refactoring-ui, make-interfaces-feel-better, kill-ai-slop)
@@ -178,6 +178,8 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`coleam00/excalidraw-diagram-skill`](https://github.com/coleam00/excalidraw-diagram-skill)**: Generates clean, hand-drawn-style Excalidraw architecture and system diagrams.
   * **[`oil-oil/beautify-github-readme`](https://github.com/oil-oil/beautify-github-readme)**: README visual design, typography, and SVG layout skill.
   * **[`enesozturk/dimensional-drawing`](https://github.com/enesozturk/dimensional-drawing)** (`dimensional-drawing` & `dimensional-drawing-motion`): Creates Apple-style dimensional technical drawings and animated motion blueprints of UI components with extension lines, dimension callouts, leader lines, and spec tables.
+  * **[`caru-ini/stack-diagram`](https://github.com/caru-ini/stack-diagram)** (`stack-diagram`): Generates cloud-vendor-style architecture diagrams with real brand logos, orthogonal connectors, and HTML/PNG/TSX outputs.
+  * **[`haydenschmitty/floorplan`](https://github.com/haydenschmitty/floorplan)** (`floorplan`): Maps any codebase or PRD into an interactive multi-zoom node-graph `floorplan/index.html`.
 * **Video, Film & Animation Production Studios**:
   * **[`NiazMorshed2007/reanimate`](https://github.com/NiazMorshed2007/reanimate)** (`reanimate`): Reverse-engineers any live web animation frame-by-frame via Playwright and proves the reconstructed animation moves identically.
   * **[`JuneYaooo/rea-video`](https://github.com/JuneYaooo/rea-video)** (`rea-video`): Reverse-engineers any video shot-by-shot (filmed, AI-generated, or coded) and outputs a complete reconstruction blueprint.
@@ -198,6 +200,14 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`hypit-ai/hypit`](https://github.com/hypit-ai/hypit)**: Open-source tool that lets an AI agent deconstruct and clone viral video structure, captions, B-roll, and effects.
   * **[`diffusionstudio/lottie`](https://github.com/diffusionstudio/lottie)**: Generates production-ready Lottie JSON animations with Claude Code or Codex.
   * **[`kajisho5/ffmpeg-skill`](https://github.com/kajisho5/ffmpeg-skill)**: Local video editor for coding agents (42 FFmpeg tools + MCP server for cuts, captions, reframing, loudness, and platform exports).
+  * **[`sarpstar/cinecode`](https://github.com/sarpstar/cinecode)** (`cinecode`): Code-made films, ads, and music videos in Quick single-HTML mode or 6-step Three.js Film mode with `-14 LUFS` MP4 mastering.
+  * **[`Vincentwei1021/video-shotcraft`](https://github.com/Vincentwei1021/video-shotcraft)** (`video-shotcraft`): Remotion product promo studio featuring 124 shot recipe cards, Ink Press template, beat sync, sound design, and JianYing export.
+  * **[`Nyxera0x/cutaway`](https://github.com/Nyxera0x/cutaway)** (`cutaway`): Turns one reference picture into a Three.js robotic exploded-view simulator and 60fps scored film.
+  * **[`Pouryaak/wobnimo`](https://github.com/Pouryaak/wobnimo)** (`wobnimo-mascot`): Builds custom living 3D brand mascots with 10 behavioral states on the ~25 KB Wobnimo Web engine.
+  * **[`vincentsch/explainroo`](https://github.com/vincentsch/explainroo)** (`explainroo`): Creates offline narrated MP4 explainer videos using local Kokoro TTS, Whisper word timing, and Canvas.
+  * **[`klad-app/klad`](https://github.com/klad-app/klad)** (`klad`): Collaborative vector, paint, and pixel-art CLI/editor workflow in `.klad` bundles.
+  * **[`Motionsites-AI/claude-skill`](https://github.com/Motionsites-AI/claude-skill)** (`motionsites-web-builder`): Cinematic landing page and hero builder using MotionSites visual recipes and screenshot-and-fix loops.
+  * **[`OpenMontageInc/OpenMontage`](https://github.com/OpenMontageInc/OpenMontage)** (`openmontage` — `.agents/skills` suite): 12 agentic video production pipelines plus modular `video-toolkit`, `website-to-video`, `motion-graphics`, and `character-animation-qa` skills.
   * **[`machina-exm/film-studio-skills`](https://github.com/machina-exm/film-studio-skills)**: 7 installable agent skills running an AI video production pipeline from script to locked, generation-ready shot prompts.
   * **[`jhartquist/claude-remotion-kickstart`](https://github.com/jhartquist/claude-remotion-kickstart)**: Programmatic video creation workflow with Claude Code and Remotion.
   * **[`pexoai/pexo-skills`](https://github.com/pexoai/pexo-skills)**, **[`cclank/lanshu-create-ai-presenter-video`](https://github.com/cclank/lanshu-create-ai-presenter-video)**, **[`gnipbao/story-to-handdrawn-video`](https://github.com/gnipbao/story-to-handdrawn-video)**, **[`letuandat131/whiteboard-animation-vi`](https://github.com/letuandat131/whiteboard-animation-vi)**, & **[`0xsline/StoryGen-Atelier`](https://github.com/0xsline/StoryGen-Atelier)**: Multimodal image/audio/video content creation, presenter video, hand-drawn comic animation, moving-hand whiteboard animation, and Gemini + Veo automated storyboarding.
@@ -261,6 +271,8 @@ Curated component libraries, shader playgrounds, brand `DESIGN.md` vaults, and i
 * **[HTML-in-Canvas](https://github.com/fimbox/html-in-canvas)**: Experimental Chrome workflow placing interactive HTML DOM screens directly inside 3D WebGL space.
 * **[ManimGX](https://manimgx.academa.ai)** ([`academa-labs/manimgx`](https://github.com/academa-labs/manimgx)): Blazing-fast math and 3D animation engine for agents (Manim Python API on a Rust GPU core).
 * **[Video-Use](https://video-use.com)** ([`browser-use/video-use`](https://github.com/browser-use/video-use)), **[FireRed-OpenStoryline](https://github.com/FireRedTeam/FireRed-OpenStoryline)**, **[ViMax](https://github.com/HKUDS/ViMax)**, **[ArtCraft](https://getartcraft.com)** ([`storytold/artcraft`](https://github.com/storytold/artcraft)), & **[FilmCraft](https://github.com/storytold/filmcraft)**: Agentic video directing, storyboarding, and nonlinear editing engines.
+* **[Anime.js v4 (`juliangarnier/anime`)](https://animejs.com)**: High-performance zero-dependency JavaScript engine for CSS, SVG, DOM, timelines, and scroll choreography.
+* **[Sand3D (`Sandflow-ai/sand3d`)](https://sandflow.ai/sand3d/)**, **[Vork (`voyager-so/vork`)](https://voyager.so/vork)**, & **[Estella (`esengine/estella`)](https://estellaengine.com/)**: Python LLM-first 3D modeling library, headless Rust 3D/VFX rendering engine, and 2D/3D WASM game engine.
 
 ### AI Motion Prompts, Image/Video Prompt Vaults & Inspiration Galleries
 * **[Scrolltide](https://scrolltide.co/)**: Curated prompt and template library for building cinematic, scroll-driven websites—copy structured prompts directly into AI coding agents to spin up production-ready animated layouts.
