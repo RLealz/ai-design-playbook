@@ -35,6 +35,7 @@ This reference file is packaged directly inside `design-router` so AI coding age
 | **Polyfork 3D Catalog** | [polyfork.dev](https://polyfork.dev/) ([`lucas-martinic/polyfork-catalog`](https://github.com/lucas-martinic/polyfork-catalog)) | 3,251 free CC-BY-4.0 low-poly 3D GLB models and 32 themed Three.js asset kits. |
 | **Anime.js v4** | [animejs.com](https://animejs.com) ([`juliangarnier/anime`](https://github.com/juliangarnier/anime)) | High-speed, zero-dependency JavaScript animation engine for CSS, SVG paths, DOM attributes, timelines, and scroll choreography. |
 | **Wobnimo 3D Mascots** | [pouryaak.github.io/wobnimo](https://pouryaak.github.io/wobnimo/) ([`Pouryaak/wobnimo`](https://github.com/Pouryaak/wobnimo)) | ~25 KB interactive 3D mascot engine with 10 behavioral states (`idle`, `thinking`, `speaking`, `celebrating`, etc.) for React & Web. |
+| **Rune Native UI** | [`anomalyco/rune`](https://github.com/anomalyco/rune) | Fast, declarative native UI framework written in Rust. |
 
 ---
 
@@ -70,6 +71,11 @@ This reference file is packaged directly inside `design-router` so AI coding age
 * **[Klad (`klad-app/klad`)](https://klad.studio)** ([GitHub](https://github.com/klad-app/klad)): Vector, paint, and pixel-art collaborative drawing editor and `.klad` CLI designed for human + agent co-creation.
 * **[Explainroo (`vincentsch/explainroo`)](https://www.explainroo.com)** & **[Explainroo UI (`jastfan/explainroo-ui`)](https://github.com/jastfan/explainroo-ui)**: Offline agentic explainer video generator using Kokoro TTS, Whisper word timing, Canvas, and an interactive Web UI.
 * **[Higgsfield Claude Fable 5.2 Cartoon Guide](https://higgsfield.ai/@higgsfield.studio/blogs/from-code-to-cartoon-how-claude-built-a-3-minute-film)**: Step-by-step code-to-cartoon 3-minute film workflow and prompt breakdown.
+
+* **[Freefield (`neuregex/freefield`)](https://github.com/neuregex/freefield)**: Open-source Higgsfield alternative on ComfyUI bundling 120 open-weight image, video, VFX, and audio apps for local GPUs or Modal.
+* **[Ink Studio (`siliconjungle/shapeshift-labs-ink-studio`)](https://github.com/siliconjungle/shapeshift-labs-ink-studio)**: Sculpting, animation, and simulation toolkit for pixel-art Gaussian splats.
+* **[Crucible (`codepawl/crucible`)](https://github.com/codepawl/crucible)**: Agent-driven JavaScript 3D scene engine paired with dedicated scene-building and rendering skills.
+* **[NeonClipping (`iamajmeena/neonclipping`)](https://github.com/iamajmeena/neonclipping)** & **[PeakCut (`haziqahmedqasmi/PeakCut`)](https://github.com/haziqahmedqasmi/PeakCut)**: Self-hosted AI short-form video clipping engines with local captions and 9:16 reframing.
 
 * **Generative Image & Video Prompt Vaults**:
   * **[Nano Banana Pro Prompts](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts)**, **[Awesome Nano Banana Images](https://github.com/PicoTrex/Awesome-Nano-Banana-images)**, & **[Awesome NanoBanana Pro](https://github.com/ZeroLu/awesome-nanobanana-pro)**: 10,000+ curated Gemini image generation prompts and visual studies.

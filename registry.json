@@ -56,7 +56,8 @@
         "make-interfaces-feel-better",
         "kill-ai-slop",
         "landing-page-design",
-        "motionsites-web-builder"
+        "motionsites-web-builder",
+        "unslop"
       ]
     },
     "scroll-3d-world": {
@@ -84,7 +85,9 @@
         "teardown",
         "pixelfx",
         "cutaway",
-        "wobnimo-mascot"
+        "wobnimo-mascot",
+        "crucible",
+        "spritecast"
       ]
     },
     "vibe-prototyping": {
@@ -95,7 +98,8 @@
         "ui-skills",
         "impeccable",
         "taste-skill",
-        "figma-designer"
+        "figma-designer",
+        "effective-html"
       ]
     },
     "viral-launch-video": {
@@ -119,7 +123,14 @@
         "cinecode",
         "video-shotcraft",
         "explainroo",
-        "openmontage"
+        "openmontage",
+        "motion-educator",
+        "brief2mp4",
+        "vox-explainer-skill",
+        "paint-mv-skills",
+        "hand-drawn-explainer",
+        "openfilm",
+        "manimgx"
       ]
     },
     "steal-like-an-artist": {
@@ -149,7 +160,8 @@
         "excalidraw-diagram-skill",
         "logo-design-skill",
         "stack-diagram",
-        "floorplan"
+        "floorplan",
+        "effective-html"
       ]
     }
   },
@@ -785,6 +797,94 @@
       "category": "Video & Motion Studios",
       "license": "AGPL-3.0",
       "description": "Open-source agentic video production system with 12 pipelines, video-toolkit, website-to-video, motion-graphics, and character QA skills."
+    },
+    {
+      "id": "motion-educator",
+      "repo": "zeative/motion-educator",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Agent skill and film engine for teardown-style 3D educational motion documentaries built frame by frame in code with pinned labels and narration."
+    },
+    {
+      "id": "crucible",
+      "repo": "codepawl/crucible",
+      "subPath": "skills",
+      "category": "3D, WebGL & Shaders",
+      "license": "MIT",
+      "description": "Agent-driven 3D engine and scene/render skill pack (build-crucible-scene + render-crucible-media) for lighting, HDRI, fog, and procedural 3D scenes."
+    },
+    {
+      "id": "brief2mp4",
+      "repo": "qualixar/brief2mp4",
+      "subPath": "plugin/skills/brief2mp4",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Turns a written brief into a finished, verified MP4 motion-graphics / 3D video using automated Blender and composition recipes."
+    },
+    {
+      "id": "spritecast",
+      "repo": "Sunghwan0112/spritecast",
+      "subPath": "skills/spritecast",
+      "category": "3D, WebGL & Shaders",
+      "license": "MIT",
+      "description": "3D-guided game sprite and isometric character sheet generator matching exact camera angles, 8-direction walk cycles, and VFX overlays."
+    },
+    {
+      "id": "unslop",
+      "repo": "avivgerz-hue/unslop",
+      "subPath": ".claude/skills/unslop",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "72-rule UI craft engine, APCA contrast checker, and studio preset skill that eliminates generic AI-slop templates."
+    },
+    {
+      "id": "vox-explainer-skill",
+      "repo": "CK42BB/vox-explainer-skill",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Generates Vox-style editorial documentary explainers from a single prompt with FFmpeg assembly and stylized typography cards."
+    },
+    {
+      "id": "paint-mv-skills",
+      "repo": "lintsinghua/paint-mv-skills",
+      "subPath": "skills",
+      "category": "Video & Motion Studios",
+      "license": "NOASSERTION",
+      "description": "Four-skill suite (paint-mv, paint-mv-storyboard, paint-mv-animate, paint-mv-render) turning a song and lyrics into hand-painted watercolor music videos."
+    },
+    {
+      "id": "hand-drawn-explainer",
+      "repo": "hi-nikola/hand-drawn-explainer-video-nikola",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "Apache-2.0",
+      "description": "Generates stroke-by-stroke hand-drawn animated knowledge explainers completely in code with procedural SVG paths and synced voiceover."
+    },
+    {
+      "id": "openfilm",
+      "repo": "openfilm/openfilm",
+      "subPath": "skills/openfilm",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Open-source AI video agent skill powering multi-shot films with a local browser shot editor and lossless timeline assembly."
+    },
+    {
+      "id": "manimgx",
+      "repo": "academa-labs/manimgx",
+      "subPath": "skills/manimgx",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "High-speed Rust/wgpu GPU animation skill for 3D math and physics explainer videos using Manim's Python API."
+    },
+    {
+      "id": "effective-html",
+      "repo": "plannotator/effective-html",
+      "subPath": "skills",
+      "category": "Deck, Diagram & Publication",
+      "license": "MIT",
+      "description": "Visual HTML artifact skill suite (design-artifact, html-diagram, html-prototype, big-pics-little-words) for crisp interactive diagrams and prototypes."
     }
   ],
   "designResources": [
@@ -1021,6 +1121,36 @@
       "url": "https://higgsfield.ai/@higgsfield.studio/blogs/from-code-to-cartoon-how-claude-built-a-3-minute-film",
       "repo": "",
       "category": "Code-to-Cartoon Video Production Guide"
+    },
+    {
+      "name": "Freefield",
+      "url": "https://github.com/neuregex/freefield",
+      "repo": "neuregex/freefield",
+      "category": "Open-Weight ComfyUI Image, Video & VFX Suite"
+    },
+    {
+      "name": "Ink Studio",
+      "url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+      "repo": "siliconjungle/shapeshift-labs-ink-studio",
+      "category": "Pixel-Art Gaussian Splat Sculpting & Animation Toolkit"
+    },
+    {
+      "name": "Crucible 3D Engine",
+      "url": "https://github.com/codepawl/crucible",
+      "repo": "codepawl/crucible",
+      "category": "Agent-Driven JavaScript 3D Scene Engine"
+    },
+    {
+      "name": "NeonClipping & PeakCut",
+      "url": "https://github.com/iamajmeena/neonclipping",
+      "repo": "iamajmeena/neonclipping",
+      "category": "Local Automated Long-to-Short Video Clipping Engines"
+    },
+    {
+      "name": "Rune Native UI",
+      "url": "https://github.com/anomalyco/rune",
+      "repo": "anomalyco/rune",
+      "category": "Rust Native UI Framework"
     }
   ],
   "mcpServers": [

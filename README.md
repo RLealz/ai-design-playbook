@@ -5,7 +5,7 @@
 
 Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), this repository goes a step further:
 1. **8 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent today—including `design-router` (anti-slop quality gates + intent routing) and **7 end-to-end Combo Orchestrators**.
-2. **79 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
+2. **90 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
 3. **Built-in Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill fetched via the installer is cloned with Git hooks disabled (`core.hooksPath=NUL`) into a temporary quarantine directory and scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes** before touching your agent config.
 
 ---
@@ -54,7 +54,7 @@ chmod +x install.sh
 Want all upstream skills required for a specific workflow? The installer uses `git sparse-checkout` to pull only the needed skill folders from GitHub and runs a static security audit before installing:
 
 ```powershell
-# List all 7 Combos and 79 Upstream Skills
+# List all 7 Combos and 90 Upstream Skills
 .\install.ps1 -List
 
 # Combo 1: Anti-Slop Landing Page (styleseed, hallmark, impeccable, refactoring-ui, make-interfaces-feel-better, kill-ai-slop)
@@ -180,6 +180,7 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`enesozturk/dimensional-drawing`](https://github.com/enesozturk/dimensional-drawing)** (`dimensional-drawing` & `dimensional-drawing-motion`): Creates Apple-style dimensional technical drawings and animated motion blueprints of UI components with extension lines, dimension callouts, leader lines, and spec tables.
   * **[`caru-ini/stack-diagram`](https://github.com/caru-ini/stack-diagram)** (`stack-diagram`): Generates cloud-vendor-style architecture diagrams with real brand logos, orthogonal connectors, and HTML/PNG/TSX outputs.
   * **[`haydenschmitty/floorplan`](https://github.com/haydenschmitty/floorplan)** (`floorplan`): Maps any codebase or PRD into an interactive multi-zoom node-graph `floorplan/index.html`.
+  * **[`plannotator/effective-html`](https://github.com/plannotator/effective-html)** (`design-artifact`, `html-diagram`, `html-prototype`, `big-pics-little-words`): Self-contained HTML diagrams, interactive prototypes, and high-signal visual artifacts.
 * **Video, Film & Animation Production Studios**:
   * **[`NiazMorshed2007/reanimate`](https://github.com/NiazMorshed2007/reanimate)** (`reanimate`): Reverse-engineers any live web animation frame-by-frame via Playwright and proves the reconstructed animation moves identically.
   * **[`JuneYaooo/rea-video`](https://github.com/JuneYaooo/rea-video)** (`rea-video`): Reverse-engineers any video shot-by-shot (filmed, AI-generated, or coded) and outputs a complete reconstruction blueprint.
@@ -208,6 +209,14 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`klad-app/klad`](https://github.com/klad-app/klad)** (`klad`): Collaborative vector, paint, and pixel-art CLI/editor workflow in `.klad` bundles.
   * **[`Motionsites-AI/claude-skill`](https://github.com/Motionsites-AI/claude-skill)** (`motionsites-web-builder`): Cinematic landing page and hero builder using MotionSites visual recipes and screenshot-and-fix loops.
   * **[`OpenMontageInc/OpenMontage`](https://github.com/OpenMontageInc/OpenMontage)** (`openmontage` — `.agents/skills` suite): 12 agentic video production pipelines plus modular `video-toolkit`, `website-to-video`, `motion-graphics`, and `character-animation-qa` skills.
+  * **[`zeative/motion-educator`](https://github.com/zeative/motion-educator)** (`motion-educator`): Code-driven 3D documentary teardown and motion-graphics film engine with pinned labels and narration.
+  * **[`codepawl/crucible`](https://github.com/codepawl/crucible)** (`build-crucible-scene`, `render-crucible-media`): Agent-driven 3D scene composition, lighting, HDRI, fog, and render skill pack.
+  * **[`qualixar/brief2mp4`](https://github.com/qualixar/brief2mp4)** (`brief2mp4`): Written brief-to-verified MP4 motion-graphics and 3D Blender pipeline.
+  * **[`Sunghwan0112/spritecast`](https://github.com/Sunghwan0112/spritecast)** (`spritecast`): 3D-guided isometric sprite sheet and 8-direction character animation generator.
+  * **[`avivgerz-hue/unslop`](https://github.com/avivgerz-hue/unslop)** (`unslop`): 72-rule UI craft linter, APCA contrast checker, and studio preset skill against generic AI slop.
+  * **[`CK42BB/vox-explainer-skill`](https://github.com/CK42BB/vox-explainer-skill)** (`vox-explainer-skill`) & **[`hi-nikola/hand-drawn-explainer-video-nikola`](https://github.com/hi-nikola/hand-drawn-explainer-video-nikola)** (`hand-drawn-explainer`): Editorial Vox documentary explainers and stroke-by-stroke hand-drawn coded animations.
+  * **[`lintsinghua/paint-mv-skills`](https://github.com/lintsinghua/paint-mv-skills)** (`paint-mv`, `paint-mv-storyboard`, `paint-mv-animate`, `paint-mv-render`): Watercolor music video production suite from audio + lyrics.
+  * **[`openfilm/openfilm`](https://github.com/openfilm/openfilm)** (`openfilm`) & **[`academa-labs/manimgx`](https://github.com/academa-labs/manimgx)** (`manimgx`): Open-source browser-editable AI film skill and Rust/wgpu-accelerated Manim 3D math animation skill.
   * **[`machina-exm/film-studio-skills`](https://github.com/machina-exm/film-studio-skills)**: 7 installable agent skills running an AI video production pipeline from script to locked, generation-ready shot prompts.
   * **[`jhartquist/claude-remotion-kickstart`](https://github.com/jhartquist/claude-remotion-kickstart)**: Programmatic video creation workflow with Claude Code and Remotion.
   * **[`pexoai/pexo-skills`](https://github.com/pexoai/pexo-skills)**, **[`cclank/lanshu-create-ai-presenter-video`](https://github.com/cclank/lanshu-create-ai-presenter-video)**, **[`gnipbao/story-to-handdrawn-video`](https://github.com/gnipbao/story-to-handdrawn-video)**, **[`letuandat131/whiteboard-animation-vi`](https://github.com/letuandat131/whiteboard-animation-vi)**, & **[`0xsline/StoryGen-Atelier`](https://github.com/0xsline/StoryGen-Atelier)**: Multimodal image/audio/video content creation, presenter video, hand-drawn comic animation, moving-hand whiteboard animation, and Gemini + Veo automated storyboarding.
@@ -273,6 +282,7 @@ Curated component libraries, shader playgrounds, brand `DESIGN.md` vaults, and i
 * **[Video-Use](https://video-use.com)** ([`browser-use/video-use`](https://github.com/browser-use/video-use)), **[FireRed-OpenStoryline](https://github.com/FireRedTeam/FireRed-OpenStoryline)**, **[ViMax](https://github.com/HKUDS/ViMax)**, **[ArtCraft](https://getartcraft.com)** ([`storytold/artcraft`](https://github.com/storytold/artcraft)), & **[FilmCraft](https://github.com/storytold/filmcraft)**: Agentic video directing, storyboarding, and nonlinear editing engines.
 * **[Anime.js v4 (`juliangarnier/anime`)](https://animejs.com)**: High-performance zero-dependency JavaScript engine for CSS, SVG, DOM, timelines, and scroll choreography.
 * **[Sand3D (`Sandflow-ai/sand3d`)](https://sandflow.ai/sand3d/)**, **[Vork (`voyager-so/vork`)](https://voyager.so/vork)**, & **[Estella (`esengine/estella`)](https://estellaengine.com/)**: Python LLM-first 3D modeling library, headless Rust 3D/VFX rendering engine, and 2D/3D WASM game engine.
+* **[Freefield (`neuregex/freefield`)](https://github.com/neuregex/freefield)**, **[Ink Studio (`siliconjungle/shapeshift-labs-ink-studio`)](https://github.com/siliconjungle/shapeshift-labs-ink-studio)**, **[NeonClipping](https://github.com/iamajmeena/neonclipping)**, & **[Rune (`anomalyco/rune`)](https://github.com/anomalyco/rune)**: Open-weight ComfyUI Higgsfield alternative, pixel-art Gaussian splat animation toolkit, self-hosted 9:16 video clipping, and Rust native UI framework.
 
 ### AI Motion Prompts, Image/Video Prompt Vaults & Inspiration Galleries
 * **[Scrolltide](https://scrolltide.co/)**: Curated prompt and template library for building cinematic, scroll-driven websites—copy structured prompts directly into AI coding agents to spin up production-ready animated layouts.
