@@ -1,0 +1,16 @@
+[
+  {
+    "legacyPath": "/services",
+    "statusObserved": 200,
+    "action": "301-redirect",
+    "targetPath": "/#services",
+    "notes": "Preserve organic search equity from primary services index."
+  },
+  {
+    "legacyPath": "/demo-cart",
+    "statusObserved": 200,
+    "action": "retire-410",
+    "targetPath": null,
+    "notes": "Unused legacy CMS template route; commerce is out of v1 scope."
+  }
+]

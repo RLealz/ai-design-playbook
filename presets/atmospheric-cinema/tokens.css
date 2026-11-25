@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Preset: atmospheric-cinema — Filmic Scrollytelling & Storycraft Tokens
+   ========================================================================== */
+
+:root {
+  --bg-canvas: oklch(0.14 0.008 65);
+  --bg-surface-1: oklch(0.185 0.010 65);
+  --bg-surface-glass: oklch(0.16 0.008 65 / 0.72);
+
+  --border-hairline: oklch(0.92 0.02 75 / 0.10);
+  --vignette-cinema: radial-gradient(circle at 50% 42%, transparent 35%, oklch(0.12 0.008 65 / 0.85) 100%);
+
+  --text-primary: oklch(0.955 0.012 80);
+  --text-secondary: oklch(0.71 0.016 75);
+  --text-muted: oklch(0.52 0.014 75);
+
+  --accent-primary: oklch(0.76 0.15 78);
+  --accent-subtle: oklch(0.76 0.15 78 / 0.14);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ease-curtain: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-surface-1: var(--bg-surface-1);
+  --color-ink: var(--text-primary);
+  --color-ink-secondary: var(--text-secondary);
+  --color-accent: var(--accent-primary);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cinema-hud-pill {
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

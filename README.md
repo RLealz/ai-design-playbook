@@ -1,21 +1,21 @@
-# 🎨 AI Design Playbook & Meta-Skill Ecosystem
+# 🎨 AI Design Playbook & Meta-Skill Ecosystem (v2.2)
 
 **Stop shipping generic AI slop.**  
-`ai-design-playbook` is a hybrid **Design Meta-Router, 7 Multi-Skill Workflow Combos, and a Security-Auditing Upstream Installer** for AI coding agents (**Claude Code**, **Antigravity / Gemini CLI**, **Cursor**, **Codex**, and **Windsurf**).
+`ai-design-playbook` is a hybrid **Phase-0 Pre-Design Discovery & Decision-Tree Router, 15 Multi-Skill Workflow Combos (`Combo 0` + `Combos 1–14`), 6 `DESIGN.md` + OKLCH Token Presets, 12 Runnable Starter Templates, and a Security-Auditing Upstream Installer** for AI coding agents (**Claude Code**, **Antigravity / Gemini CLI**, **Cursor**, **Codex**, and **Windsurf**).
 
-Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), this repository goes a step further:
-1. **8 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent today—including `design-router` (anti-slop quality gates + intent routing) and **7 end-to-end Combo Orchestrators**.
-2. **90 Curated Upstream Skills (`registry.json`)**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, WebGL, Remotion, and diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`) and keeping this repo lightweight.
-3. **Built-in Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill fetched via the installer is cloned with Git hooks disabled (`core.hooksPath=NUL`) into a temporary quarantine directory and scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes** before touching your agent config.
+Inspired by [`elayadesign/ai-design-skills`](https://github.com/elayadesign/ai-design-skills), v2.2 turns curated design knowledge into a deterministic end-to-end production engine:
+1. **16 Built-in MIT Meta-Skills (`skills/*/SKILL.md`)**: Ready to drop directly into your agent—including `design-router` v2.2 (Phase 0 Pre-Design Discovery + single-engine decision matrices + 6 anti-slop laws + 4-step visual QA), **`combo-discovery-audit` (`Combo 0` Pre-Design Website & Brief Analysis)**, and **14 execution Combo Orchestrators**.
+2. **6 Aesthetic `DESIGN.md` + Tailwind v4 OKLCH Presets (`presets/*/`)**: Drop-in `DESIGN.md` contracts paired with production `tokens.css` variables (`obsidian-precision`, `swiss-editorial`, `tactile-daylight-bento`, `industrial-blueprint`, `atmospheric-cinema`, `kinetic-neo-brutalist`).
+3. **12 Complete Runnable Starter Templates (`templates/*/`)**: Copy-ready scaffolds starting with **Pre-Design Live Website Surface Auditing & Brand Fact-Locking (`discovery-audit-pack`)**, plus **Higgsfield Full-Stack Cinema Websites (TanStack SSR + Cloudflare D1 + A4 ScrollScrub + X-Ray)**, **Next.js B2B Scope/Dossier Configurators**, **0%-Idle Resilient GLSL 3D Stages**, **Client Boardroom Multi-Direction Galleries + Playwright 6-Viewport QA Probes**, Asymmetric Landing Pages, 4-Act Spline Scrollytelling, AI Agent Cockpits, 60fps Remotion Trailers, 12-Col HTML/SVG Decks, 3D Cutaways, and a 4-Stack Mobile/Spatial Pack.
+4. **95 Curated Upstream Skills (`registry.json`) — Zero Orphans**: Selective, on-demand installation of the best open-source UI, GSAP, Three.js, Blender 5.2, WebGL, Remotion, Storycraft Cinema, Mobile/Spatial, and Diagram skills directly from their upstream GitHub repositories—preserving upstream licenses (`MIT`, `Apache-2.0`, `AGPL-3.0`).
+5. **Portable Quarantine Security Scanner (`install.ps1` / `install.sh`)**: Every upstream skill is cloned with Git hooks disabled into an isolated quarantine directory, scanned for **prompt injection overrides, hidden bidirectional Unicode characters, malicious `package.json` lifecycle hooks, and remote shell execution pipes**, and auto-flattened if it contains a multi-skill suite.
 
 ---
 
-## ⚡ Quick Installation
+## ⚡ Quick Installation & Scaffolding
 
 <details open>
-<summary><strong>1. Install Built-in Meta-Router & 7 Combo Orchestrators (Zero Dependencies)</strong></summary>
-
-Clone the repository and install the 8 built-in MIT skills (`design-router` + 7 `combo-*` skills):
+<summary><strong>1. Install Built-in Meta-Router & All 15 Combo Orchestrators (Zero Dependencies)</strong></summary>
 
 **PowerShell (Windows):**
 ```powershell
@@ -25,11 +25,11 @@ cd ai-design-playbook
 # Install to current project (.claude/skills)
 .\install.ps1 -Router
 
-# Or install globally to Antigravity / Gemini CLI (~/.gemini/config/skills)
+# Install globally to Antigravity / Gemini CLI (~/.gemini/config/skills)
 .\install.ps1 -Router -Target antigravity
 
-# Or install globally to Claude Code (~/.claude/skills)
-.\install.ps1 -Router -Target global-claude
+# Or sync non-destructively across local Antigravity + Claude global skill folders
+.\install.ps1 -SyncLocal
 ```
 
 **Bash (macOS / Linux / WSL):**
@@ -38,91 +38,121 @@ git clone https://github.com/RLealz/ai-design-playbook.git
 cd ai-design-playbook
 chmod +x install.sh
 
-# Install to current project (.claude/skills)
-./install.sh --router
-
-# Or install globally to Antigravity (~/.gemini/config/skills) or Claude (~/.claude/skills)
 ./install.sh --router --target antigravity
-./install.sh --router --target global-claude
+./install.sh --sync-local
 ```
 
 </details>
 
 <details>
-<summary><strong>2. Install a Complete Workflow Combo (Fetches & Security-Audits Upstream Skills)</strong></summary>
-
-Want all upstream skills required for a specific workflow? The installer uses `git sparse-checkout` to pull only the needed skill folders from GitHub and runs a static security audit before installing:
+<summary><strong>2. Drop a DESIGN.md + Tailwind v4 OKLCH Token Preset or Runnable Starter Template</strong></summary>
 
 ```powershell
-# List all 7 Combos and 90 Upstream Skills
+# Drop DESIGN.md + tokens.css into an existing app
+.\install.ps1 -Preset obsidian-precision -OutDir .\my-app
+.\install.ps1 -Preset swiss-editorial -OutDir .\my-landing
+
+# Scaffold a complete runnable starter project (start redesigns with discovery-audit-pack!)
+.\install.ps1 -Template discovery-audit-pack -OutDir .\discovery
+.\install.ps1 -Template anti-slop-landing -OutDir .\landing
+.\install.ps1 -Template scroll-3d-stage -OutDir .\scroll-world
+.\install.ps1 -Template agent-saas-cockpit -OutDir .\cockpit
+.\install.ps1 -Template remotion-launch-trailer -OutDir .\trailer
+.\install.ps1 -Template editorial-deck-diagram -OutDir .\deck
+.\install.ps1 -Template interactive-cutaway -OutDir .\cutaway
+.\install.ps1 -Template mobile-spatial-ui -OutDir .\mobile-app
+.\install.ps1 -Template higgsfield-cinema-fullstack -OutDir .\hf-cinema
+.\install.ps1 -Template b2b-dossier-configurator -OutDir .\b2b-flagship
+.\install.ps1 -Template glsl-resilient-3d-showcase -OutDir .\glsl-stage
+.\install.ps1 -Template boardroom-gallery-and-qa -OutDir .\client-hub
+```
+
+```bash
+# Bash equivalent
+./install.sh --preset obsidian-precision --out ./my-app
+./install.sh --template scroll-3d-stage --out ./scroll-world
+```
+
+</details>
+
+<details>
+<summary><strong>3. Install Any of the 15 Workflow Combos (Fetches & Security-Audits Upstream Skills)</strong></summary>
+
+```powershell
+# List all 16 Meta-Skills, 15 Combos, 6 Presets, 12 Templates, and 95 Upstream Skills
 .\install.ps1 -List
 
-# Combo 1: Anti-Slop Landing Page (styleseed, hallmark, impeccable, refactoring-ui, make-interfaces-feel-better, kill-ai-slop)
-.\install.ps1 -Combo anti-slop-landing -Target antigravity
-
-# Combo 2: Scroll & 3D World Experience (scrollcraft, scroll-world, gsap-skills)
-.\install.ps1 -Combo scroll-3d-world -Target antigravity
-
-# Combo 3: 3D / WebGL / Isometric Hero (genjutsu, threejs-skills, 3dviz-pro-max, img2threejs, anatomy)
-.\install.ps1 -Combo 3d-webgl-hero -Target antigravity
-
-# Combo 4: Rapid Vibe Prototyping (brainstorm-prototypes, ui-skills, impeccable, make-interfaces-feel-better)
-.\install.ps1 -Combo vibe-prototyping -Target antigravity
-
-# Combo 5: Viral Launch Video (brag, lemo-opuscar, showtime, motion-video-kit, motionmaxxing, hyperframes, ffmpeg-skill)
-.\install.ps1 -Combo viral-launch-video -Target antigravity
-
-# Combo 6: Steal Like an Artist (design-dna, genjutsu, design-md, design-motion-principles, motion-design)
-.\install.ps1 -Combo steal-like-an-artist -Target antigravity
-
-# Combo 7: Executive Deck & Diagram Factory (logo-design-skill, diagram-design, archify, excalidraw-diagram-skill, kami, ppt-master)
-.\install.ps1 -Combo deck-diagram-factory -Target antigravity
+.\install.ps1 -Combo discovery-audit -Target antigravity       # Combo 0: Pre-Design Website Audit & Fact-Lock
+.\install.ps1 -Combo anti-slop-landing -Target antigravity     # Combo 1: Editorial & Tactile Landing Pages
+.\install.ps1 -Combo scroll-3d-world -Target antigravity       # Combo 2: Narrative Scroll & 3D Spline Worlds
+.\install.ps1 -Combo 3d-webgl-hero -Target antigravity         # Combo 3: Procedural Three.js, Cutaways & Shaders
+.\install.ps1 -Combo vibe-prototyping -Target antigravity      # Combo 4: 3-Direction Rapid Aesthetic Prototyping
+.\install.ps1 -Combo viral-launch-video -Target antigravity    # Combo 5: Product Launch Trailers & Sizzle Reels
+.\install.ps1 -Combo steal-like-an-artist -Target antigravity  # Combo 6: Live URL, Animation & Video DNA Extraction
+.\install.ps1 -Combo deck-diagram-factory -Target antigravity  # Combo 7: Executive Decks, Logos & Orthogonal Diagrams
+.\install.ps1 -Combo storycraft-studio -Target antigravity     # Combo 8: Storycraft AI Cinema, Passports & Music Videos
+.\install.ps1 -Combo explainer-film -Target antigravity        # Combo 9: Voiceover Documentaries, 3D Teardowns & Manim
+.\install.ps1 -Combo product-agent-ui -Target antigravity      # Combo 10: SaaS Workspaces, Agent Cockpits & Data-Viz
+.\install.ps1 -Combo blender-game-assets -Target antigravity   # Combo 11: Blender 5.2, 3D Mascots, Sprites & Playable 3D
+.\install.ps1 -Combo brand-social-growth -Target antigravity   # Combo 12: Product Photoshoots, Thumbnails & Viral Reels
+.\install.ps1 -Combo mobile-spatial-ui -Target antigravity     # Combo 13: SwiftUI, Liquid Glass, visionOS & Compose
+.\install.ps1 -Combo higgsfield-websites -Target antigravity   # Combo 14: Higgsfield Full-Stack Cinema Websites, Apps & Games
 ```
 
 </details>
 
 <details>
-<summary><strong>3. Install Individual Upstream Skills by ID</strong></summary>
+<summary><strong>4. Install Individual Upstream Skills by ID or Manual Copy</strong></summary>
 
 ```powershell
-# PowerShell
 .\install.ps1 -Skill impeccable -Target antigravity
-.\install.ps1 -Skill img2threejs -Target claude
-
-# Bash
-./install.sh --skill impeccable --target antigravity
-./install.sh --skill img2threejs --target claude
+.\install.ps1 -Skill video-shotcraft -Target global-claude
 ```
 
-</details>
-
-<details>
-<summary><strong>4. Manual Copy for Claude Code / Cursor / Codex / Windsurf</strong></summary>
-
-If you prefer not to run the installer script, copy any folder inside `skills/` directly into your agent's skill directory:
-
-- **Claude Code (Project)**: `.claude/skills/`
-- **Claude Code (Global)**: `~/.claude/skills/`
+Manual target directories:
+- **Claude Code (Project / Global)**: `.claude/skills/` or `~/.claude/skills/`
 - **Antigravity / Gemini CLI**: `~/.gemini/config/skills/`
-- **Cursor**: `.cursor/skills/` (or reference `skills/design-router/SKILL.md` in `.cursorrules`)
-- **Codex / OpenCode**: `.agents/skills/`
+- **Cursor**: `.cursor/skills/`
+- **Codex / OpenCode**: `.agents/skills/` or `~/.codex/skills/`
 
 </details>
 
 ---
 
-## 🧭 Built-in Meta-Skills Included in This Repo (`skills/`)
+## 🧭 16 Built-in MIT Meta-Skills (`skills/`)
 
 | Skill Directory | Role |
 | :--- | :--- |
-| [`skills/design-router/SKILL.md`](skills/design-router/SKILL.md) | **Master Router & Anti-Slop Quality Gate**: Routes any UI, 3D, motion, or deck task to the optimal Combo and enforces 10 non-negotiable anti-slop laws. |
-| [`skills/combo-anti-slop-landing/SKILL.md`](skills/combo-anti-slop-landing/SKILL.md) | **Combo 1 Orchestrator**: High-converting, editorial & tactile landing pages with zero AI layout clichés. |
-| [`skills/combo-scroll-3d-world/SKILL.md`](skills/combo-scroll-3d-world/SKILL.md) | **Combo 2 Orchestrator**: Narrative scrollytelling, GSAP ScrollTrigger pinning, Lenis smooth scroll, and 3D Z-axis camera travel. |
-| [`skills/combo-3d-webgl-hero/SKILL.md`](skills/combo-3d-webgl-hero/SKILL.md) | **Combo 3 Orchestrator**: Procedural `img2threejs` 3D heroes, custom GLSL shaders, interactive isometric SVG/WebGL machines, and 60fps mobile budgets. |
-| [`skills/combo-vibe-prototyping/SKILL.md`](skills/combo-vibe-prototyping/SKILL.md) | **Combo 4 Orchestrator**: Parallel 3-direction aesthetic prototyping (`Swiss Editorial`, `Linear Obsidian`, `Tactile Bento`) + high-craft component vaults. |
-| [`skills/combo-viral-launch-video/SKILL.md`](skills/combo-viral-launch-video/SKILL.md) | **Combo 5 Orchestrator**: Code-driven launch trailers, Remotion/HyperFrames compositions, `The Gauntlet` frame inspection, and `motionmaxxing` 53 rules. |
-| [`skills/combo-steal-like-an-artist/SKILL.md`](skills/combo-steal-like-an-artist/SKILL.md) | **Combo 6 Orchestrator**: Live URL/screenshot token extraction (`OKLCH`, typography, spacing, motion grammar) into `DESIGN.md`. |
-| [`skills/combo-deck-diagram-factory/SKILL.md`](skills/combo-deck-diagram-factory/SKILL.md) | **Combo 7 Orchestrator**: Geometric SVG brand marks, self-contained HTML/SVG architecture diagrams, Excalidraw whiteboards, and executive `.pptx` decks. |
+| [`skills/design-router/SKILL.md`](skills/design-router/SKILL.md) | **Master Router v2.2 & Visual QA Gate**: Enforces Step 0 Pre-Design Discovery and routes across all 15 Combos, 6 Presets, 12 Starter Templates, and 4-step rendered QA. |
+| [`skills/combo-discovery-audit/SKILL.md`](skills/combo-discovery-audit/SKILL.md) | **Combo 0 (Pre-Phase)**: Live-website surface crawling, SEO/CRO/IA diagnostics, `brand-facts.json` logo/fact lock, legacy `301` redirect mapping, and `R1–R8` brief review before UI design. |
+| [`skills/combo-anti-slop-landing/SKILL.md`](skills/combo-anti-slop-landing/SKILL.md) | **Combo 1**: High-converting editorial & tactile greenfield landing pages with zero AI layout clichés. |
+| [`skills/combo-scroll-3d-world/SKILL.md`](skills/combo-scroll-3d-world/SKILL.md) | **Combo 2**: 4-Act scrollytelling, GSAP ScrollTrigger + Lenis ticker sync, and 3D spline camera travel. |
+| [`skills/combo-3d-webgl-hero/SKILL.md`](skills/combo-3d-webgl-hero/SKILL.md) | **Combo 3**: Procedural `img2threejs` heroes, exploded hardware cutaways, isometric SVGs, and 60fps DPR budgets. |
+| [`skills/combo-vibe-prototyping/SKILL.md`](skills/combo-vibe-prototyping/SKILL.md) | **Combo 4**: Parallel 3-direction orthogonal prototyping across curated component registries. |
+| [`skills/combo-viral-launch-video/SKILL.md`](skills/combo-viral-launch-video/SKILL.md) | **Combo 5**: 45-second 5-act product launch trailers, `video-shotcraft`/`brag`/`hyperframes`, and `-14 LUFS` mastering. |
+| [`skills/combo-steal-like-an-artist/SKILL.md`](skills/combo-steal-like-an-artist/SKILL.md) | **Combo 6**: Live URL, Playwright animation (`reanimate`), and shot-level video (`rea-video`) extraction into `DESIGN.md`. |
+| [`skills/combo-deck-diagram-factory/SKILL.md`](skills/combo-deck-diagram-factory/SKILL.md) | **Combo 7**: Geometric SVG logos, orthogonal HTML/SVG architecture diagrams, codebase floorplans, and PPTX/PDF decks. |
+| [`skills/combo-storycraft-studio/SKILL.md`](skills/combo-storycraft-studio/SKILL.md) | **Combo 8 (New)**: Storycraft narrative AI cinema, character Asset Passports, shot-card storyboards, and music videos. |
+| [`skills/combo-explainer-film/SKILL.md`](skills/combo-explainer-film/SKILL.md) | **Combo 9 (New)**: Word-timestamped voiceover documentaries, Vox/3D teardowns, ManimGX math, and hand-drawn explainers. |
+| [`skills/combo-product-agent-ui/SKILL.md`](skills/combo-product-agent-ui/SKILL.md) | **Combo 10 (New)**: Production SaaS apps, dense AMOLED AI agent cockpits, `Cmd+K` ergonomics, and KPI/D3 dashboards. |
+| [`skills/combo-blender-game-assets/SKILL.md`](skills/combo-blender-game-assets/SKILL.md) | **Combo 11 (New)**: Headless Blender 5.2 studio pipelines, ~25 KB 3D mascots, 8-dir isometric sprites, and playable 3D. |
+| [`skills/combo-brand-social-growth/SKILL.md`](skills/combo-brand-social-growth/SKILL.md) | **Combo 12 (New)**: Studio product photoshoots, marketplace cards, squint-tested thumbnails, and viral Reels/carousels. |
+| [`skills/combo-mobile-spatial-ui/SKILL.md`](skills/combo-mobile-spatial-ui/SKILL.md) | **Combo 13**: Native iOS SwiftUI, Apple Liquid Glass, visionOS spatial computing, Jetpack Compose, and Flutter. |
+| [`skills/combo-higgsfield-websites/SKILL.md`](skills/combo-higgsfield-websites/SKILL.md) | **Combo 14 (New)**: Higgsfield full-stack React 19 + TanStack SSR + Cloudflare D1 websites, ~18-credit A4 scroll-scrub kits, Quanta apps, and multiplayer games. |
+
+---
+
+## 🎨 6 `DESIGN.md` + Tailwind v4 OKLCH Token Presets (`presets/`) & 12 Starter Templates (`templates/`)
+
+| Preset (`presets/<id>/`) | Archetype & Typography | Paired Starter Templates (`templates/<id>/`) |
+| :--- | :--- | :--- |
+| **`(Pre-Phase / Any Preset)`** | Live Surface Audit, `brand-facts.json` & `R1–R8` Contract | **`discovery-audit-pack`** *(Playwright `1440px/390px` Surface Crawler + Redirect Map + `AUDIT-BRIEF.md`)* |
+| **`obsidian-precision`** | Linear/Raycast/Pacifio Obsidian Dark · `Geist`/`Inter` + `JetBrains Mono` | **`higgsfield-cinema-fullstack`** *(TanStack SSR + Cloudflare D1 + A4 ScrollScrub + X-Ray)* & **`agent-saas-cockpit`** *(React 19 3-Zone Cockpit & `⌘K`)* |
+| **`swiss-editorial`** | Warm Archival Paper (`#FAF8F5`) & `1px` Hairlines · `Instrument Serif` + `Plus Jakarta Sans` | **`b2b-dossier-configurator`** *(Next.js 15 + `light-dark()` + Threshold Reveal + Scope Calculator)* & **`anti-slop-landing`** |
+| **`atmospheric-cinema`** | Anamorphic Cinema & Tungsten Gold · `Cormorant Garamond` + `Inter` + `JetBrains Mono` | **`scroll-3d-stage`** *(Three.js Spline + GSAP + Lenis)* & **`glsl-resilient-3d-showcase`** *(0%-Idle GLSL Silk + Context Recovery)* |
+| **`kinetic-neo-brutalist`** | Hard `2px` Ink Borders & Acid Volt Blocks · `Syne` + `Space Mono` | **`remotion-launch-trailer`** *(60fps `16:9` & `9:16` 45s Trailer + FFmpeg `-14 LUFS`)* |
+| **`industrial-blueprint`** | Technical CAD Drafting & Semantic Lanes · `Space Grotesk` + `IBM Plex Mono` | **`editorial-deck-diagram`** *(12-Col Slide Deck + Orthogonal SVG)* & **`interactive-cutaway`** *(3D Exploded Sensor Stack)* |
+| **`tactile-daylight-bento`** | Layered Daylight Shadows & Concentric Radii · `Outfit` + `Plus Jakarta Sans` | **`mobile-spatial-ui`** *(4-Stack Mobile/Spatial Pack)* & **`boardroom-gallery-and-qa`** *(Lazy-Iframe Client Hub + Playwright 6-VP Probe)* |
 
 ---
 
@@ -217,6 +247,7 @@ These are our primary agent skills that enforce design logic, reject AI slop, ex
   * **[`CK42BB/vox-explainer-skill`](https://github.com/CK42BB/vox-explainer-skill)** (`vox-explainer-skill`) & **[`hi-nikola/hand-drawn-explainer-video-nikola`](https://github.com/hi-nikola/hand-drawn-explainer-video-nikola)** (`hand-drawn-explainer`): Editorial Vox documentary explainers and stroke-by-stroke hand-drawn coded animations.
   * **[`lintsinghua/paint-mv-skills`](https://github.com/lintsinghua/paint-mv-skills)** (`paint-mv`, `paint-mv-storyboard`, `paint-mv-animate`, `paint-mv-render`): Watercolor music video production suite from audio + lyrics.
   * **[`openfilm/openfilm`](https://github.com/openfilm/openfilm)** (`openfilm`) & **[`academa-labs/manimgx`](https://github.com/academa-labs/manimgx)** (`manimgx`): Open-source browser-editable AI film skill and Rust/wgpu-accelerated Manim 3D math animation skill.
+  * **[`higgsfield-ai/skills`](https://github.com/higgsfield-ai/skills)** (`@higgsfield/cli` + 9 companion skills: `higgsfield-generate` [Seedance 2.5 video, GPT Image 2.5, Nano Banana 2, Marketing Studio, Seed Audio 1.0, Virality Predictor], `higgsfield-soul-id`, `higgsfield-faceless-video`, `higgsfield-video-explainer`, `higgsfield-brandkit`, `higgsfield-product-photoshoot`, `higgsfield-marketplace-cards`, `higgsfield-youtube-thumbnail`, `higgsfield-websites`): Full Higgsfield AI terminal and agent skill suite.
   * **[`machina-exm/film-studio-skills`](https://github.com/machina-exm/film-studio-skills)**: 7 installable agent skills running an AI video production pipeline from script to locked, generation-ready shot prompts.
   * **[`jhartquist/claude-remotion-kickstart`](https://github.com/jhartquist/claude-remotion-kickstart)**: Programmatic video creation workflow with Claude Code and Remotion.
   * **[`pexoai/pexo-skills`](https://github.com/pexoai/pexo-skills)**, **[`cclank/lanshu-create-ai-presenter-video`](https://github.com/cclank/lanshu-create-ai-presenter-video)**, **[`gnipbao/story-to-handdrawn-video`](https://github.com/gnipbao/story-to-handdrawn-video)**, **[`letuandat131/whiteboard-animation-vi`](https://github.com/letuandat131/whiteboard-animation-vi)**, & **[`0xsline/StoryGen-Atelier`](https://github.com/0xsline/StoryGen-Atelier)**: Multimodal image/audio/video content creation, presenter video, hand-drawn comic animation, moving-hand whiteboard animation, and Gemini + Veo automated storyboarding.

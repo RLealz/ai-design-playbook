@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orthogonal System Architecture Blueprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0F17;
+      --panel: #111826;
+      --grid: rgba(148, 163, 184, 0.06);
+      --border: rgba(148, 163, 184, 0.2);
+      --ink: #F1F5F9;
+      --muted: #94A3B8;
+    }
+    [data-theme="light"] {
+      --bg: #F8FAFC;
+      --panel: #FFFFFF;
+      --grid: rgba(15, 23, 42, 0.05);
+      --border: rgba(15, 23, 42, 0.16);
+      --ink: #0F172A;
+      --muted: #475569;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--ink);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+    .sheet {
+      width: min(1160px, 100%);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .sheet-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .mono { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+    button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="sheet-bar">
+      <div>
+        <div class="mono">DRAWING NO. ARCH-2026-01 · ORTHOGONAL SEMANTIC ROUTING</div>
+        <h1 style="margin: 6px 0 0; font-size: 1.5rem;">Multi-Region Event & Inference Mesh</h1>
+      </div>
+      <button onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">
+        Switch Dark / Light
+      </button>
+    </div>
+
+    <!-- Semantic Color Lanes: Cyan=Ingress, Indigo=Compute, Emerald=Persistence, Amber=External -->
+    <svg viewBox="0 0 1040 420" style="width: 100%; height: auto;">
+      <!-- Orthogonal Paths with 8px Rounded Corners -->
+      <path d="M 210 210 L 340 210" stroke="#38BDF8" stroke-width="2" fill="none" />
+      <path d="M 560 185 L 650 185 Q 658 185 658 177 L 658 118 Q 658 110 666 110 L 760 110" stroke="#34D399" stroke-width="2" fill="none" />
+      <path d="M 560 235 L 650 235 Q 658 235 658 243 L 658 302 Q 658 310 666 310 L 760 310" stroke="#F59E0B" stroke-width="2" fill="none" />
+
+      <!-- Animated Signal Pulses -->
+      <circle r="4.5" fill="#38BDF8"><animateMotion dur="1.5s" repeatCount="indefinite" path="M 210 210 L 340 210"/></circle>
+      <circle r="4.5" fill="#34D399"><animateMotion dur="2.0s" repeatCount="indefinite" path="M 560 185 L 658 185 L 658 110 L 760 110"/></circle>
+      <circle r="4.5" fill="#F59E0B"><animateMotion dur="2.2s" begin="0.5s" repeatCount="indefinite" path="M 560 235 L 658 235 L 658 310 L 760 310"/></circle>
+
+      <!-- Ingress Node -->
+      <rect x="30" y="162" width="180" height="96" rx="8" fill="var(--bg)" stroke="#38BDF8" stroke-width="2"/>
+      <text x="120" y="204" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="16">Edge Gateway</text>
+      <text x="120" y="228" text-anchor="middle" fill="#38BDF8" font-family="IBM Plex Mono" font-size="12">WAF · mTLS · QUIC</text>
+
+      <!-- Core Compute Node -->
+      <rect x="340" y="148" width="220" height="124" rx="8" fill="var(--bg)" stroke="#818CF8" stroke-width="2"/>
+      <text x="450" y="198" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="17">Orchestrator Core</text>
+      <text x="450" y="224" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono" font-size="12">gRPC Stream · Rust</text>
+      <text x="450" y="246" text-anchor="middle" fill="#818CF8" font-family="IBM Plex Mono" font-size="11">P99 3.8ms</text>
+
+      <!-- Persistence Node -->
+      <rect x="760" y="62" width="240" height="96" rx="8" fill="var(--bg)" stroke="#34D399" stroke-width="2"/>
+      <text x="880" y="104" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="16">Postgres + pgvector</text>
+      <text x="880" y="128" text-anchor="middle" fill="#34D399" font-family="IBM Plex Mono" font-size="12">HNSW Index · Read Pool</text>
+
+      <!-- External Inference Node -->
+      <rect x="760" y="262" width="240" height="96" rx="8" fill="var(--bg)" stroke="#F59E0B" stroke-width="2"/>
+      <text x="880" y="304" text-anchor="middle" fill="var(--ink)" font-weight="600" font-size="16">GPU Model Workers</text>
+      <text x="880" y="328" text-anchor="middle" fill="#F59E0B" font-family="IBM Plex Mono" font-size="12">vLLM · TensorRT-LLM</text>
+    </svg>
+  </div>
+</body>
+</html>

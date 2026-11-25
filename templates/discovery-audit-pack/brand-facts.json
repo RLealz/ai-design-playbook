@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "brandIdentity": {
+    "officialName": "",
+    "officialLogoPath": "public/assets/brand-logo.svg",
+    "allowAiReplacementLogo": false,
+    "primaryLocale": "en-US"
+  },
+  "verifiedFacts": {
+    "taglineOrProposition": "",
+    "locations": [],
+    "directPhone": "",
+    "directEmail": "",
+    "confirmedServices": []
+  },
+  "unconfirmedItemsRequiringHonestEmptyState": [
+    "upcomingEventsProgramme",
+    "liveInventoryCheckout"
+  ],
+  "provenancePolicy": {
+    "requireExplicitBadgeOnAiMedia": true,
+    "verifiedPhotoLabel": "Verified Photograph",
+    "aiConceptLabel": "AI Conceptual Render"
+  }
+}

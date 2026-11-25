@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Preset: kinetic-neo-brutalist — Hard Ink Borders, Volt Blocks & Snappy Press
+   ========================================================================== */
+
+:root {
+  --bg-canvas: oklch(0.992 0.010 92);
+  --bg-surface-1: oklch(1 0 0);
+  --bg-volt: oklch(0.93 0.21 118);
+
+  --border-ink: oklch(0.17 0 0);
+  --shadow-hard: 4px 4px 0px var(--border-ink);
+  --shadow-hard-lg: 6px 6px 0px var(--border-ink);
+
+  --text-primary: oklch(0.17 0 0);
+  --text-secondary: oklch(0.34 0 0);
+  --text-muted: oklch(0.48 0 0);
+
+  --accent-primary: oklch(0.65 0.23 32);
+  --accent-cobalt: oklch(0.55 0.22 262);
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  --radius-brutal: 8px;
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-surface-1: var(--bg-surface-1);
+  --color-volt: var(--bg-volt);
+  --color-ink: var(--text-primary);
+  --color-accent: var(--accent-primary);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.brutal-card {
+  background: var(--bg-surface-1);
+  border: 2px solid var(--border-ink);
+  border-radius: var(--radius-brutal);
+  box-shadow: var(--shadow-hard);
+}
+
+.brutal-btn {
+  border: 2px solid var(--border-ink);
+  border-radius: var(--radius-brutal);
+  box-shadow: var(--shadow-hard);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  transition: transform 110ms var(--ease-snap), box-shadow 110ms var(--ease-snap);
+}
+
+.brutal-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px var(--border-ink);
+}
+
+.brutal-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px var(--border-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

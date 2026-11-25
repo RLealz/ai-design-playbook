@@ -1,0 +1,29 @@
+[
+  {
+    "id": "v1-editorial",
+    "category": "Editorial",
+    "title": "Direction 01 — Swiss Editorial Dossier",
+    "typography": "Instrument Serif + Plus Jakarta Sans",
+    "palette": "#FAF8F5 · #141413 · #C84B31",
+    "summary": "Exposed 1px architectural hairlines, scope configurator, and verified case dossiers.",
+    "url": "../anti-slop-landing/index.html"
+  },
+  {
+    "id": "v2-glsl",
+    "category": "3D & Shader",
+    "title": "Direction 02 — Resilient GLSL Silk Stage",
+    "typography": "Cormorant Garamond + IBM Plex Mono",
+    "palette": "#0E1014 · #F4F1EA · #D4A359",
+    "summary": "0%-idle demand-rendered WebGL wave shader with context-loss recovery and skip-3D bypass.",
+    "url": "../glsl-resilient-3d-showcase/index.html"
+  },
+  {
+    "id": "v3-cutaway",
+    "category": "3D & Shader",
+    "title": "Direction 03 — Exploded Hardware Blueprint",
+    "typography": "Space Grotesk + IBM Plex Mono",
+    "palette": "#0B0F17 · #F1F5F9 · #38BDF8",
+    "summary": "5-layer coaxial PBR cutaway simulator with per-part isolation and tolerance HUD.",
+    "url": "../interactive-cutaway/index.html"
+  }
+]

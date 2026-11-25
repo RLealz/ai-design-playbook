@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Preset: obsidian-precision — Semantic OKLCH Tokens & Tailwind v4 @theme
+   ========================================================================== */
+
+:root {
+  --bg-canvas: oklch(0.14 0.012 265);
+  --bg-surface-1: oklch(0.18 0.014 265);
+  --bg-surface-2: oklch(0.22 0.016 265);
+  --bg-glass: oklch(0.18 0.014 265 / 0.78);
+
+  --border-hairline: oklch(1 0 0 / 0.08);
+  --border-strong: oklch(1 0 0 / 0.15);
+  --shadow-specular: inset 0 1px 0 0 oklch(1 0 0 / 0.09), 0 8px 24px -8px oklch(0 0 0 / 0.55);
+
+  --text-primary: oklch(0.96 0.006 265);
+  --text-secondary: oklch(0.71 0.02 265);
+  --text-muted: oklch(0.52 0.022 265);
+
+  --accent-primary: oklch(0.63 0.17 272);
+  --accent-hover: oklch(0.69 0.16 272);
+  --accent-subtle: oklch(0.63 0.17 272 / 0.15);
+
+  --status-ok: oklch(0.77 0.15 162);
+  --status-warn: oklch(0.83 0.16 84);
+  --status-err: oklch(0.70 0.19 25);
+
+  --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Geist', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-inner: 8px;
+  --pad-card: 8px;
+  --radius-outer: calc(var(--radius-inner) + var(--pad-card));
+
+  --ease-snappy: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 150ms;
+  --dur-enter: 280ms;
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-surface-1: var(--bg-surface-1);
+  --color-surface-2: var(--bg-surface-2);
+  --color-ink: var(--text-primary);
+  --color-ink-secondary: var(--text-secondary);
+  --color-ink-muted: var(--text-muted);
+  --color-accent: var(--accent-primary);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.surface-obsidian {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-specular);
+  border-radius: var(--radius-outer);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

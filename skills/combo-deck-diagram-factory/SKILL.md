@@ -1,57 +1,47 @@
 ---
 name: combo-deck-diagram-factory
-description: "Orchestrates executive presentations, brand marks, and publication-grade architecture diagrams (Combo 7). Use when building pitch decks, technical architecture diagrams, Excalidraw canvases, or SVG logos."
+description: >
+  Combo 7 Orchestrator: Executive Deck, Brand Identity, Diagram & README Factory (v2.0). Use when building
+  boardroom PPTX/PDF pitch decks, zero-Mermaid-slop HTML/SVG architecture diagrams, codebase floorplans,
+  bespoke SVG brand marks, or publication-grade GitHub READMEs. Pairs with preset `industrial-blueprint`
+  and starter `editorial-deck-diagram`.
+license: MIT
+metadata:
+  author: RLealz
+  version: "2.0.0"
 ---
 
-# Combo 7: Executive Deck, Brand Identity & Diagram Factory
+# 📐 Combo 7: Executive Deck, Brand Identity & Diagram Factory (v2.0)
 
-Use this orchestrator skill when creating **boardroom-ready pitch decks, publication-grade system architecture diagrams, interactive HTML/SVG technical explainers, or bespoke SVG brand marks**.
+* **Recommended Preset**: `.\install.ps1 -Preset industrial-blueprint -OutDir .` (or `swiss-editorial`)
+* **Runnable Starter Scaffold**: `.\install.ps1 -Template editorial-deck-diagram -OutDir .\deck-and-diagrams`
 
 ---
 
-## Required Upstream Skills (`--combo deck-diagram-factory`)
+## Single-Engine Deliverable Selection Matrix
 
-Install the upstream skills for this workflow with:
-```bash
-# PowerShell
-.\install.ps1 -Combo deck-diagram-factory
-
-# Bash / macOS / Linux
-./install.sh --combo deck-diagram-factory
-```
-
-| Phase | Upstream Skill | Role |
+| Deliverable Type | Primary Engine | Output Format |
 | :--- | :--- | :--- |
-| **1. Brand Mark & Logo** | `logo-design-skill` | Crafts geometric SVG brand marks, wordmarks, and monochrome/inverted variants |
-| **2. Editorial HTML/SVG Diagrams** | `diagram-design` | Generates self-contained dark/light HTML/SVG architecture, sequence, and C4 diagrams |
-| **3. System Visuals** | `archify` | Converts codebase structure into interactive system architecture visualizations |
-| **4. Hand-Drawn Whiteboards** | `excalidraw-diagram-skill` | Produces structured `.excalidraw` JSON files that make a clear visual argument |
-| **5. Slide Narrative** | `kami` | Structures persuasive slide narratives, typography hierarchy, and HTML/PDF slide layouts |
-| **6. Native PPTX / SVG Slides** | `ppt-master` | Generates editable `.pptx` and high-resolution SVG slide decks |
+| **Editorial System / Sequence / Data Diagram** | `diagram-design` **OR** `archify` **OR** `html-diagram` | Self-contained dark/light HTML + orthogonal SVG (zero Mermaid slop) |
+| **Cloud / Tech Stack Diagram with Brand Logos** | `stack-diagram` | Engineering-grade HTML / PNG / TSX stack blueprint with real vendor marks |
+| **Interactive Codebase / PRD Map** | `floorplan` | Multi-zoom interactive node-graph (`floorplan/index.html`) |
+| **Apple Hardware / UI Spec Sheet** | `dimensional-drawing` | Monochrome technical drawing with extension lines, leader callouts & spec table |
+| **Hand-Drawn RFC / Architecture Whiteboard** | `excalidraw-diagram-skill` | Structured visual-argument `.excalidraw` JSON |
+| **Native Editable PowerPoint / PDF Deck** | `ppt-master` **OR** `Kami` | Native `.pptx` shapes/charts (`ppt-master`) or publication PDF/PNG/HTML slides (`Kami`) |
+| **Geometric Brand Logo & Brandbook** | `logo-design-skill` + `higgsfield-brandkit` | Optically corrected `24×24`/`64×64` SVG lockups + multi-page brand system |
+| **Open-Source Repository Showcase** | `beautify-github-readme` | Custom SVG hero banner, badges, architecture SVG, and scannable README typography |
 
 ---
 
-## Execution Pipeline
+## 3-Phase Execution Pipeline
 
-### Phase 1: Brand Identity Lock (`logo-design-skill`)
-If the project lacks a visual mark:
-- Design a pure geometric SVG symbol on a `24x24` or `64x64` grid using mathematical ratios.
-- Provide 3 lockups: **Icon Only**, **Horizontal Wordmark**, and **Monochrome Stencil** (works at `16x16` favicon scale and on both light and dark backgrounds).
+### Phase 1: Brand Mark & Visual Token Lock (`logo-design-skill`)
+* If no logo exists, craft a geometric SVG mark tested at `16×16` (squint test) across **Icon Only**, **Horizontal Lockup**, and **Monochrome Stencil**.
 
-### Phase 2: Visual Argument & Diagram Architecture (`diagram-design` / `archify` / `excalidraw-diagram-skill`)
-Never dump raw, unstyled Mermaid boxes with default colors. Choose the right diagram medium:
+### Phase 2: Orthogonal Diagram Engineering (Ban Default Mermaid!)
+* Use semantic lane colors (Ingress = Cyan, Compute = Indigo, Data = Emerald, External = Amber), orthogonal `8px`-radius connectors, monospace protocol pills (`gRPC`, `PostgreSQL`), and subtle SVG `<circle>` data-flow pulses.
 
-1. **Publication-Grade HTML/SVG (`diagram-design`)**:
-   - Best for READMEs, architecture docs, and executive slides.
-   - Uses semantic color coding (e.g., Ingress/Edge in Cyan, Core Compute in Indigo, Persistence in Emerald, External APIs in Amber).
-   - Includes orthogonal routing lines with `8px` rounded corners, subtle animated pulse dots along active data paths, and monospace protocol labels (`gRPC`, `WebSocket`, `PostgreSQL`).
-2. **Conceptual Whiteboard (`excalidraw-diagram-skill`)**:
-   - Best for brainstorming, RFCs, and system trade-off walkthroughs.
-   - Groups related nodes into visually distinct containers, uses size and stroke weight to establish hierarchy, and annotates bottlenecks directly on arrows.
-
-### Phase 3: Executive Slide Choreography (`kami` + `ppt-master`)
-Follow strict editorial presentation rules:
-- **One Idea Per Slide**: Never crowd more than 1 primary takeaway and 3 supporting data points onto a single 16:9 canvas.
-- **Headline = The Conclusion**: Slide titles must state the conclusion (*"Edge Caching Cut P99 Latency by 74%"*), never a generic topic label (*"Performance Metrics"*).
-- **Typographic Contrast**: Pair a commanding `56px–72px` headline with `20px–24px` body copy and oversized `80px+` tabular metric callouts.
-- **Grid Alignment**: Lock every chart, diagram, and callout card to a strict 12-column slide grid with `64px` outer margins.
+### Phase 3: 12-Column Executive Slide Choreography (`Kami` + `ppt-master`)
+* **One Takeaway Per Slide**: Max 1 thesis + 3 supporting proof points on a `16:9` (`1920×1080`) canvas with `64px` outer margins.
+* **Conclusion Headlines**: Titles state the outcome (*"Edge Caching Cut P99 Latency by 74%"*), never a passive label (*"Latency Overview"*).
+* **Oversized Tabular Callouts**: Pair `56px–68px` headlines with `80px+` `tabular-nums` KPI callouts and `20px–24px` body copy.

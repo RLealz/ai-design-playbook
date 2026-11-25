@@ -1,40 +1,51 @@
 ---
 name: combo-3d-webgl-hero
 description: >
-  Combo 3 Orchestrator: The 3D, WebGL & Isometric Hero Section. Use when injecting interactive 3D models,
-  procedural Three.js scenes, custom GLSL shaders, or isometric SVG+WebGL technical illustrations into a hero
-  or feature showcase. Chains img2threejs, anatomy, threejs-skills, 3dviz-pro-max, and genjutsu:cast.
+  Combo 3 Orchestrator: The 3D, WebGL & Isometric Hero Section (v2.0). Use when building interactive procedural
+  Three.js heroes, custom GLSL shaders, exploded hardware cutaways, or isometric SVG+WebGL technical illustrations.
+  Pairs with preset `obsidian-precision` and starter `interactive-cutaway`. (For Blender 5.2 studio assets, mascots,
+  or game sprites, route to Combo 11 `combo-blender-game-assets`.)
 license: MIT
 metadata:
   author: RLealz
-  version: "1.0.0"
+  version: "2.0.0"
 ---
 
-# 🧊 Combo 3: The 3D, WebGL & Isometric Hero Pipeline
+# 🧊 Combo 3: The 3D, WebGL & Isometric Hero Pipeline (v2.0)
 
-Use this workflow when elevating a hero section or feature showcase with interactive 3D graphics, procedural geometry, or technical isometric illustrations.
+* **Recommended Preset**: `.\install.ps1 -Preset obsidian-precision -OutDir .` (or `industrial-blueprint`)
+* **Runnable Starter Scaffold**: `.\install.ps1 -Template interactive-cutaway -OutDir .\hero-3d`
 
 ---
 
-## Phase 1: Select the 3D / Visual Modality
+## Single-Engine 3D Hero Decision Matrix
 
-Pick the right engine for the subject matter:
-1. **Procedural 3D Object from a Reference Image (`img2threejs`)**:
-   * Best when you want a zero-asset-download, code-only TypeScript `THREE.Group` sculpted through 8 passes (`blockout` → `structural` → `form` → `material` → `surface` → `lighting` → `interaction` → `optimization`).
-2. **Interactive Isometric System / Machine Illustration (`anatomy`)**:
-   * Best for architecture, hardware, developer infrastructure, or mechanical explainers. Generates ultra-crisp isometric SVGs with interactive callouts, exploded views, and optional WebGL shader overlays.
-3. **Full Three.js / Custom Shader Scene (`threejs-skills` + `3dviz-pro-max` + `ThreeUI` / `HorizonX`)**:
-   * Best for particle fields, raymarched/GLSL backgrounds, interactive globes, or custom lighting studios.
+Select **ONE** primary visual modality based on input assets and domain:
 
-## Phase 2: Lighting, Camera & Performance Discipline (`threejs-skills` + `3dviz-pro-max`)
-1. **Three-Point Studio Lighting**:
-   * Never rely on flat `AmbientLight` alone. Combine a warm or cool **Key Light** (`DirectionalLight` or `SpotLight` with soft shadows), a contrasting **Rim/Back Light** to separate the silhouette from the background, and a subtle **Fill/Hemisphere Light**.
-2. **Responsive Framing & Device Pixel Ratio**:
-   * Clamp renderer pixel ratio with `renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))` to protect 4K/Retina frame rates.
-   * Pause the `requestAnimationFrame` render loop via `IntersectionObserver` whenever the hero canvas scrolls out of view.
-   * Dispose of geometries, materials, and textures on component unmount.
+| Subject Matter | Primary Skill | Output Artifact |
+| :--- | :--- | :--- |
+| **2D Product/Object Photo → Procedural 3D** | `img2threejs` | Zero-GLB-download TypeScript `THREE.Group` sculpted across 8 passes (`blockout` → `optimization`) |
+| **Exploded Hardware / Mechanical Simulator** | `cutaway` **OR** `teardown` | Interactive Three.js exploded-view assembly with per-part isolation buttons & callouts |
+| **Architecture / Cloud / Machine Isometric** | `anatomy` **OR** `dimensional-drawing` | Ultra-crisp isometric SVG + optional WebGL shader glow (`anatomy`) or Apple CAD spec sheet (`dimensional-drawing`) |
+| **Abstract Shader / Particle / Studio Hero** | `threejs-skills` + `3dviz-pro-max` | Custom vertex/fragment GLSL shader, raymarched glass, or recipe-backed R3F/Three.js hero |
 
-## Phase 3: Seamless DOM Integration (`/genjutsu:cast`)
-* Never let the 3D canvas fight the typography for contrast.
-* Use subtle radial masks, vignette shaders, or asymmetric camera framing (positioning the 3D focal point in the right 45% of the viewport while keeping the left 55% high-contrast for headline and CTA legibility).
-* Add subtle pointer parallax (damped `lerp` on mouse move) so the scene feels alive before the user even clicks.
+*(Need headless Blender `.glb` modeling, ~25 KB `wobnimo-mascot`, or `spritecast`/`pixelfx`? Use **Combo 11: `combo-blender-game-assets`**.)*
+
+---
+
+## 3-Phase Execution Pipeline
+
+### Phase 1: Geometry & Material Construction
+* Prefer procedural PBR materials (`MeshPhysicalMaterial` with controlled `roughness`, `metalness`, `clearcoat`) or crisp custom GLSL uniforms over unlit flat meshes.
+* Keep hero triangle budget `< 80k` tris on desktop and `< 25k` on mobile.
+
+### Phase 2: Studio Lighting & GPU Budget (`threejs-skills` + `3dviz-pro-max`)
+1. **3-Point Studio Rig**: Key `DirectionalLight`/`SpotLight` + contrasting Rim/Back light for silhouette separation + soft `HemisphereLight` fill. Never use `AmbientLight` alone.
+2. **DPR & Lifecycle Discipline**:
+   * Clamp pixel ratio: `renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))`.
+   * Pause `requestAnimationFrame` via `IntersectionObserver` whenever the hero leaves the viewport.
+   * Dispose geometries, materials, and render targets on unmount.
+
+### Phase 3: Contrast-Safe DOM Integration (`/genjutsu:cast`)
+* Frame the 3D focal object in the right `45%–50%` of the viewport (or behind a radial vignette mask) so headline typography and primary CTAs maintain `≥ 7:1` contrast.
+* Add damped pointer parallax (`lerp(current, target, 0.06)`) with automatic idle breathing when untouched.

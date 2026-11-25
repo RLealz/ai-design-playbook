@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Preset: tactile-daylight-bento — Layered Light Shadows & Concentric Tokens
+   ========================================================================== */
+
+:root {
+  --bg-canvas: oklch(0.968 0.005 255);
+  --bg-surface-1: oklch(1 0 0);
+  --bg-surface-2: oklch(0.945 0.007 255);
+
+  --border-hairline: oklch(0.20 0.02 260 / 0.07);
+  --shadow-tactile:
+    0 0 0 1px oklch(0.20 0.02 260 / 0.06),
+    0 2px 4px oklch(0.20 0.02 260 / 0.04),
+    0 12px 24px -8px oklch(0.20 0.02 260 / 0.07);
+  --shadow-button:
+    inset 0 1px 0 oklch(1 0 0 / 0.22),
+    0 1px 2px oklch(0.20 0.02 260 / 0.16);
+
+  --text-primary: oklch(0.20 0.03 262);
+  --text-secondary: oklch(0.44 0.03 258);
+  --text-muted: oklch(0.56 0.025 256);
+
+  --accent-primary: oklch(0.55 0.21 260);
+  --accent-hover: oklch(0.49 0.21 260);
+  --accent-subtle: oklch(0.55 0.21 260 / 0.10);
+
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-inner: 14px;
+  --pad-bento: 10px;
+  --radius-bento: calc(var(--radius-inner) + var(--pad-bento));
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-surface-1: var(--bg-surface-1);
+  --color-surface-2: var(--bg-surface-2);
+  --color-ink: var(--text-primary);
+  --color-ink-secondary: var(--text-secondary);
+  --color-accent: var(--accent-primary);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.bento-card {
+  background: var(--bg-surface-1);
+  border-radius: var(--radius-bento);
+  padding: var(--pad-bento);
+  box-shadow: var(--shadow-tactile);
+  transition: transform 200ms var(--ease-spring), box-shadow 200ms var(--ease-spring);
+}
+
+.bento-inner {
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-inner);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

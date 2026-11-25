@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# AI Design Playbook — Security-Auditing Skill & Combo Installer (Bash)
+# AI Design Playbook v2.0 — Security-Auditing Skill, Combo, Preset & Template Installer
 # ==============================================================================
-# Installs built-in MIT Meta-Skills (design-router + 7 Combos) and selectively
-# fetches upstream design skills from GitHub using git sparse-checkout and a
-# static quarantine security scanner.
-#
 # Usage:
 #   ./install.sh --list
 #   ./install.sh --router [--target claude|global-claude|cursor|antigravity|codex|/custom/path]
-#   ./install.sh --combo anti-slop-landing [--target ...]
+#   ./install.sh --combo storycraft-studio [--target ...]
+#   ./install.sh --preset obsidian-precision [--out ./my-app]
+#   ./install.sh --template scroll-3d-stage [--out ./my-scroll-site]
 #   ./install.sh --skill impeccable [--target ...]
+#   ./install.sh --sync-local
 #   ./install.sh --all [--target ...]
 # ==============================================================================
 
@@ -21,45 +20,24 @@ REGISTRY_PATH="$REPO_ROOT/registry.json"
 
 ACTION=""
 ARG_VAL=""
+OUT_DIR=""
 TARGET="claude"
 SKIP_AUDIT=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --list|-l)
-      ACTION="list"
-      shift
-      ;;
-    --router|-r)
-      ACTION="router"
-      shift
-      ;;
-    --combo|-c)
-      ACTION="combo"
-      ARG_VAL="${2:-}"
-      shift 2
-      ;;
-    --skill|-s)
-      ACTION="skill"
-      ARG_VAL="${2:-}"
-      shift 2
-      ;;
-    --all|-a)
-      ACTION="all"
-      shift
-      ;;
-    --target|-t)
-      TARGET="${2:-claude}"
-      shift 2
-      ;;
-    --skip-audit)
-      SKIP_AUDIT=1
-      shift
-      ;;
-    *)
-      echo "Unknown option: $1"
-      exit 1
-      ;;
+    --list|-l)       ACTION="list"; shift ;;
+    --router|-r)     ACTION="router"; shift ;;
+    --combo|-c)      ACTION="combo"; ARG_VAL="${2:-}"; shift 2 ;;
+    --skill|-s)      ACTION="skill"; ARG_VAL="${2:-}"; shift 2 ;;
+    --preset|-p)     ACTION="preset"; ARG_VAL="${2:-}"; shift 2 ;;
+    --template|-m)   ACTION="template"; ARG_VAL="${2:-}"; shift 2 ;;
+    --out|-o)        OUT_DIR="${2:-}"; shift 2 ;;
+    --sync-local)    ACTION="sync-local"; shift ;;
+    --all|-a)        ACTION="all"; shift ;;
+    --target|-t)     TARGET="${2:-claude}"; shift 2 ;;
+    --skip-audit)    SKIP_AUDIT=1; shift ;;
+    *) echo "Unknown option: $1"; exit 1 ;;
   esac
 done
 
@@ -70,6 +48,7 @@ resolve_target_dir() {
     cursor)        echo "$(pwd)/.cursor/skills" ;;
     antigravity)   echo "$HOME/.gemini/config/skills" ;;
     codex)         echo "$(pwd)/.agents/skills" ;;
+    global-codex)  echo "$HOME/.codex/skills" ;;
     *)             echo "$1" ;;
   esac
 }
@@ -83,31 +62,40 @@ audit_skill_dir() {
     return 0
   fi
 
-  echo "  [AUDIT] Scanning '$skill_id' for prompt injection, lifecycle hooks & shell pipes..."
+  echo "  [AUDIT] Scanning '$skill_id' for prompt injection, bidi Unicode, lifecycle hooks & shell pipes..."
   local failed=0
 
-  # 1. Check package.json for preinstall/postinstall hooks
   if find "$scan_dir" -name "package.json" -exec grep -Eq '"(preinstall|postinstall|preuninstall)"[[:space:]]*:' {} + 2>/dev/null; then
     echo "  [BLOCKED] Suspicious package.json lifecycle hook detected in '$skill_id'"
     failed=1
   fi
 
-  # 2. Check for prompt injection override phrases
   if grep -R -E -i "(ignore all previous instructions|ignore prior instructions|disregard system prompt|you are now in developer mode)" "$scan_dir" 2>/dev/null; then
     echo "  [BLOCKED] Prompt injection phrase detected in '$skill_id'"
     failed=1
   fi
 
-  # 3. Check for remote shell execution pipes
   if grep -R -E -i "(curl[[:space:]]+[^|]+\|[[:space:]]*(ba)?sh|wget[[:space:]]+[^|]+\|[[:space:]]*(ba)?sh)" "$scan_dir" 2>/dev/null; then
     echo "  [BLOCKED] Suspicious curl/wget pipe to shell detected in '$skill_id'"
     failed=1
   fi
 
-  if [[ "$failed" -ne 0 ]]; then
-    return 1
+  if command -v python3 >/dev/null 2>&1; then
+    if ! python3 -c "
+import pathlib, re, sys
+bidi = re.compile(r'[\u202a-\u202e\u2066-\u2069]')
+for p in pathlib.Path(sys.argv[1]).rglob('*'):
+    if p.is_file() and p.suffix.lower() in {'.md','.txt','.json','.yaml','.yml','.js','.ts','.tsx','.py','.sh'} and p.stat().st_size < 2097152:
+        txt = p.read_text(encoding='utf-8', errors='ignore')
+        if bidi.search(txt):
+            print(f'  [BLOCKED] Hidden bidirectional Unicode detected in {p.name}')
+            sys.exit(1)
+" "$scan_dir"; then
+      failed=1
+    fi
   fi
 
+  [[ "$failed" -ne 0 ]] && return 1
   echo "  [PASS] '$skill_id' passed static security audit."
   return 0
 }
@@ -130,15 +118,14 @@ install_local_skill() {
 install_upstream_skill() {
   local skill_id="$1"
   local dest_root="$2"
+  local meta=""
 
-  # Parse repo and subPath using python3, node, or jq
-  local meta
   if command -v jq >/dev/null 2>&1; then
-    meta=$(jq -r --arg id "$skill_id" '.upstreamSkills[] | select(.id == $id) | "\(.repo)|\(.subPath)|\(.license)"' "$REGISTRY_PATH")
+    meta=$(jq -r --arg id "$skill_id" '.upstreamSkills[] | select(.id == $id) | "\(.repo)|\(.subPath)|\(.license)|\(.flattenSubskills // false)"' "$REGISTRY_PATH")
   elif command -v node >/dev/null 2>&1; then
-    meta=$(node -e "const r=require('$REGISTRY_PATH'); const s=r.upstreamSkills.find(x=>x.id==='$skill_id'); if(s) console.log(s.repo+'|'+(s.subPath||'')+'|'+s.license);")
+    meta=$(node -e "const r=require('$REGISTRY_PATH'); const s=r.upstreamSkills.find(x=>x.id==='$skill_id'); if(s) console.log(s.repo+'|'+(s.subPath||'')+'|'+s.license+'|'+Boolean(s.flattenSubskills));")
   elif command -v python3 >/dev/null 2>&1; then
-    meta=$(python3 -c "import json; r=json.load(open('$REGISTRY_PATH')); s=next((x for x in r['upstreamSkills'] if x['id']=='$skill_id'),None); print(f\"{s['repo']}|{s.get('subPath','')}|{s['license']}\" if s else '')")
+    meta=$(python3 -c "import json; r=json.load(open('$REGISTRY_PATH',encoding='utf-8')); s=next((x for x in r['upstreamSkills'] if x['id']=='$skill_id'),None); print(f\"{s['repo']}|{s.get('subPath','')}|{s['license']}|{str(bool(s.get('flattenSubskills'))).lower()}\" if s else '')")
   else
     echo "  [ERROR] jq, node, or python3 is required to parse registry.json"
     exit 1
@@ -149,7 +136,7 @@ install_upstream_skill() {
     return 0
   fi
 
-  IFS='|' read -r repo subpath license <<< "$meta"
+  IFS='|' read -r repo subpath license flatten <<< "$meta"
   local temp_dir
   temp_dir="$(mktemp -d 2>/dev/null || mktemp -d -t 'aidesign')"
 
@@ -166,12 +153,31 @@ install_upstream_skill() {
   fi
 
   rm -rf "$temp_dir/.git"
-
-  if [[ ! -d "$payload_dir" ]]; then
-    payload_dir="$temp_dir"
-  fi
+  [[ ! -d "$payload_dir" ]] && payload_dir="$temp_dir"
 
   if audit_skill_dir "$payload_dir" "$skill_id"; then
+    if [[ "$flatten" == "true" || ! -f "$payload_dir/SKILL.md" ]]; then
+      local found_sub=0
+      for sroot in "$payload_dir" "$payload_dir/skills" "$payload_dir/.claude/skills" "$payload_dir/.agents/skills"; do
+        if [[ -d "$sroot" ]]; then
+          for child in "$sroot"/*/; do
+            if [[ -f "${child}SKILL.md" ]]; then
+              local cname
+              cname="$(basename "$child")"
+              mkdir -p "$dest_root/$cname"
+              cp -R "$child"* "$dest_root/$cname/"
+              echo "  [INSTALLED] Sub-skill '$cname' (from $skill_id) -> $dest_root/$cname"
+              found_sub=1
+            fi
+          done
+        fi
+      done
+      if [[ "$found_sub" -eq 1 && ! -f "$payload_dir/SKILL.md" ]]; then
+        rm -rf "$temp_dir"
+        return 0
+      fi
+    fi
+
     mkdir -p "$dest_root/$skill_id"
     cp -R "$payload_dir/"* "$dest_root/$skill_id/"
     echo "  [INSTALLED] Upstream skill '$skill_id' -> $dest_root/$skill_id"
@@ -187,23 +193,67 @@ DEST_ROOT="$(resolve_target_dir "$TARGET")"
 case "$ACTION" in
   list)
     if command -v jq >/dev/null 2>&1; then
-      echo "=== Built-in MIT Meta-Skills ==="
+      echo "=== $(jq '.localSkills | length' "$REGISTRY_PATH") Built-in MIT Meta-Skills (--router) ==="
       jq -r '.localSkills[] | "  - \(.id): \(.description)"' "$REGISTRY_PATH"
       echo ""
-      echo "=== 7 Curated Combos (--combo <name>) ==="
+      echo "=== $(jq '.combos | length' "$REGISTRY_PATH") Curated Combos (--combo <name>) ==="
       jq -r '.combos | to_entries[] | "  - \(.key): \(.value.name) [\(.value.upstreamSkills | join(", "))]"' "$REGISTRY_PATH"
       echo ""
-      echo "=== 44 Upstream Skills (--skill <id>) ==="
+      echo "=== $(jq '.presets | length' "$REGISTRY_PATH") DESIGN.md + Token Presets (--preset <id> [--out <dir>]) ==="
+      jq -r '.presets[] | "  - \(.id): \(.name) (\(.fonts))"' "$REGISTRY_PATH"
+      echo ""
+      echo "=== $(jq '.templates | length' "$REGISTRY_PATH") Runnable Starter Templates (--template <id> [--out <dir>]) ==="
+      jq -r '.templates[] | "  - \(.id): [\(.stack)] \(.description)"' "$REGISTRY_PATH"
+      echo ""
+      echo "=== $(jq '.upstreamSkills | length' "$REGISTRY_PATH") Upstream Skills (--skill <id>) ==="
       jq -r '.upstreamSkills[] | "  - \(.id) [\(.category)] (\(.license)) -> \(.repo)"' "$REGISTRY_PATH"
+    elif command -v python3 >/dev/null 2>&1; then
+      python3 -c "
+import json
+r = json.load(open('$REGISTRY_PATH', encoding='utf-8'))
+print(f'=== {len(r[\"localSkills\"])} Built-in MIT Meta-Skills ===')
+for s in r['localSkills']: print(f'  - {s[\"id\"]}: {s[\"description\"]}')
+print(f'\n=== {len(r[\"combos\"])} Curated Combos ===')
+for k, v in r['combos'].items(): print(f'  - {k}: {v[\"name\"]}')
+print(f'\n=== {len(r.get(\"presets\", []))} DESIGN.md Presets ===')
+for p in r.get('presets', []): print(f'  - {p[\"id\"]}: {p[\"name\"]}')
+print(f'\n=== {len(r.get(\"templates\", []))} Starter Templates ===')
+for t in r.get('templates', []): print(f'  - {t[\"id\"]}: [{t[\"stack\"]}] {t[\"description\"]}')
+print(f'\n=== {len(r[\"upstreamSkills\"])} Upstream Skills ===')
+for u in r['upstreamSkills']: print(f'  - {u[\"id\"]} [{u[\"category\"]}] ({u[\"license\"]}) -> {u[\"repo\"]}')
+"
     else
       cat "$REGISTRY_PATH"
     fi
     ;;
+  preset)
+    src_dir="$REPO_ROOT/presets/$ARG_VAL"
+    [[ ! -d "$src_dir" ]] && { echo "Unknown preset '$ARG_VAL'"; exit 1; }
+    out="${OUT_DIR:-$(pwd)}"
+    mkdir -p "$out"
+    cp -R "$src_dir/"* "$out/"
+    echo "[PRESET] Installed '$ARG_VAL' (DESIGN.md + tokens.css) -> $out"
+    ;;
+  template)
+    src_dir="$REPO_ROOT/templates/$ARG_VAL"
+    [[ ! -d "$src_dir" ]] && { echo "Unknown template '$ARG_VAL'"; exit 1; }
+    out="${OUT_DIR:-$(pwd)/$ARG_VAL}"
+    mkdir -p "$out"
+    cp -R "$src_dir/"* "$out/"
+    echo "[TEMPLATE] Scaffolded starter template '$ARG_VAL' -> $out"
+    ;;
+  sync-local)
+    for tgt in "$HOME/.gemini/config/skills" "$HOME/.claude/skills"; do
+      mkdir -p "$tgt"
+      for dir in "$REPO_ROOT"/skills/*/; do
+        install_local_skill "$(basename "$dir")" "$tgt"
+      done
+    done
+    ;;
   router)
     mkdir -p "$DEST_ROOT"
     for dir in "$REPO_ROOT"/skills/*/; do
-      sid="$(basename "$dir")"
-      install_local_skill "$sid" "$DEST_ROOT"
+      install_local_skill "$(basename "$dir")" "$DEST_ROOT"
     done
     ;;
   combo)
@@ -215,7 +265,7 @@ case "$ACTION" in
     elif command -v node >/dev/null 2>&1; then
       ups=$(node -e "const r=require('$REGISTRY_PATH'); (r.combos['$ARG_VAL']?.upstreamSkills||[]).forEach(x=>console.log(x));")
     else
-      ups=$(python3 -c "import json; r=json.load(open('$REGISTRY_PATH')); print('\n'.join(r['combos']['$ARG_VAL']['upstreamSkills']))")
+      ups=$(python3 -c "import json; r=json.load(open('$REGISTRY_PATH',encoding='utf-8')); print('\n'.join(r['combos']['$ARG_VAL']['upstreamSkills']))")
     fi
     for u in $ups; do
       install_upstream_skill "$u" "$DEST_ROOT"
@@ -232,15 +282,14 @@ case "$ACTION" in
   all)
     mkdir -p "$DEST_ROOT"
     for dir in "$REPO_ROOT"/skills/*/; do
-      sid="$(basename "$dir")"
-      install_local_skill "$sid" "$DEST_ROOT"
+      install_local_skill "$(basename "$dir")" "$DEST_ROOT"
     done
     if command -v jq >/dev/null 2>&1; then
       all_ups=$(jq -r '.upstreamSkills[].id' "$REGISTRY_PATH")
     elif command -v node >/dev/null 2>&1; then
       all_ups=$(node -e "const r=require('$REGISTRY_PATH'); r.upstreamSkills.forEach(x=>console.log(x.id));")
     else
-      all_ups=$(python3 -c "import json; r=json.load(open('$REGISTRY_PATH')); print('\n'.join(x['id'] for x in r['upstreamSkills']))")
+      all_ups=$(python3 -c "import json; r=json.load(open('$REGISTRY_PATH',encoding='utf-8')); print('\n'.join(x['id'] for x in r['upstreamSkills']))")
     fi
     for u in $all_ups; do
       install_upstream_skill "$u" "$DEST_ROOT"
@@ -251,7 +300,10 @@ case "$ACTION" in
     echo "  ./install.sh --list"
     echo "  ./install.sh --router [--target claude|global-claude|cursor|antigravity|codex|/custom/path]"
     echo "  ./install.sh --combo <combo-name> [--target ...]"
+    echo "  ./install.sh --preset <preset-id> [--out <dir>]"
+    echo "  ./install.sh --template <template-id> [--out <dir>]"
     echo "  ./install.sh --skill <skill-id> [--target ...]"
+    echo "  ./install.sh --sync-local"
     echo "  ./install.sh --all [--target ...]"
     ;;
 esac

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chronos — 4-Act Spline Scrollytelling Stage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+        "gsap": "https://esm.sh/gsap@3.12.5",
+        "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger",
+        "lenis": "https://esm.sh/lenis@1.1.18"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Fixed 3D WebGL Viewport with Contrast Vignette -->
+  <div class="webgl-wrap" aria-hidden="true">
+    <canvas id="stageCanvas"></canvas>
+    <div class="cinema-vignette"></div>
+  </div>
+
+  <!-- Minimal Chapter & Scroll Progress HUD -->
+  <aside class="cinema-hud">
+    <span class="hud-pill" id="actLabel">ACT I / ESTABLISH</span>
+    <span class="hud-pill" id="scrollPct">000%</span>
+  </aside>
+
+  <!-- 4-Act Narrative Scroll Choreography -->
+  <main class="scroll-chapters">
+    <section class="chapter" data-act="ACT I / ESTABLISH">
+      <div class="chapter-card">
+        <p class="eyebrow">01 · ANAMORPHIC SPLINE WORLD</p>
+        <h1>Engineered in light, <em>calibrated</em> by scroll.</h1>
+        <p class="body-copy">Scroll to travel along a continuous Three.js Catmull-Rom spline with damped Lenis inertia and 3-point tungsten studio lighting.</p>
+      </div>
+    </section>
+
+    <section class="chapter right" data-act="ACT II / DECONSTRUCT">
+      <div class="chapter-card">
+        <p class="eyebrow">02 · GYROSCOPIC ASSEMBLY</p>
+        <h2>Concentric rings unlock along the Z-axis.</h2>
+        <p class="body-copy">Compositor-clean scrubbing interpolates orbital tilt and camera focal framing while clamping pixel ratio to protect 4K frame budgets.</p>
+      </div>
+    </section>
+
+    <section class="chapter" data-act="ACT III / PRECISION PROOF">
+      <div class="chapter-card">
+        <p class="eyebrow">03 · STUDIO TELEMETRY</p>
+        <h2>60fps budget with automatic offscreen sleep.</h2>
+        <p class="body-copy">IntersectionObserver halts the WebGL render loop whenever the stage leaves view, and reduced-motion users receive calm static framing.</p>
+      </div>
+    </section>
+
+    <section class="chapter center" data-act="ACT IV / RESOLUTION">
+      <div class="chapter-card final">
+        <p class="eyebrow">04 · BEGIN PRODUCTION</p>
+        <h2>Drop your own GLB or procedural shader into this stage.</h2>
+        <a href="#top" class="cinema-cta">Launch Interactive Build</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

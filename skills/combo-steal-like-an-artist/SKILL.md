@@ -1,61 +1,48 @@
 ---
 name: combo-steal-like-an-artist
-description: "Orchestrates reference-to-system design extraction (Combo 6). Use when extracting design tokens, typography, spacing, and motion grammar from an inspiring live website, screenshot, or video reference."
+description: >
+  Combo 6 Orchestrator: "Steal Like an Artist" Reference-to-System Pipeline (v2.0). Use when extracting DTCG
+  design tokens, OKLCH palettes, typography, motion choreography, or shot blueprints from any live website,
+  screenshot, web animation, or reference video into a reusable `DESIGN.md`.
+license: MIT
+metadata:
+  author: RLealz
+  version: "2.0.0"
 ---
 
-# Combo 6: "Steal Like an Artist" Reference-to-System Pipeline
+# 🧬 Combo 6: "Steal Like an Artist" Reference-to-System Pipeline (v2.0)
 
-Use this orchestrator skill when a user shares a **reference URL, screenshot, or motion clip** (from Godly.design, HorizonX, Mobbin, or a live site) and wants to extract its **structural DNA, token system, and motion grammar** to build an original product with that same level of craft.
+Use this workflow when a user provides a **reference URL, screenshot, interactive web animation, or motion video** and wants to extract its structural DNA, token system, and choreography grammar—building an **100% original product** with that exact tier of craft.
 
 ---
 
-## Required Upstream Skills (`--combo steal-like-an-artist`)
+## Single-Engine Extraction Decision Matrix
 
-Install the upstream skills for this workflow with:
-```bash
-# PowerShell
-.\install.ps1 -Combo steal-like-an-artist
-
-# Bash / macOS / Linux
-./install.sh --combo steal-like-an-artist
-```
-
-| Phase | Upstream Skill | Role |
+| Reference Input | Primary Extraction Engine | Output Contract |
 | :--- | :--- | :--- |
-| **1. 3-Axis DNA Profile** | `design-dna` | Maps the reference onto 3 orthogonal axes (`color_mood`, `density_rythm`, `surface_treatment`) |
-| **2. Screenshot-to-Tokens** | `genjutsu` (`/genjutsu:paint`) | Extracts hex palettes, font pairings, border treatments, and shadow geometry into a self-contained spec |
-| **3. Semantic System** | `design-md` | Synthesizes extracted tokens into a rigorous `DESIGN.md` semantic contract |
-| **4. Motion Grammar** | `design-motion-principles` | Audits and replicates the choreography grammar (Gil Huybrecht, Jonas Reymondin, Emil Kowalski, Jakub Krehel) |
-| **5. Vector / Lottie Polish** | `motion-design` | Generates interactive SVG/Lottie state machines and micro-animations matching the extracted style |
+| **Live Website URL (DOM + CSS)** | `design-extract` (CLI/MCP) **OR** `design-md-chrome` | DTCG tokens, Tailwind v4 `@theme`, semantic OKLCH variables, `DESIGN.md` |
+| **Screenshots / Moodboard Images** | `design-dna` + `/genjutsu:paint` | 3-axis DNA JSON (`Design System`, `Design Style`, `Visual Effects`) + `DESIGN.md` |
+| **Live Web Micro-Interaction / Scroll** | `reanimate` + `design-motion-principles` | Frame-verified Playwright animation reconstruction + spring/easing spec |
+| **Reference Video / Commercial / Reel** | `rea-video` **OR** `reelmimic` (`6 sub-skills`) | Shot-by-shot camera/edit blueprint (`rea-video`) or style-cloned Remotion/Blender pipeline (`reelmimic-*`) |
 
 ---
 
-## Execution Pipeline
+## 4-Phase Execution Pipeline
 
-### Phase 1: Extract Structural Tokens (Never Clone Copy or Brand Assets)
-When given a reference URL or screenshot:
-1. **Surface & Color Hierarchy**:
-   - Extract Primary Canvas, Elevated Surface 1, Elevated Surface 2, Glass/Overlay Surface, Hairline Border, Primary Text, Secondary Text, Muted Text, and 1–2 Accent tokens.
-   - Convert all raw colors into semantic `OKLCH` or CSS custom properties (`--bg-canvas`, `--bg-surface-1`, `--border-subtle`, `--text-primary`, etc.).
-2. **Typographic Scale & Rhythm**:
-   - Identify the Display font category (e.g., high-contrast editorial serif vs geometric grotesk), Body font, and Monospace font.
-   - Extract line-height ratios (`1.02–1.08` for hero display, `1.5–1.65` for body) and letter-spacing (`-0.03em` display, `+0.08em` uppercase micro-labels).
-3. **Spatial Grid & Density**:
-   - Measure container max-width (`1200px`, `1440px`, or full-bleed fluid), column count, gap rhythm (`1px` exposed hairlines vs `24px` bento cards), and section vertical padding (`clamp(5rem, 10vw, 9rem)`).
+### Phase 1: Structural Token Extraction (Zero Brand/Copy Plagiarism)
+1. **Semantic Surfaces (`OKLCH`)**: Extract `--bg-canvas`, `--bg-surface-1`, `--bg-surface-2`, `--border-hairline`, `--text-primary`, `--text-secondary`, `--text-muted`, and `--accent-primary`.
+2. **Typographic Ratio**: Capture Display, Body, and Mono font categories, `line-height` (`1.02–1.08` display vs `1.55` body), and `letter-spacing` (`-0.03em` display vs `+0.08em` uppercase micro-labels).
+3. **Spatial Density**: Measure container max-width, column count, gap mechanics (`1px` exposed hairlines vs `24px` bento gutters), and section cadence.
 
-### Phase 2: Map the 3-Dimension `design-dna` Profile
-Classify the reference across three dimensions in `DESIGN.md`:
-- **`color_mood`**: e.g., `obsidian-precision`, `warm-editorial-paper`, `high-craft-daylight`, `atmospheric-cinema`.
-- **`density_rhythm`**: e.g., `spacious-scrollytelling`, `high-density-pro-tool`, `modular-swiss-bento`.
-- **`surface_treatment`**: e.g., `hairline-wireframe`, `specular-layered-dark`, `tactile-matte-elevation`.
+### Phase 2: 3-Axis `design-dna` Classification
+Document in `DESIGN.md`:
+* `color_mood` (`obsidian-precision`, `swiss-editorial`, `tactile-daylight`, `atmospheric-cinema`)
+* `density_rhythm` (`spacious-scrollytelling`, `dense-pro-cockpit`, `asymmetric-bento`)
+* `surface_treatment` (`hairline-wireframe`, `top-specular-dark`, `matte-layered-shadow`)
 
-### Phase 3: Extract the Motion Grammar (`design-motion-principles`)
-Analyze how the reference moves across four lenses:
-1. **Emil Kowalski (Micro-Craft)**: Fast, interruptible spring transitions (`150–250ms`), subtle scale transforms (`0.97 -> 1.0`), zero layout shift.
-2. **Jakub Krehel (Tactile Polish)**: Specular border reveals, blurred backdrop layers, smooth height morphing.
-3. **Gil Huybrecht (Editorial Grid Choreography)**: Masked baseline text reveals (`translateY(105%) -> 0%`), staggered curtain wipes, image parallax inside fixed overflow frames.
-4. **Jonas Reymondin (Spatial Depth)**: Scroll-linked Z-axis camera travel, pinned canvas transitions.
+### Phase 3: Motion & Vector Reconstruction (`reanimate` / `motion-design-skill` / `text-to-lottie`)
+* Measure duration, stagger interval, and easing curves across Emil Kowalski (interruptible `150–220ms` springs), Jakub Krehel (specular surfaces), and Gil Huybrecht (masked baseline text reveals).
+* Generate matching SVG/Lottie state machines via `text-to-lottie` where custom vector motion is required.
 
-### Phase 4: Synthesize `DESIGN.md` & Build Original Components
-- Write a complete `DESIGN.md` file documenting the extracted tokens, typography, layout rules, and motion curves.
-- Implement the user's actual domain and content using those tokens—achieving 100% of the reference's craft with 0% plagiarism of its copy or proprietary brand marks.
+### Phase 4: Synthesize `DESIGN.md` + `tokens.css` & Build Original Domain UI
+* Save `DESIGN.md` + `tokens.css` in the project root, then implement the user's original copy, data, and components strictly against those tokens.

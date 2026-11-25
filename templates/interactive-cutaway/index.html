@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpticCore X1 — Interactive 3D Exploded Cutaway & Dimensional Blueprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.170.0/build/three.module.js"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #0B0F17;
+      --panel: rgba(17, 24, 38, 0.82);
+      --border: rgba(148, 163, 184, 0.18);
+      --cyan: #38BDF8;
+      --ink: #F1F5F9;
+      --muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(to right, rgba(148,163,184,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148,163,184,0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--ink);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+    }
+    .spec-rail {
+      z-index: 5;
+      padding: 36px 32px;
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-variant-numeric: tabular-nums;
+      color: var(--cyan);
+    }
+    h1 { font-size: 2.1rem; line-height: 1.05; margin-top: 10px; letter-spacing: -0.025em; }
+    .lead { color: var(--muted); font-size: 0.94rem; line-height: 1.55; margin-top: 12px; }
+    .slider-box {
+      margin-top: 24px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(11, 15, 23, 0.65);
+    }
+    .slider-head { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 10px; }
+    input[type="range"] { width: 100%; accent-color: var(--cyan); cursor: pointer; }
+    .parts-list { display: grid; gap: 8px; margin-top: 20px; }
+    .part-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: all 140ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .part-btn:hover, .part-btn.active {
+      border-color: var(--cyan);
+      background: rgba(56, 189, 248, 0.12);
+    }
+    .stage-area { position: relative; height: 100%; }
+    #cutawayCanvas { width: 100%; height: 100%; display: block; }
+    .callout-hud {
+      position: absolute;
+      right: 32px;
+      top: 32px;
+      padding: 16px 20px;
+      background: var(--panel);
+      border: 1px solid var(--cyan);
+      border-radius: 10px;
+      max-width: 290px;
+      pointer-events: none;
+    }
+    @media (max-width: 860px) {
+      body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; overflow: auto; height: auto; }
+      .stage-area { height: 55vh; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="spec-rail">
+    <div>
+      <p class="mono">SPEC SHEET // EXPLODED CUTAWAY</p>
+      <h1>OpticCore X1 Sensor Stack</h1>
+      <p class="lead">Scrub the axial explosion slider or isolate individual sub-assemblies to inspect tolerances and materials.</p>
+
+      <div class="slider-box">
+        <div class="slider-head">
+          <span>Axial Explosion Factor</span>
+          <strong class="mono" id="explodePct">65%</strong>
+        </div>
+        <input id="explodeRange" type="range" min="0" max="100" value="65" />
+      </div>
+
+      <div class="parts-list" id="partsList">
+        <button class="part-btn active" data-part="-1"><span>All 5 Sub-Assemblies</span><span class="mono">±0.01mm</span></button>
+        <button class="part-btn" data-part="0"><span>01 · Sapphire Front Element</span><span class="mono">Ø 44.0mm</span></button>
+        <button class="part-btn" data-part="1"><span>02 · Aperture Leaf Ring</span><span class="mono">Ti-6Al-4V</span></button>
+        <button class="part-btn" data-part="2"><span>03 · Stacked CMOS Wafer</span><span class="mono">120 MP</span></button>
+        <button class="part-btn" data-part="3"><span>04 · Copper Vapor Chamber</span><span class="mono">18.4 W TDP</span></button>
+        <button class="part-btn" data-part="4"><span>05 · Unibody Rear Housing</span><span class="mono">CNC Al-7075</span></button>
+      </div>
+    </div>
+
+    <p class="mono" style="color: var(--muted);">3-POINT STUDIO RIG · DPR CLAMPED ≤ 2X</p>
+  </aside>
+
+  <main class="stage-area">
+    <canvas id="cutawayCanvas"></canvas>
+    <div class="callout-hud">
+      <div class="mono" id="hudCode">PART // ALL LAYERS</div>
+      <div style="font-weight: 600; margin-top: 6px;" id="hudTitle">Full Coaxial Assembly</div>
+      <div style="font-size: 0.82rem; color: var(--muted); margin-top: 4px;" id="hudSpec">Total stack height: 19.80 mm · Coaxial alignment &lt; 2 µm</div>
+    </div>
+  </main>
+
+  <script type="module">
+    import * as THREE from 'three';
+
+    const canvas = document.getElementById('cutawayCanvas');
+    const slider = document.getElementById('explodeRange');
+    const explodePct = document.getElementById('explodePct');
+    const hudCode = document.getElementById('hudCode');
+    const hudTitle = document.getElementById('hudTitle');
+    const hudSpec = document.getElementById('hudSpec');
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(38, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+    camera.position.set(4.2, 3.1, 5.4);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+    // 3-Point Studio Lighting
+    const key = new THREE.DirectionalLight(0xffffff, 2.6);
+    key.position.set(5, 8, 6);
+    const rim = new THREE.DirectionalLight(0x38bdf8, 2.1);
+    rim.position.set(-6, 2, -5);
+    const fill = new THREE.HemisphereLight(0xe0f2fe, 0x0f172a, 0.8);
+    scene.add(key, rim, fill);
+
+    const assembly = new THREE.Group();
+    scene.add(assembly);
+
+    const specs = [
+      { title: 'Sapphire Front Element', spec: 'AR multi-coated synthetic sapphire · Ø 44.00 mm', baseY: 0.65 },
+      { title: 'Aperture Leaf Ring', spec: '9-blade titanium iris · f/1.4 – f/16 continuous', baseY: 0.32 },
+      { title: 'Stacked CMOS Wafer', spec: '35.9 × 23.9 mm · 14.8 stops dynamic range', baseY: 0.0 },
+      { title: 'Copper Vapor Chamber', spec: 'Micro-fin sintered copper · 18.4 W dissipation', baseY: -0.34 },
+      { title: 'Unibody Rear Housing', spec: 'Bead-blasted 7075 aluminum · IP68 gasket channel', baseY: -0.72 },
+    ];
+
+    const meshes = [
+      new THREE.Mesh(
+        new THREE.CylinderGeometry(1.15, 1.15, 0.14, 64),
+        new THREE.MeshPhysicalMaterial({ color: 0x7dd3fc, transmission: 0.72, roughness: 0.08, thickness: 0.5 })
+      ),
+      new THREE.Mesh(
+        new THREE.TorusGeometry(1.05, 0.14, 24, 64),
+        new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.85, roughness: 0.25 })
+      ),
+      new THREE.Mesh(
+        new THREE.BoxGeometry(1.65, 0.12, 1.35),
+        new THREE.MeshStandardMaterial({ color: 0x10b981, metalness: 0.75, roughness: 0.2 })
+      ),
+      new THREE.Mesh(
+        new THREE.BoxGeometry(1.85, 0.16, 1.55),
+        new THREE.MeshStandardMaterial({ color: 0xd97706, metalness: 0.88, roughness: 0.28 })
+      ),
+      new THREE.Mesh(
+        new THREE.BoxGeometry(2.15, 0.34, 1.85),
+        new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.65, roughness: 0.42 })
+      ),
+    ];
+    meshes[1].rotation.x = Math.PI / 2;
+    meshes.forEach((m) => assembly.add(m));
+
+    let explodeTarget = 0.65;
+    let explodeCur = 0.65;
+    let selectedPart = -1;
+    const pointer = { x: 0, y: 0, cx: 0, cy: 0 };
+
+    slider.addEventListener('input', () => {
+      explodeTarget = Number(slider.value) / 100;
+      explodePct.textContent = `${slider.value}%`;
+    });
+
+    document.querySelectorAll('.part-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.part-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedPart = Number(btn.dataset.part);
+        if (selectedPart === -1) {
+          hudCode.textContent = 'PART // ALL LAYERS';
+          hudTitle.textContent = 'Full Coaxial Assembly';
+          hudSpec.textContent = 'Total stack height: 19.80 mm · Coaxial alignment < 2 µm';
+        } else {
+          hudCode.textContent = `PART // 0${selectedPart + 1}`;
+          hudTitle.textContent = specs[selectedPart].title;
+          hudSpec.textContent = specs[selectedPart].spec;
+        }
+      });
+    });
+
+    window.addEventListener('pointermove', (e) => {
+      pointer.x = (e.clientX / window.innerWidth - 0.5) * 0.7;
+      pointer.y = (e.clientY / window.innerHeight - 0.5) * 0.4;
+    });
+
+    let visible = true;
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(canvas);
+
+    function render(now) {
+      requestAnimationFrame(render);
+      if (!visible) return;
+
+      explodeCur += (explodeTarget - explodeCur) * 0.08;
+      pointer.cx += (pointer.x - pointer.cx) * 0.06;
+      pointer.cy += (pointer.y - pointer.cy) * 0.06;
+
+      assembly.rotation.y = now * 0.00035 + pointer.cx;
+      assembly.rotation.x = pointer.cy * 0.5;
+
+      meshes.forEach((m, i) => {
+        const offset = (2 - i) * explodeCur * 0.72;
+        const base = specs[i].baseY * 0.45 + offset;
+        m.position.y += (base - m.position.y) * 0.12;
+        const dim = selectedPart !== -1 && selectedPart !== i;
+        m.material.transparent = true;
+        m.material.opacity += ((dim ? 0.18 : 1.0) - m.material.opacity) * 0.15;
+      });
+
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    requestAnimationFrame(render);
+
+    window.addEventListener('resize', () => {
+      const parent = canvas.parentElement;
+      camera.aspect = parent.clientWidth / parent.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(parent.clientWidth, parent.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    });
+  </script>
+</body>
+</html>

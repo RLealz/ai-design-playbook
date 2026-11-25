@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: oklch(0.14 0.012 265);
+  --bg-surface-1: oklch(0.18 0.014 265);
+  --bg-surface-2: oklch(0.22 0.016 265);
+  --border-hairline: oklch(1 0 0 / 0.08);
+  --shadow-specular: inset 0 1px 0 0 oklch(1 0 0 / 0.09), 0 10px 28px -10px oklch(0 0 0 / 0.6);
+  --text-primary: oklch(0.96 0.006 265);
+  --text-secondary: oklch(0.71 0.02 265);
+  --text-muted: oklch(0.52 0.022 265);
+  --accent-primary: oklch(0.63 0.17 272);
+}
+
+body {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.panel-specular {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-specular);
+}
+
+.tabular-nums { font-variant-numeric: tabular-nums; }

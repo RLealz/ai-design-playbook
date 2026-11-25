@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Preset: industrial-blueprint — Technical Drafting, Callouts & Diagram Tokens
+   ========================================================================== */
+
+:root {
+  --bg-canvas: oklch(0.16 0.018 255);
+  --bg-surface-1: oklch(0.20 0.022 255);
+  --bg-surface-2: oklch(0.24 0.025 255);
+
+  --border-hairline: oklch(0.75 0.03 250 / 0.14);
+  --grid-minor: oklch(0.75 0.03 250 / 0.06);
+  --line-callout: oklch(0.76 0.14 230);
+
+  --text-primary: oklch(0.96 0.008 250);
+  --text-secondary: oklch(0.72 0.025 252);
+  --text-muted: oklch(0.54 0.025 252);
+
+  --accent-primary: oklch(0.76 0.14 230);
+  --accent-signal: oklch(0.78 0.16 75);
+  --accent-ok: oklch(0.76 0.15 160);
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+}
+
+[data-theme="light"] {
+  --bg-canvas: oklch(0.98 0.004 250);
+  --bg-surface-1: oklch(1 0 0);
+  --bg-surface-2: oklch(0.95 0.008 250);
+  --border-hairline: oklch(0.22 0.03 255 / 0.14);
+  --grid-minor: oklch(0.22 0.03 255 / 0.05);
+  --line-callout: oklch(0.50 0.16 242);
+  --text-primary: oklch(0.18 0.025 255);
+  --text-secondary: oklch(0.42 0.025 255);
+  --text-muted: oklch(0.56 0.02 255);
+  --accent-primary: oklch(0.50 0.16 242);
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-surface-1: var(--bg-surface-1);
+  --color-callout: var(--line-callout);
+  --color-ink: var(--text-primary);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  background-image:
+    linear-gradient(to right, var(--grid-minor) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-minor) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}

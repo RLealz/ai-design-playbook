@@ -1,0 +1,20 @@
+{
+  "name": "template-remotion-launch-trailer",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "studio": "remotion studio src/Root.tsx",
+    "render:16x9": "remotion render src/Root.tsx LaunchTrailer-16x9 out/draft-16x9.mp4 --codec=h264",
+    "render:9x16": "remotion render src/Root.tsx LaunchTrailer-9x16 out/draft-9x16.mp4 --codec=h264"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.240",
+    "@remotion/cli": "^4.0.240"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}

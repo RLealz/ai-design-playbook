@@ -1,53 +1,109 @@
 {
-  "version": "1.0.0",
+  "version": "2.2.0",
   "name": "ai-design-playbook",
-  "description": "Curated upstream registry of AI Design, Motion, 3D, Video, and Diagram skills with built-in security auditing and Combo orchestration.",
+  "description": "Hybrid AI Design Meta-Router with Phase 0 Pre-Design Discovery, 15 Workflow Combos (Combo 0 + Combos 1-14), 6 DESIGN.md Token Presets, 12 Runnable Starter Templates, and 95 Security-Audited Upstream Skills.",
   "localSkills": [
     {
       "id": "design-router",
       "path": "skills/design-router",
-      "description": "Master Art Director & Design Router skill that diagnoses UI/motion/3D/video tasks, selects the optimal Skill Combo, and routes to curated libraries and anti-slop laws."
+      "description": "Master Art Director & Decision-Tree Design Router v2.2 with Phase 0 Discovery, 15 Combos, 6 DESIGN.md Presets, 12 Starter Templates, and 4-step Visual QA."
+    },
+    {
+      "id": "combo-discovery-audit",
+      "path": "skills/combo-discovery-audit",
+      "description": "Combo 0 Orchestrator: Pre-design live-website surface audit, SEO/CRO/IA diagnostics, official brand-fact locking (brand-facts.json), and greenfield R1-R8 plan review before UI design."
     },
     {
       "id": "combo-anti-slop-landing",
       "path": "skills/combo-anti-slop-landing",
-      "description": "Combo 1 Orchestrator: Chains styleseed, refactoring-ui-skill, hallmark, impeccable, make-interfaces-feel-better, and kill-ai-slop for non-generic landing pages."
+      "description": "Combo 1 Orchestrator: Editorial & tactile greenfield landing pages chaining styleseed, refactoring-ui-skill, hallmark, impeccable, make-interfaces-feel-better, and unslop."
     },
     {
       "id": "combo-scroll-3d-world",
       "path": "skills/combo-scroll-3d-world",
-      "description": "Combo 2 Orchestrator: Chains scrollcraft/scroll-world, GSAP ScrollTrigger, motion-primitives, and Scrolltide/Nohira patterns for narrative scroll experiences."
+      "description": "Combo 2 Orchestrator: Narrative scrollytelling & 3D spline camera worlds chaining scrollcraft, scroll-world, GSAP ScrollTrigger, Lenis, and dimensional-drawing-motion."
     },
     {
       "id": "combo-3d-webgl-hero",
       "path": "skills/combo-3d-webgl-hero",
-      "description": "Combo 3 Orchestrator: Chains genjutsu:cast, threejs-skills/3dviz-pro-max, img2threejs/anatomy, and ThreeUI/HorizonX for procedural 3D & isometric WebGL heroes."
+      "description": "Combo 3 Orchestrator: Procedural Three.js heroes, GLSL shaders, interactive cutaways, and isometric SVG+WebGL technical illustrations."
     },
     {
       "id": "combo-vibe-prototyping",
       "path": "skills/combo-vibe-prototyping",
-      "description": "Combo 4 Orchestrator: Rapid multi-direction prototyping with superdesign, React Bits, 21st.dev, Skiper UI, Vengeance UI, Pacifio UI, and impeccable colorize."
+      "description": "Combo 4 Orchestrator: Rapid 3-direction aesthetic prototyping with superdesign, html-prototype, figma-designer, klad, impeccable, and curated component vaults."
     },
     {
       "id": "combo-viral-launch-video",
       "path": "skills/combo-viral-launch-video",
-      "description": "Combo 5 Orchestrator: Code-to-video launch pipeline combining brag, motion-video-kit, motionmaxxing, hyperframes, and ffmpeg-skill."
+      "description": "Combo 5 Orchestrator: Code-to-video product launch trailers and commercial sizzle reels using brag, video-shotcraft, hyperframes, showtime, motion-video-kit, and motionmaxxing."
     },
     {
       "id": "combo-steal-like-an-artist",
       "path": "skills/combo-steal-like-an-artist",
-      "description": "Combo 6 Orchestrator: Live URL & reference-to-design-system extraction using design-extract, design-dna, genjutsu:paint, design-motion-principles, and LottieFiles motion-design."
+      "description": "Combo 6 Orchestrator: Live URL, web animation, and video shot teardown into DESIGN.md using design-extract, design-dna, reanimate, rea-video, and reelmimic."
     },
     {
       "id": "combo-deck-diagram-factory",
       "path": "skills/combo-deck-diagram-factory",
-      "description": "Combo 7 Orchestrator: Executive decks, brand identity kits, and editorial HTML/SVG diagrams using Kami, ppt-master, diagram-design, archify, and logo-design-skill."
+      "description": "Combo 7 Orchestrator: Executive PPTX/PDF decks, SVG brand marks, codebase floorplans, and zero-Mermaid-slop HTML/SVG architecture diagrams."
+    },
+    {
+      "id": "combo-storycraft-studio",
+      "path": "skills/combo-storycraft-studio",
+      "description": "Combo 8 Orchestrator: End-to-end narrative AI cinema, character/world asset passports, shot-card storyboarding, watercolor music videos, and multi-shot coded/AI films."
+    },
+    {
+      "id": "combo-explainer-film",
+      "path": "skills/combo-explainer-film",
+      "description": "Combo 9 Orchestrator: Voiceover-synced documentary, 3D mechanical teardown, GPU Manim math, and stroke-by-stroke hand-drawn explainer films."
+    },
+    {
+      "id": "combo-product-agent-ui",
+      "path": "skills/combo-product-agent-ui",
+      "description": "Combo 10 Orchestrator: Production SaaS workspaces, dense AMOLED AI agent cockpits, streaming generative UI, and interactive KPI/D3 data-viz dashboards."
+    },
+    {
+      "id": "combo-blender-game-assets",
+      "path": "skills/combo-blender-game-assets",
+      "description": "Combo 11 Orchestrator: Headless Blender 5.2 studio modeling, Crucible 3D scenes, living 3D web mascots, 3D-guided isometric sprite sheets, and playable Three.js worlds."
+    },
+    {
+      "id": "combo-brand-social-growth",
+      "path": "skills/combo-brand-social-growth",
+      "description": "Combo 12 Orchestrator: AI product photoshoots, marketplace visuals, high-CTR thumbnails, digital-twin presenters, and viral Reels/LinkedIn carousels."
+    },
+    {
+      "id": "combo-mobile-spatial-ui",
+      "path": "skills/combo-mobile-spatial-ui",
+      "description": "Combo 13 Orchestrator: Native iOS SwiftUI, Apple Liquid Glass, visionOS spatial computing, Android Jetpack Compose, and Flutter tactile craft."
+    },
+    {
+      "id": "combo-higgsfield-websites",
+      "path": "skills/combo-higgsfield-websites",
+      "description": "Combo 14 Orchestrator: Higgsfield full-stack React 19 + TanStack Start SSR + Cloudflare D1 websites, Quanta AI apps, and multiplayer games with ~18-credit A4 scroll-scrub media kits."
     }
   ],
   "combos": {
+    "discovery-audit": {
+      "name": "Combo 0: Pre-Design Discovery, Website Audit & Fact-Lock",
+      "localSkill": "combo-discovery-audit",
+      "recommendedPreset": "",
+      "starterTemplate": "discovery-audit-pack",
+      "upstreamSkills": [
+        "design-extract",
+        "design-dna",
+        "styleseed",
+        "opendesign",
+        "ui-ux-pro-max",
+        "design-for-ai"
+      ]
+    },
     "anti-slop-landing": {
-      "name": "The Anti-Slop Landing Page",
+      "name": "Combo 1: The Anti-Slop Landing Page",
       "localSkill": "combo-anti-slop-landing",
+      "recommendedPreset": "swiss-editorial",
+      "starterTemplate": "anti-slop-landing",
       "upstreamSkills": [
         "styleseed",
         "hallmark",
@@ -57,22 +113,29 @@
         "kill-ai-slop",
         "landing-page-design",
         "motionsites-web-builder",
-        "unslop"
+        "unslop",
+        "design-for-ai",
+        "claude-design-skill"
       ]
     },
     "scroll-3d-world": {
-      "name": "The Premium Scroll & 3D World Experience",
+      "name": "Combo 2: The Premium Scroll & 3D World Experience",
       "localSkill": "combo-scroll-3d-world",
+      "recommendedPreset": "atmospheric-cinema",
+      "starterTemplate": "scroll-3d-stage",
       "upstreamSkills": [
         "scroll-craft",
         "scroll-world",
         "gsap-skills",
-        "motion-design-skill"
+        "motion-design-skill",
+        "dimensional-drawing-motion"
       ]
     },
     "3d-webgl-hero": {
-      "name": "The 3D / WebGL / Isometric Hero Section",
+      "name": "Combo 3: The 3D, WebGL & Isometric Hero Section",
       "localSkill": "combo-3d-webgl-hero",
+      "recommendedPreset": "obsidian-precision",
+      "starterTemplate": "interactive-cutaway",
       "upstreamSkills": [
         "genjutsu",
         "threejs-skills",
@@ -80,88 +143,202 @@
         "img2threejs",
         "anatomy",
         "dimensional-drawing",
-        "blender-skills",
-        "dream-loop",
-        "teardown",
-        "pixelfx",
         "cutaway",
-        "wobnimo-mascot",
-        "crucible",
-        "spritecast"
+        "teardown"
       ]
     },
     "vibe-prototyping": {
-      "name": "Rapid Vibe Prototyping",
+      "name": "Combo 4: Rapid Multi-Direction Vibe Prototyping",
       "localSkill": "combo-vibe-prototyping",
+      "recommendedPreset": "tactile-daylight-bento",
+      "starterTemplate": "boardroom-gallery-and-qa",
       "upstreamSkills": [
         "superdesign-skill",
         "ui-skills",
         "impeccable",
         "taste-skill",
         "figma-designer",
-        "effective-html"
+        "effective-html",
+        "make-interfaces-feel-better",
+        "unslop",
+        "klad",
+        "huashu-design"
       ]
     },
     "viral-launch-video": {
-      "name": "The Viral Launch Video & Sizzle Reel",
+      "name": "Combo 5: Product Launch Trailer & Commercial Sizzle Reel",
       "localSkill": "combo-viral-launch-video",
+      "recommendedPreset": "kinetic-neo-brutalist",
+      "starterTemplate": "remotion-launch-trailer",
       "upstreamSkills": [
         "brag",
+        "video-shotcraft",
         "hyperframes",
         "motion-video-kit",
         "motionmaxxing",
-        "ffmpeg-skill",
-        "digital-human-koubo",
-        "finance-explainer",
-        "bang-motion",
-        "video-talkcraft",
-        "anything2explainer",
+        "showtime",
         "huashu-motion",
-        "huashu-art-motion",
-        "claude-animated-shorts",
-        "claude-video",
-        "cinecode",
-        "video-shotcraft",
-        "explainroo",
+        "bang-motion",
         "openmontage",
-        "motion-educator",
-        "brief2mp4",
-        "vox-explainer-skill",
-        "paint-mv-skills",
-        "hand-drawn-explainer",
-        "openfilm",
-        "manimgx"
+        "claude-remotion-kickstart",
+        "ffmpeg-skill"
       ]
     },
     "steal-like-an-artist": {
-      "name": "Steal Like an Artist (Reference-to-System Extraction)",
+      "name": "Combo 6: Steal Like an Artist (Reference-to-System Extraction)",
       "localSkill": "combo-steal-like-an-artist",
+      "recommendedPreset": "obsidian-precision",
+      "starterTemplate": "",
       "upstreamSkills": [
         "design-extract",
         "design-dna",
+        "design-md-chrome",
         "genjutsu",
         "design-motion-principles",
         "motion-design-skill",
+        "text-to-lottie",
         "reanimate",
         "rea-video",
         "reelmimic"
       ]
     },
     "deck-diagram-factory": {
-      "name": "Executive Deck, Editorial Diagram & Publication Factory",
+      "name": "Combo 7: Executive Deck, Editorial Diagram & Publication Factory",
       "localSkill": "combo-deck-diagram-factory",
+      "recommendedPreset": "industrial-blueprint",
+      "starterTemplate": "editorial-deck-diagram",
       "upstreamSkills": [
         "Kami",
         "ppt-master",
         "diagram-design",
         "archify",
         "dimensional-drawing",
-        "dimensional-drawing-motion",
         "excalidraw-diagram-skill",
         "logo-design-skill",
         "stack-diagram",
         "floorplan",
-        "effective-html"
+        "effective-html",
+        "beautify-github-readme",
+        "higgsfield-skills"
+      ]
+    },
+    "storycraft-studio": {
+      "name": "Combo 8: Storycraft AI Cinema, Storyboard & Music Video Studio",
+      "localSkill": "combo-storycraft-studio",
+      "recommendedPreset": "atmospheric-cinema",
+      "starterTemplate": "remotion-launch-trailer",
+      "upstreamSkills": [
+        "film-studio-skills",
+        "openfilm",
+        "cinecode",
+        "lemo-opuscar",
+        "claude-video",
+        "animate-claude",
+        "mortiflix",
+        "huashu-art-motion",
+        "paint-mv-skills",
+        "claude-animated-shorts",
+        "brief2mp4",
+        "higgsfield-skills",
+        "ffmpeg-skill"
+      ]
+    },
+    "explainer-film": {
+      "name": "Combo 9: Narrated Documentary, 3D Teardown & Math Explainer Studio",
+      "localSkill": "combo-explainer-film",
+      "recommendedPreset": "industrial-blueprint",
+      "starterTemplate": "interactive-cutaway",
+      "upstreamSkills": [
+        "video-talkcraft",
+        "anything2explainer",
+        "explainroo",
+        "vox-explainer-skill",
+        "motion-educator",
+        "manimgx",
+        "hand-drawn-explainer",
+        "story-to-handdrawn-video",
+        "stickman-video-director",
+        "finance-explainer",
+        "ffmpeg-skill"
+      ]
+    },
+    "product-agent-ui": {
+      "name": "Combo 10: Production SaaS, AI Agent Cockpit & Data-Viz UI",
+      "localSkill": "combo-product-agent-ui",
+      "recommendedPreset": "obsidian-precision",
+      "starterTemplate": "agent-saas-cockpit",
+      "upstreamSkills": [
+        "opendesign",
+        "open-design",
+        "ui-ux-pro-max",
+        "ui-skills",
+        "impeccable",
+        "styleseed",
+        "design-for-ai",
+        "make-interfaces-feel-better",
+        "unslop"
+      ]
+    },
+    "blender-game-assets": {
+      "name": "Combo 11: Blender 5.2 Studio, Living 3D Mascots & Playable Assets",
+      "localSkill": "combo-blender-game-assets",
+      "recommendedPreset": "tactile-daylight-bento",
+      "starterTemplate": "interactive-cutaway",
+      "upstreamSkills": [
+        "blender-skills",
+        "dream-loop",
+        "crucible",
+        "threejs-game-skills",
+        "wobnimo-mascot",
+        "spritecast",
+        "pixelfx",
+        "3dviz-pro-max"
+      ]
+    },
+    "brand-social-growth": {
+      "name": "Combo 12: E-Commerce Photoshoot, Thumbnails & Viral Reels Factory",
+      "localSkill": "combo-brand-social-growth",
+      "recommendedPreset": "kinetic-neo-brutalist",
+      "starterTemplate": "",
+      "upstreamSkills": [
+        "higgsfield-skills",
+        "claude-content-skills",
+        "hypit",
+        "digital-human-koubo",
+        "lanshu-create-ai-presenter-video",
+        "logo-design-skill",
+        "motionmaxxing",
+        "ffmpeg-skill"
+      ]
+    },
+    "mobile-spatial-ui": {
+      "name": "Combo 13: Native iOS SwiftUI, Liquid Glass, visionOS & Mobile Craft",
+      "localSkill": "combo-mobile-spatial-ui",
+      "recommendedPreset": "tactile-daylight-bento",
+      "starterTemplate": "mobile-spatial-ui",
+      "upstreamSkills": [
+        "genjutsu",
+        "ui-ux-pro-max",
+        "motion-design-skill",
+        "design-motion-principles",
+        "make-interfaces-feel-better",
+        "text-to-lottie"
+      ]
+    },
+    "higgsfield-websites": {
+      "name": "Combo 14: Higgsfield Full-Stack Cinema Websites, Apps & Games",
+      "localSkill": "combo-higgsfield-websites",
+      "recommendedPreset": "obsidian-precision",
+      "starterTemplate": "higgsfield-cinema-fullstack",
+      "upstreamSkills": [
+        "higgsfield-skills",
+        "genjutsu",
+        "gsap-skills",
+        "taste-skill",
+        "styleseed",
+        "hallmark",
+        "unslop",
+        "ffmpeg-skill"
       ]
     }
   },
@@ -260,7 +437,8 @@
       "subPath": "skills",
       "category": "Core Design Engines",
       "license": "MIT",
-      "description": "10 composable design skills (create-design-system, interactive-prototype, wireframe, make-a-deck, handoff-to-claude-code)."
+      "description": "10 composable design skills (create-design-system, interactive-prototype, wireframe, make-a-deck, handoff-to-claude-code).",
+      "flattenSubskills": true
     },
     {
       "id": "huashu-design",
@@ -338,15 +516,16 @@
       "id": "gsap-skills",
       "repo": "greensock/gsap-skills",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
-      "description": "Official GreenSock AI skills covering gsap-core, scrolltrigger, timeline, react, plugins, utils, and performance."
+      "description": "Official GreenSock AI skills covering gsap-core, scrolltrigger, timeline, react, plugins, utils, and performance.",
+      "flattenSubskills": true
     },
     {
       "id": "threejs-skills",
       "repo": "CloudAI-X/threejs-skills",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Systematically creates 3D scenes, custom shaders, particle systems, and interactive WebGL experiences."
     },
@@ -354,7 +533,7 @@
       "id": "img2threejs",
       "repo": "img2threejs/img2threejs",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Converts a 2D reference image into a procedural, animation-ready Three.js TypeScript model via an 8-stage sculpting pipeline."
     },
@@ -362,7 +541,7 @@
       "id": "scroll-world",
       "repo": "oso95/scroll-world",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "See Repo",
       "description": "Turns any brand into a scrollable 3D world landing page."
     },
@@ -370,7 +549,7 @@
       "id": "anatomy",
       "repo": "wheresryan22/anatomy",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Creates detailed, interactive isometric SVG illustrations of complex systems with optional WebGL shaders and 3D effects."
     },
@@ -378,7 +557,7 @@
       "id": "3dviz-pro-max",
       "repo": "viettranx/3dviz-pro-max",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Creative 3D visualization skill for Three.js and Blender with 223 recipes, 22 kits, and 37 runnable studies."
     },
@@ -386,7 +565,7 @@
       "id": "text-to-lottie",
       "repo": "diffusionstudio/lottie",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Generates production-ready Lottie JSON animations directly from prompts."
     },
@@ -394,15 +573,16 @@
       "id": "threejs-game-skills",
       "repo": "majidmanzarpour/threejs-game-skills",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
-      "description": "9 specialized skills for building playable Three.js WebGL experiences with AAA graphics and UI."
+      "description": "9 specialized skills for building playable Three.js WebGL experiences with AAA graphics and UI.",
+      "flattenSubskills": true
     },
     {
       "id": "Kami",
       "repo": "tw93/Kami",
       "subPath": "",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Document typesetting and layout rules for exporting publication-grade PDF, PNG, and editable PowerPoint."
     },
@@ -410,7 +590,7 @@
       "id": "ppt-master",
       "repo": "hugohe3/ppt-master",
       "subPath": "",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Turns documents or topics into native PowerPoint (.pptx) decks with native shapes, transitions, and data-backed charts."
     },
@@ -418,7 +598,7 @@
       "id": "diagram-design",
       "repo": "cathrynlavery/diagram-design",
       "subPath": "skills/diagram-design",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Cathryn Lavery's editorial diagram design skill rendering 45 self-contained HTML + SVG diagram types with zero Mermaid slop."
     },
@@ -426,7 +606,7 @@
       "id": "archify",
       "repo": "tt-a1i/archify",
       "subPath": "archify",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Turns plain-English system descriptions into self-contained, theme-toggling HTML/PNG/SVG architecture and sequence diagrams."
     },
@@ -434,7 +614,7 @@
       "id": "excalidraw-diagram-skill",
       "repo": "coleam00/excalidraw-diagram-skill",
       "subPath": "",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Generates clean, visual-argument Excalidraw JSON diagrams."
     },
@@ -442,7 +622,7 @@
       "id": "beautify-github-readme",
       "repo": "oil-oil/beautify-github-readme",
       "subPath": "",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "README visual design, typography, and custom SVG badge/diagram skill."
     },
@@ -532,13 +712,14 @@
       "subPath": "",
       "category": "Video & Motion Studios",
       "license": "MIT",
-      "description": "7 installable skills running an AI video production pipeline from script to asset passports and locked shot prompts."
+      "description": "7 installable skills running an AI video production pipeline from script to asset passports and locked shot prompts.",
+      "flattenSubskills": true
     },
     {
       "id": "reanimate",
       "repo": "NiazMorshed2007/reanimate",
       "subPath": "skills/reanimate",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Reverse-engineers any live web animation frame-by-frame via Playwright and proves the reconstructed copy moves identically."
     },
@@ -546,7 +727,7 @@
       "id": "dimensional-drawing",
       "repo": "enesozturk/dimensional-drawing",
       "subPath": "skills/dimensional-drawing",
-      "category": "Decks, Diagrams & Docs",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Creates Apple-style dimensional technical drawings of UI components with extension lines, dimension callouts, and spec tables."
     },
@@ -554,7 +735,7 @@
       "id": "dimensional-drawing-motion",
       "repo": "enesozturk/dimensional-drawing",
       "subPath": "skills/dimensional-drawing-motion",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Animated motion blueprint version of Apple-style dimensional technical UI drawings with Playwright + FFmpeg MP4 export."
     },
@@ -594,15 +775,16 @@
       "id": "blender-skills",
       "repo": "EL4CTEO/blender-skills",
       "subPath": "skills",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
-      "description": "28 professional Blender 5.2 agent skills covering hard-surface modeling, sculpting, UVs, PBR materials, baking, rigging, animation, geometry nodes, export, and QA."
+      "description": "28 professional Blender 5.2 agent skills covering hard-surface modeling, sculpting, UVs, PBR materials, baking, rigging, animation, geometry nodes, export, and QA.",
+      "flattenSubskills": true
     },
     {
       "id": "dream-loop",
       "repo": "achimala/dream-loop",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Agent skill for impressive 3D visuals using Blender + image generation + an automated subagent visual critic loop."
     },
@@ -610,7 +792,7 @@
       "id": "teardown",
       "repo": "elvarofficial/teardown",
       "subPath": "",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Claude Code skill that turns any machine (V8 engine, Cessna, Strandbeest) into an interactive 3D simulator you can explode and take apart."
     },
@@ -618,7 +800,7 @@
       "id": "pixelfx",
       "repo": "patch-gg/pixelfx",
       "subPath": "skills/pixelfx",
-      "category": "Animation, 3D & WebGL",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "244 procedural pixel-art VFX and sprite animations in pure JS/Canvas with an iterative draft-render-look-refine agent skill."
     },
@@ -636,7 +818,8 @@
       "subPath": ".claude/skills",
       "category": "Video & Motion Studios",
       "license": "MIT",
-      "description": "Multi-agent video style-cloning crew that analyzes a reference video and plans, builds, and reviews a new video in the same style."
+      "description": "Multi-agent video style-cloning crew that analyzes a reference video and plans, builds, and reviews a new video in the same style.",
+      "flattenSubskills": true
     },
     {
       "id": "bang-motion",
@@ -692,7 +875,8 @@
       "subPath": "plugin/skills",
       "category": "Video & Motion Studios",
       "license": "MIT",
-      "description": "Expanded Lemo-Opuscar derivative featuring 61 code-made film styles plus a talking-head presenter video workflow."
+      "description": "Expanded Lemo-Opuscar derivative featuring 61 code-made film styles plus a talking-head presenter video workflow.",
+      "flattenSubskills": true
     },
     {
       "id": "claude-content-skills",
@@ -700,7 +884,8 @@
       "subPath": "skills",
       "category": "Video & Motion Studios",
       "license": "MIT",
-      "description": "55 modular content-growth and scroll-stopping Instagram Reel skills (reel-analyzer, reel-builder, reel-scripter, viral-carousel, b-roll-shot-list)."
+      "description": "55 modular content-growth and scroll-stopping Instagram Reel skills (reel-analyzer, reel-builder, reel-scripter, viral-carousel, b-roll-shot-list).",
+      "flattenSubskills": true
     },
     {
       "id": "stickman-video-director",
@@ -730,7 +915,7 @@
       "id": "stack-diagram",
       "repo": "caru-ini/stack-diagram",
       "subPath": "skills/stack-diagram",
-      "category": "Deck, Diagram & Publication",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Engineering-drawing-style tech stack and cloud architecture diagrams with real brand logos, HTML, PNG, and TSX outputs."
     },
@@ -738,7 +923,7 @@
       "id": "floorplan",
       "repo": "haydenschmitty/floorplan",
       "subPath": "skills/floorplan",
-      "category": "Deck, Diagram & Publication",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
       "description": "Interactive node-graph codebase map and architectural overview rendered as self-contained floorplan/index.html."
     },
@@ -762,7 +947,7 @@
       "id": "cutaway",
       "repo": "Nyxera0x/cutaway",
       "subPath": "",
-      "category": "3D, WebGL & Shaders",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Turns a single reference image into an interactive Three.js exploded-view robotic cutaway simulator and 60fps scored film."
     },
@@ -770,7 +955,7 @@
       "id": "wobnimo-mascot",
       "repo": "Pouryaak/wobnimo",
       "subPath": "skills/wobnimo-mascot",
-      "category": "3D, WebGL & Shaders",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "Designs custom living 3D brand mascots with 10 behavioral states for React and vanilla web using the ~25 KB Wobnimo engine."
     },
@@ -796,7 +981,8 @@
       "subPath": ".agents/skills",
       "category": "Video & Motion Studios",
       "license": "AGPL-3.0",
-      "description": "Open-source agentic video production system with 12 pipelines, video-toolkit, website-to-video, motion-graphics, and character QA skills."
+      "description": "Open-source agentic video production system with 12 pipelines, video-toolkit, website-to-video, motion-graphics, and character QA skills.",
+      "flattenSubskills": true
     },
     {
       "id": "motion-educator",
@@ -810,9 +996,10 @@
       "id": "crucible",
       "repo": "codepawl/crucible",
       "subPath": "skills",
-      "category": "3D, WebGL & Shaders",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
-      "description": "Agent-driven 3D engine and scene/render skill pack (build-crucible-scene + render-crucible-media) for lighting, HDRI, fog, and procedural 3D scenes."
+      "description": "Agent-driven 3D engine and scene/render skill pack (build-crucible-scene + render-crucible-media) for lighting, HDRI, fog, and procedural 3D scenes.",
+      "flattenSubskills": true
     },
     {
       "id": "brief2mp4",
@@ -826,7 +1013,7 @@
       "id": "spritecast",
       "repo": "Sunghwan0112/spritecast",
       "subPath": "skills/spritecast",
-      "category": "3D, WebGL & Shaders",
+      "category": "3D, WebGL & Animation",
       "license": "MIT",
       "description": "3D-guided game sprite and isometric character sheet generator matching exact camera angles, 8-direction walk cycles, and VFX overlays."
     },
@@ -852,7 +1039,8 @@
       "subPath": "skills",
       "category": "Video & Motion Studios",
       "license": "NOASSERTION",
-      "description": "Four-skill suite (paint-mv, paint-mv-storyboard, paint-mv-animate, paint-mv-render) turning a song and lyrics into hand-painted watercolor music videos."
+      "description": "Four-skill suite (paint-mv, paint-mv-storyboard, paint-mv-animate, paint-mv-render) turning a song and lyrics into hand-painted watercolor music videos.",
+      "flattenSubskills": true
     },
     {
       "id": "hand-drawn-explainer",
@@ -882,9 +1070,51 @@
       "id": "effective-html",
       "repo": "plannotator/effective-html",
       "subPath": "skills",
-      "category": "Deck, Diagram & Publication",
+      "category": "Decks, Diagrams & Publications",
       "license": "MIT",
-      "description": "Visual HTML artifact skill suite (design-artifact, html-diagram, html-prototype, big-pics-little-words) for crisp interactive diagrams and prototypes."
+      "description": "Visual HTML artifact skill suite (design-artifact, html-diagram, html-prototype, big-pics-little-words) for crisp interactive diagrams and prototypes.",
+      "flattenSubskills": true
+    },
+    {
+      "id": "higgsfield-skills",
+      "repo": "higgsfield-ai/skills",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Official Higgsfield AI CLI (@higgsfield/cli) 9-skill companion suite: higgsfield-generate (Seedance 2.5 video, GPT Image 2.5, Nano Banana 2, Marketing Studio, Seed Audio 1.0, Virality Predictor), higgsfield-soul-id, higgsfield-faceless-video, higgsfield-video-explainer, higgsfield-brandkit, higgsfield-product-photoshoot, higgsfield-marketplace-cards, higgsfield-youtube-thumbnail, and higgsfield-websites.",
+      "flattenSubskills": true
+    },
+    {
+      "id": "story-to-handdrawn-video",
+      "repo": "gnipbao/story-to-handdrawn-video",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Converts story scripts or ordered image sequences into hand-drawn diary-comic animated videos."
+    },
+    {
+      "id": "claude-remotion-kickstart",
+      "repo": "jhartquist/claude-remotion-kickstart",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Programmatic React + Remotion video creation workflow and composition starter rules."
+    },
+    {
+      "id": "lanshu-create-ai-presenter-video",
+      "repo": "cclank/lanshu-create-ai-presenter-video",
+      "subPath": "",
+      "category": "Video & Motion Studios",
+      "license": "MIT",
+      "description": "Produces verified AI presenter and digital-avatar talking-head videos from a script and presenter image."
+    },
+    {
+      "id": "design-md-chrome",
+      "repo": "bergside/design-md-chrome",
+      "subPath": "",
+      "category": "Core Design Engines",
+      "license": "MIT",
+      "description": "Extracts live website styles and tokens directly into DESIGN.md files and reusable AI design skills."
     }
   ],
   "designResources": [
@@ -1218,6 +1448,136 @@
       "name": "AllVoiceLab-MCP",
       "repo": "allvoicelab/AllVoiceLab-MCP",
       "domain": "Voice & Video Dubbing"
+    }
+  ],
+  "presets": [
+    {
+      "id": "obsidian-precision",
+      "path": "presets/obsidian-precision",
+      "name": "Obsidian Precision (Linear / Raycast / Pacifio Dark)",
+      "fonts": "Geist / Inter Display + JetBrains Mono",
+      "description": "AMOLED/Obsidian dark elevation scale, 1px top specular highlights, OKLCH semantic tokens, and tabular telemetry."
+    },
+    {
+      "id": "swiss-editorial",
+      "path": "presets/swiss-editorial",
+      "name": "Swiss Editorial Paper",
+      "fonts": "Instrument Serif + Plus Jakarta Sans + IBM Plex Mono",
+      "description": "Warm archival paper (#FAF8F5), exposed 1px structural hairlines, high-contrast editorial serif headlines, and asymmetric grid tokens."
+    },
+    {
+      "id": "tactile-daylight-bento",
+      "path": "presets/tactile-daylight-bento",
+      "name": "Tactile Daylight Bento",
+      "fonts": "Cabinet Grotesk / Outfit + Plus Jakarta Sans",
+      "description": "Crisp daylight surfaces, multi-layer ambient + key shadows, concentric border-radius helpers, and spring-physics micro-interactions."
+    },
+    {
+      "id": "industrial-blueprint",
+      "path": "presets/industrial-blueprint",
+      "name": "Industrial Technical Blueprint",
+      "fonts": "Space Grotesk + IBM Plex Mono",
+      "description": "Apple dimensional-drawing & CAD engineering sheet tokens: hairline callout strokes, dimension leader accents, and high-precision spec tables."
+    },
+    {
+      "id": "atmospheric-cinema",
+      "path": "presets/atmospheric-cinema",
+      "name": "Atmospheric Cinema & Scrollytelling",
+      "fonts": "Playfair Display / Instrument Serif + Satoshi / Inter",
+      "description": "Deep cinema canvas, film grain overlay variables, vignette gradients, and baseline-masked curtain reveal curves."
+    },
+    {
+      "id": "kinetic-neo-brutalist",
+      "path": "presets/kinetic-neo-brutalist",
+      "name": "Kinetic Neo-Brutalist Launch",
+      "fonts": "Syne + Space Mono",
+      "description": "High-contrast ink borders, crisp hard-offset shadows, electric accent tokens, and snappy kinetic typography motion curves."
+    }
+  ],
+  "templates": [
+    {
+      "id": "discovery-audit-pack",
+      "path": "templates/discovery-audit-pack",
+      "stack": "Playwright Live Surface Crawler + brand-facts.json + legacy-redirects.json + R1-R8 Brief",
+      "combo": "discovery-audit",
+      "description": "Pre-design website diagnostic & fact-lock starter capturing 1440px/390px baseline screenshots, H1/OG/CMS metadata, 390px overflow, placeholder debt, and legacy 301 redirect maps."
+    },
+    {
+      "id": "anti-slop-landing",
+      "path": "templates/anti-slop-landing",
+      "stack": "HTML5 / CSS3 (Tailwind v4 OKLCH Tokens) / Vanilla ES Module",
+      "combo": "anti-slop-landing",
+      "description": "Zero-build asymmetric 5-section landing page scaffold (Split Interactive Hero, Concentric Bento Proof, Sticky Comparison, Live Spec Matrix, High-Contrast CTA)."
+    },
+    {
+      "id": "scroll-3d-stage",
+      "path": "templates/scroll-3d-stage",
+      "stack": "Vite + Three.js + GSAP ScrollTrigger + Lenis",
+      "combo": "scroll-3d-world",
+      "description": "4-Act spline-camera 3D scrollytelling stage with Lenis ticker sync, 3-point studio lighting, DPR clamp, IntersectionObserver loop pause, and reduced-motion fallback."
+    },
+    {
+      "id": "agent-saas-cockpit",
+      "path": "templates/agent-saas-cockpit",
+      "stack": "React 19 + TypeScript + Tailwind v4 (Obsidian Precision)",
+      "combo": "product-agent-ui",
+      "description": "Dense multi-pane AI Agent & SaaS workspace with Cmd+K Command Palette, Streaming Tool-Call Thread, Resizable Artifact Inspector, and tabular-nums Telemetry."
+    },
+    {
+      "id": "remotion-launch-trailer",
+      "path": "templates/remotion-launch-trailer",
+      "stack": "Remotion 4 + TypeScript (60fps 16:9 & 9:16 + FFmpeg -14 LUFS Master)",
+      "combo": "viral-launch-video",
+      "description": "45-second (2700-frame) dual-aspect product launch trailer pre-wired with the 5-Act beat sheet, spring choreography, 80% title-safe overlay, and loudness mastering."
+    },
+    {
+      "id": "editorial-deck-diagram",
+      "path": "templates/editorial-deck-diagram",
+      "stack": "Self-Contained HTML5 + Orthogonal SVG + Print-to-PDF CSS",
+      "combo": "deck-diagram-factory",
+      "description": "12-column 1920x1080 keyboard-navigable executive slide deck + dark/light orthogonal SVG architecture diagram with animated data-path pulses."
+    },
+    {
+      "id": "interactive-cutaway",
+      "path": "templates/interactive-cutaway",
+      "stack": "HTML5 + Three.js ImportMap + Dimensional Blueprint SVG HUD",
+      "combo": "3d-webgl-hero",
+      "description": "Interactive 3D exploded-view hardware/system cutaway simulator with part isolation controls, animated SVG leader-line callouts, and damped pointer parallax."
+    },
+    {
+      "id": "mobile-spatial-ui",
+      "path": "templates/mobile-spatial-ui",
+      "stack": "SwiftUI iOS 26 Liquid Glass + Expo/Reanimated + Jetpack Compose M3 + visionOS 26 RealityKit",
+      "combo": "mobile-spatial-ui",
+      "description": "4-platform native & spatial starter pack featuring morphing Liquid Glass docks, 120fps velocity-preserving spring sheets, M3 Expressive haptics, and 60pt gaze-ergonomic visionOS ornaments/volumes."
+    },
+    {
+      "id": "higgsfield-cinema-fullstack",
+      "path": "templates/higgsfield-cinema-fullstack",
+      "stack": "React 19 + TanStack Start SSR + Cloudflare Worker + D1 + Higgsfield A4 ScrollScrub",
+      "combo": "higgsfield-websites",
+      "description": "Audit-hardened Higgsfield full-stack website pack with ~18.5-credit design-brief, real Cloudflare D1 enquiry persistence, GOP-4 scroll-scrubbing, X-Ray provenance curtain, and <900px mobile drawer."
+    },
+    {
+      "id": "b2b-dossier-configurator",
+      "path": "templates/b2b-dossier-configurator",
+      "stack": "Next.js 15 App Router + TypeScript + Zod + Native CSS light-dark()",
+      "combo": "anti-slop-landing",
+      "description": "B2B flagship platform combining Threshold split-panel reveal, zero-selection-safe Scope/Feasibility configurator, Zod API dispatch, audited Case Dossiers, and honest empty-state agenda."
+    },
+    {
+      "id": "glsl-resilient-3d-showcase",
+      "path": "templates/glsl-resilient-3d-showcase",
+      "stack": "HTML5 Semantic DOM + Three.js + Custom GLSL Wave/Ripple Shader",
+      "combo": "3d-webgl-hero",
+      "description": "0%-idle demand-rendered custom GLSL silk/architectural shader stage with webglcontextlost auto-recovery, 3s network failsafe, 34svh mobile cap, and keyboard Skip-3D bypass."
+    },
+    {
+      "id": "boardroom-gallery-and-qa",
+      "path": "templates/boardroom-gallery-and-qa",
+      "stack": "Lazy-Iframe Client Presentation Hub + Playwright 6-Viewport QA Probe",
+      "combo": "vibe-prototyping",
+      "description": "Single-lazy-iframe multi-direction client showcase (Desktop/Tablet/Mobile switcher, zero WebGL memory crash) paired with an automated 320-1920px overflow & 44px tap-target Playwright probe."
     }
   ]
 }

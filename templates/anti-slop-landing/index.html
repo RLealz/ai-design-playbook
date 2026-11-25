@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kestrel — Deterministic Edge Compute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="editorial-frame">
+    <!-- Top Hairline Bar -->
+    <header class="topbar editorial-rule-b">
+      <a href="#" class="brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" stroke="currentColor" stroke-width="1.75"/>
+          <path d="M2 15L11 6L16 11L22 5" stroke="var(--accent-primary)" stroke-width="2"/>
+        </svg>
+        <span>Kestrel Runtime</span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#proof">Architecture</a>
+        <a href="#comparison">Benchmarks</a>
+        <a href="#deploy">Deploy</a>
+      </nav>
+      <a href="#deploy" class="btn-ink">Start Sandbox</a>
+    </header>
+
+    <!-- Section 1: Asymmetric Split Hero (55% Editorial Thesis / 45% Live Tactile Sandbox) -->
+    <section class="hero-split editorial-rule-b">
+      <div class="hero-copy">
+        <p class="mono-index">01 / ZERO COLD-START ISOLATES</p>
+        <h1 class="hero-title">Sub-millisecond compute, <em>pinned</em> to the user's city.</h1>
+        <p class="hero-lead">
+          Kestrel compiles TypeScript and Rust workers into snapshot-warmed Firecracker microVMs across 42 regional PoPs—eliminating regional tail latency without Kubernetes YAML.
+        </p>
+        <div class="hero-actions">
+          <button class="cmd-pill" id="copyCmdBtn" type="button" aria-label="Copy install command">
+            <span class="cmd-prompt">$</span>
+            <code>npx kestrel@latest ship --edge</code>
+            <span class="cmd-badge" id="copyStatus">Copy</span>
+          </button>
+          <a href="#proof" class="link-editorial">Read technical spec →</a>
+        </div>
+      </div>
+
+      <div class="hero-sandbox" aria-label="Interactive latency estimator">
+        <div class="sandbox-card">
+          <div class="sandbox-header">
+            <span class="mono-index">LIVE ROUTING SIMULATOR</span>
+            <span class="status-dot"><span></span> 42 PoPs Active</span>
+          </div>
+          <div class="sandbox-controls">
+            <label for="rpsSlider" class="control-row">
+              <span>Concurrent Requests / sec</span>
+              <strong class="tabular-nums" id="rpsVal">12,500</strong>
+            </label>
+            <input id="rpsSlider" type="range" min="500" max="50000" step="500" value="12500" />
+
+            <div class="region-pills" role="group" aria-label="Origin topology">
+              <button type="button" class="pill active" data-mode="edge">Kestrel Edge Mesh</button>
+              <button type="button" class="pill" data-mode="single">Single-Region us-east-1</button>
+            </div>
+          </div>
+
+          <div class="telemetry-grid">
+            <div class="metric-cell">
+              <span class="mono-index">GLOBAL P50</span>
+              <div class="metric-num tabular-nums" id="p50Out">3.4 ms</div>
+            </div>
+            <div class="metric-cell">
+              <span class="mono-index">GLOBAL P99</span>
+              <div class="metric-num accent tabular-nums" id="p99Out">9.8 ms</div>
+            </div>
+            <div class="metric-cell">
+              <span class="mono-index">COLD BOOT</span>
+              <div class="metric-num tabular-nums" id="bootOut">0.4 ms</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Variable-Span Concentric Bento Proof (7 cols + 5 cols) -->
+    <section id="proof" class="bento-section editorial-rule-b">
+      <div class="section-head">
+        <p class="mono-index">02 / DETERMINISTIC EXECUTION PATH</p>
+        <h2>Memory snapshots replace container spin-up.</h2>
+      </div>
+
+      <div class="bento-asymmetric">
+        <article class="bento-outer span-7">
+          <div class="bento-inner diagram-box">
+            <div class="diagram-caption">
+              <span class="mono-index">ORTHOGONAL REQUEST TRACE</span>
+              <span class="mono-index">TLS 1.3 → V8 SNAPSHOT → NVMeKV</span>
+            </div>
+            <svg viewBox="0 0 620 200" class="trace-svg" role="img" aria-label="Request routing architecture diagram">
+              <rect x="16" y="64" width="128" height="72" rx="6" fill="var(--bg-surface-2)" stroke="var(--border-strong)" stroke-width="1.25"/>
+              <text x="80" y="96" text-anchor="middle" class="svg-title">Anycast Ingress</text>
+              <text x="80" y="116" text-anchor="middle" class="svg-mono">0.6 ms BGP</text>
+
+              <path id="route1" d="M 144 100 L 244 100" stroke="var(--border-strong)" stroke-width="1.5" fill="none"/>
+              <circle r="4" fill="var(--accent-primary)">
+                <animateMotion dur="1.8s" repeatCount="indefinite" path="M 144 100 L 244 100" />
+              </circle>
+
+              <rect x="244" y="52" width="152" height="96" rx="6" fill="var(--bg-surface-2)" stroke="var(--accent-primary)" stroke-width="1.75"/>
+              <text x="320" y="92" text-anchor="middle" class="svg-title">Snapshot Isolate</text>
+              <text x="320" y="114" text-anchor="middle" class="svg-mono">CoW Restore 0.4 ms</text>
+              <text x="320" y="132" text-anchor="middle" class="svg-mono">128 MB Cap</text>
+
+              <path d="M 396 100 L 472 100" stroke="var(--border-strong)" stroke-width="1.5" fill="none"/>
+              <circle r="4" fill="var(--accent-primary)">
+                <animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite" path="M 396 100 L 472 100" />
+              </circle>
+
+              <rect x="472" y="64" width="132" height="72" rx="6" fill="var(--bg-surface-2)" stroke="var(--border-strong)" stroke-width="1.25"/>
+              <text x="538" y="96" text-anchor="middle" class="svg-title">Raft State KV</text>
+              <text x="538" y="116" text-anchor="middle" class="svg-mono">Local Read 1.1 ms</text>
+            </svg>
+          </div>
+        </article>
+
+        <article class="bento-outer span-5">
+          <div class="bento-inner spec-list">
+            <span class="mono-index">CONCENTRIC HARDWARE GUARANTEES</span>
+            <ul class="ledger">
+              <li><span>CPU Isolation</span><strong class="tabular-nums">Dedicated vCPU Slice</strong></li>
+              <li><span>Snapshot Checksum</span><strong class="tabular-nums">BLAKE3 Verified</strong></li>
+              <li><span>Egress Metering</span><strong class="tabular-nums">$0.00 / GB Unmetered</strong></li>
+              <li><span>Rollback Horizon</span><strong class="tabular-nums">Instant (320 ms)</strong></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 3: Sticky Editorial Comparison -->
+    <section id="comparison" class="sticky-comparison editorial-rule-b">
+      <div class="sticky-left">
+        <p class="mono-index">03 / MEASURED IN PRODUCTION</p>
+        <h2>Why teams replace legacy serverless containers.</h2>
+        <p>Sampled across 1.4B requests from Frankfurt, São Paulo, Tokyo, and Ashburn over 30 days.</p>
+      </div>
+      <div class="comparison-rows">
+        <div class="comp-row">
+          <span class="mono-index">TAIL P99 COLD START</span>
+          <div class="comp-bars">
+            <div class="bar-line"><span>Legacy Lambda Container</span><strong class="tabular-nums">640.0 ms</strong></div>
+            <div class="bar-track"><div class="bar-fill muted" style="width: 94%"></div></div>
+            <div class="bar-line"><span>Kestrel Snapshot Isolate</span><strong class="tabular-nums accent">0.4 ms</strong></div>
+            <div class="bar-track"><div class="bar-fill active" style="width: 3%"></div></div>
+          </div>
+        </div>
+        <div class="comp-row">
+          <span class="mono-index">MEMORY FOOTPRINT PER WORKER</span>
+          <div class="comp-bars">
+            <div class="bar-line"><span>Node Container Base</span><strong class="tabular-nums">148 MB</strong></div>
+            <div class="bar-track"><div class="bar-fill muted" style="width: 82%"></div></div>
+            <div class="bar-line"><span>Kestrel CoW Page Delta</span><strong class="tabular-nums accent">4.2 MB</strong></div>
+            <div class="bar-track"><div class="bar-fill active" style="width: 8%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: High-Contrast Editorial CTA Anchor -->
+    <section id="deploy" class="cta-anchor">
+      <div>
+        <p class="mono-index">04 / SHIP IN 45 SECONDS</p>
+        <h2>Deploy your first worker before your coffee cools.</h2>
+      </div>
+      <div class="cta-buttons">
+        <a href="#" class="btn-ink lg">Create Free Workspace</a>
+        <a href="#" class="btn-outline lg">Inspect CLI Source</a>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

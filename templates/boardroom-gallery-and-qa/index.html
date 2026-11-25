@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Boardroom Showcase — Multi-Direction Review Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./gallery.css" />
+</head>
+<body>
+  <header class="hub-header">
+    <div>
+      <p class="mono">BOARDROOM PRESENTATION HUB · LAZY SINGLE-IFRAME ENGINE</p>
+      <h1>Design Directions &amp; Comparative Review</h1>
+    </div>
+    <div class="filter-bar" id="filterBar" role="group" aria-label="Filter proposals by category">
+      <button type="button" class="filter-btn active" data-filter="All">All Directions</button>
+      <button type="button" class="filter-btn" data-filter="Editorial">Editorial</button>
+      <button type="button" class="filter-btn" data-filter="3D & Shader">3D &amp; Shader</button>
+    </div>
+  </header>
+
+  <main class="cards-grid" id="cardsGrid" aria-live="polite"></main>
+
+  <!-- Single Lazy-Mounted Iframe Modal (Prevents 15x WebGL Context Exhaustion!) -->
+  <div class="preview-modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-toolbar">
+      <strong id="modalTitle" class="modal-title">Direction Preview</strong>
+      <div class="viewport-pills" role="group" aria-label="Preview viewport width">
+        <button type="button" class="vp-btn active" data-width="100%">Desktop</button>
+        <button type="button" class="vp-btn" data-width="768px">Tablet 768</button>
+        <button type="button" class="vp-btn" data-width="390px">Mobile 390</button>
+      </div>
+      <div class="modal-actions">
+        <a id="standaloneLink" href="#" target="_blank" rel="noreferrer" class="action-link">Open Standalone ↗</a>
+        <button type="button" id="closeModalBtn" class="close-btn">Close [Esc]</button>
+      </div>
+    </div>
+    <div class="iframe-stage">
+      <iframe id="previewFrame" title="Live proposal preview" src="about:blank"></iframe>
+    </div>
+  </div>
+
+  <script type="module" src="./gallery.js"></script>
+</body>
+</html>

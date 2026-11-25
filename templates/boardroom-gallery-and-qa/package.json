@@ -1,0 +1,13 @@
+{
+  "name": "template-boardroom-gallery-and-qa",
+  "private": true,
+  "version": "2.1.0",
+  "type": "module",
+  "scripts": {
+    "serve": "npx serve . -l 4181",
+    "probe": "node ./scripts/probe-site.mjs http://127.0.0.1:4181"
+  },
+  "devDependencies": {
+    "playwright": "^1.51.0"
+  }
+}

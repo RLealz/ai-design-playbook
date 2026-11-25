@@ -1,0 +1,12 @@
+{
+  "name": "template-discovery-audit-pack",
+  "private": true,
+  "version": "2.2.0",
+  "type": "module",
+  "scripts": {
+    "audit": "node ./scripts/audit-live-surface.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.51.0"
+  }
+}

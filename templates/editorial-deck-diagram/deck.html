@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive Architecture Deck — 12-Column Slide System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #0B0F17;
+      --bg-card: #111826;
+      --border: rgba(148, 163, 184, 0.16);
+      --ink: #F1F5F9;
+      --ink-sec: #94A3B8;
+      --accent: #38BDF8;
+      --emerald: #34D399;
+    }
+    [data-theme="light"] {
+      --bg-canvas: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border: rgba(15, 23, 42, 0.14);
+      --ink: #0F172A;
+      --ink-sec: #475569;
+      --accent: #0284C7;
+      --emerald: #059669;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-canvas);
+      color: var(--ink);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .deck-stage { flex: 1; position: relative; }
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 64px;
+      display: none;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto 1fr;
+      gap: 32px;
+    }
+    .slide.active { display: grid; }
+    .slide-head { grid-column: 1 / -1; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2 {
+      font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      margin-top: 10px;
+      max-width: 24ch;
+    }
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-12 { grid-column: span 12; }
+    .big-stat {
+      font-size: clamp(3.4rem, 5.2vw, 5.2rem);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.03em;
+      color: var(--emerald);
+    }
+    .stat-desc { color: var(--ink-sec); font-size: 1.05rem; line-height: 1.5; }
+    .deck-footer {
+      height: 48px;
+      padding: 0 64px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--ink-sec);
+    }
+    .ctrl-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    @media print {
+      body { height: auto; overflow: visible; }
+      .slide { position: relative; display: grid !important; page-break-after: always; min-height: 100vh; }
+      .deck-footer { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck-stage">
+    <!-- Slide 1: Conclusion Headline + 3 Tabular Proof Points (Combo 7 Law) -->
+    <section class="slide active">
+      <header class="slide-head">
+        <p class="eyebrow">01 / EXECUTIVE SUMMARY</p>
+        <h1>Regional Snapshot Caching Cut Global P99 Latency by 74%.</h1>
+      </header>
+      <div class="kpi-card span-4">
+        <span class="eyebrow">GLOBAL P99 LATENCY</span>
+        <div class="big-stat">18.4 ms</div>
+        <p class="stat-desc">Down from 71.2 ms across 42 Anycast edge locations in Q4 production traffic.</p>
+      </div>
+      <div class="kpi-card span-4">
+        <span class="eyebrow">COMPUTE INFRASTRUCTURE COST</span>
+        <div class="big-stat" style="color: var(--accent)">-41.0%</div>
+        <p class="stat-desc">Copy-on-write microVM memory sharing eliminated idle container over-provisioning.</p>
+      </div>
+      <div class="kpi-card span-4">
+        <span class="eyebrow">AVAILABILITY SLA</span>
+        <div class="big-stat">99.996%</div>
+        <p class="stat-desc">Automated sub-second regional failover verified across three simulated AZ outages.</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: Zero-Slop Embedded Orthogonal Architecture -->
+    <section class="slide">
+      <header class="slide-head">
+        <p class="eyebrow">02 / REQUEST DATAPLANE</p>
+        <h2>Zero-Hop Read Path Eliminates Cross-Ocean Database Roundtrips.</h2>
+      </header>
+      <div class="kpi-card span-12" style="justify-content: center; align-items: center;">
+        <svg viewBox="0 0 960 280" style="width: 100%; max-height: 320px;">
+          <rect x="30" y="90" width="190" height="100" rx="8" fill="var(--bg-canvas)" stroke="#38BDF8" stroke-width="2"/>
+          <text x="125" y="135" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600">Anycast Edge TLS</text>
+          <text x="125" y="162" text-anchor="middle" fill="var(--ink-sec)" font-family="IBM Plex Mono" font-size="13">HTTP/3 + QUIC</text>
+
+          <path d="M 220 140 L 370 140" stroke="var(--accent)" stroke-width="2" fill="none"/>
+          <circle r="5" fill="#34D399"><animateMotion dur="1.6s" repeatCount="indefinite" path="M 220 140 L 370 140"/></circle>
+
+          <rect x="370" y="75" width="220" height="130" rx="8" fill="var(--bg-canvas)" stroke="#818CF8" stroke-width="2"/>
+          <text x="480" y="130" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600">Isolate Worker Pool</text>
+          <text x="480" y="158" text-anchor="middle" fill="var(--ink-sec)" font-family="IBM Plex Mono" font-size="13">0.4ms Snapshot Boot</text>
+
+          <path d="M 590 140 L 740 140" stroke="#34D399" stroke-width="2" fill="none"/>
+          <circle r="5" fill="#34D399"><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M 590 140 L 740 140"/></circle>
+
+          <rect x="740" y="90" width="190" height="100" rx="8" fill="var(--bg-canvas)" stroke="#34D399" stroke-width="2"/>
+          <text x="835" y="135" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600">Local Read Replica</text>
+          <text x="835" y="162" text-anchor="middle" fill="var(--ink-sec)" font-family="IBM Plex Mono" font-size="13">Raft NVMe · 1.1ms</text>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="deck-footer">
+    <span>← / → Navigate Slides · Press [T] Theme · Ctrl+P Export PDF</span>
+    <div>
+      <button class="ctrl-btn" id="themeBtn" type="button">Toggle Light/Dark</button>
+      <span id="counter" style="margin-left: 14px;">01 / 02</span>
+    </div>
+  </footer>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const counter = document.getElementById('counter');
+    let idx = 0;
+    function show(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      counter.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    }
+    function toggleTheme() {
+      const root = document.documentElement;
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
+    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') show(idx + 1);
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key.toLowerCase() === 't') toggleTheme();
+    });
+  </script>
+</body>
+</html>

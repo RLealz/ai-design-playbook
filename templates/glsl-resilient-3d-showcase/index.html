@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" class="motion">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Looma — Resilient GLSL Wave & Architectural Stage</title>
+  <link rel="modulepreload" href="https://unpkg.com/three@0.170.0/build/three.module.js" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.170.0/build/three.module.js"
+      }
+    }
+  </script>
+  <!-- 3-Second Failsafe: Never leave content hidden if CDN/WebGL stalls -->
+  <script>
+    window.__stageFailsafe = setTimeout(function () {
+      document.documentElement.classList.remove('motion');
+    }, 3000);
+  </script>
+</head>
+<body>
+  <!-- Keyboard & Mobile Accessibility Bypass -->
+  <a href="#specifications" class="skip-3d">Skip interactive 3D stage →</a>
+
+  <header class="hud-bar">
+    <span class="brand-mark">LOOMA // GLSL STAGE</span>
+    <span class="gpu-pill" id="gpuStatus">GPU · POSTER READY</span>
+  </header>
+
+  <div class="split-experience">
+    <!-- Sticky WebGL Stage (Capped at 34svh on portrait phones, non-sticky in landscape) -->
+    <div class="stage-column">
+      <div class="poster-fallback" id="posterLayer" aria-hidden="true"></div>
+      <canvas id="glslCanvas" aria-label="Interactive woven architectural shader surface"></canvas>
+    </div>
+
+    <!-- Real Semantic HTML Copy Over WebGL -->
+    <main class="narrative-column">
+      <section class="beat" data-wave="0.35">
+        <p class="mono">01 / DEMAND-RENDERED GLSL</p>
+        <h1>Tactile shader physics with <em>zero</em> idle GPU drain.</h1>
+        <p class="copy">Move your pointer or scroll to ripple the woven GLSL displacement mesh. When motion settles, the render loop sleeps completely at 0 FPS.</p>
+      </section>
+
+      <section class="beat" data-wave="0.75">
+        <p class="mono">02 / CONTEXT-LOSS IMMUNITY</p>
+        <h2>Automatic WebGL context recovery &amp; poster fallback.</h2>
+        <p class="copy">Includes full <code>webglcontextlost</code> and <code>webglcontextrestored</code> scene reconstruction so mobile tab eviction or slow networks never leave a blank viewport.</p>
+      </section>
+
+      <section id="specifications" class="beat final" data-wave="0.20">
+        <p class="mono">03 / TECHNICAL SPECIFICATIONS</p>
+        <h2>Accessible HTML semantics over mathematical surfaces.</h2>
+        <div class="spec-grid">
+          <div class="spec-card"><span class="mono">IDLE GPU</span><strong class="tabular">0.0 FPS</strong></div>
+          <div class="spec-card"><span class="mono">MOBILE CAP</span><strong class="tabular">34 svh</strong></div>
+          <div class="spec-card"><span class="mono">DPR LIMIT</span><strong class="tabular">≤ 1.75×</strong></div>
+        </div>
+        <a href="#top" class="cta-btn">Request Material Sample</a>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./shader-stage.js"></script>
+</body>
+</html>
